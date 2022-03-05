@@ -9,6 +9,7 @@
 
 [node name="Node2D" instance=ExtResource( 1 )]
 dimensions = Vector2( 480, 360 )
+color = Color( 0, 1, 0.976471, 1 )
 title = "youtube"
 
 [node name="Body" parent="." index="0"]
