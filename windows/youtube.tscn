@@ -19,7 +19,7 @@ margin_bottom = 360.0
 margin_right = 480.0
 
 [node name="Pewds" type="Sprite" parent="." index="2"]
-position = Vector2( 449, 477 )
+position = Vector2( 186, 179 )
 texture = ExtResource( 2 )
 
 [node name="YoutubeHeader" type="Sprite" parent="." index="3"]
