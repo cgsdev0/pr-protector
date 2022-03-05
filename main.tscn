@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/PixelScale.gd" type="Script" id=2]
+[ext_resource path="res://scripts/FullscreenButton.gd" type="Script" id=3]
+[ext_resource path="res://ui_theme.tres" type="Theme" id=4]
+[ext_resource path="res://scripts/WindowManager.gd" type="Script" id=5]
+[ext_resource path="res://windows/youtube.tscn" type="PackedScene" id=6]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Monitor" type="Node2D" parent="."]
+position = Vector2( 160, 30 )
+
+[node name="WindowControl" type="Control" parent="Monitor"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="Monitor/WindowControl"]
+margin_right = 640.0
+margin_bottom = 480.0
+mouse_filter = 2
+
+[node name="Node2D3" parent="Monitor/WindowControl" instance=ExtResource( 1 )]
+position = Vector2( 391, 41 )
+title = "reddit"
+
+[node name="Node2D2" parent="Monitor/WindowControl" instance=ExtResource( 1 )]
+position = Vector2( 111, 91 )
+dimensions = Vector2( 300, 200 )
+color = Color( 0.243137, 0.443137, 0.968627, 1 )
+title = "twitter"
+
+[node name="Node2D" parent="Monitor/WindowControl" instance=ExtResource( 1 )]
+position = Vector2( 214, 163 )
+dimensions = Vector2( 360, 300 )
+color = Color( 0.196078, 1, 0, 1 )
+title = "email"
+
+[node name="Node2D4" parent="Monitor/WindowControl" instance=ExtResource( 6 )]
+position = Vector2( 147, 92 )
+
+[node name="ColorRect" type="ColorRect" parent="Monitor"]
+margin_right = 640.0
+margin_bottom = 26.0
+color = Color( 0.133333, 0.356863, 0.878431, 1 )
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="Control"]
+margin_left = 870.0
+margin_top = 510.0
+margin_right = 948.0
+margin_bottom = 530.0
+text = "Fullscreen"
+script = ExtResource( 3 )
