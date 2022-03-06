@@ -1,4 +1,4 @@
-extends Button
+extends Sprite
 
 
 # Declare member variables here. Examples:
@@ -11,5 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _pressed():
-	OS.window_fullscreen = !OS.window_fullscreen
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	rotation_degrees += delta * 150

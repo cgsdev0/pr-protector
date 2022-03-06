@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/PixelScale.gd" type="Script" id=2]
 [ext_resource path="res://scripts/BtnFullscreen.gd" type="Script" id=3]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=4]
 [ext_resource path="res://scripts/window/WindowManager.gd" type="Script" id=5]
+[ext_resource path="res://windows/youtube.tscn" type="PackedScene" id=6]
 [ext_resource path="res://windows/reddit.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/BtnDebug.gd" type="Script" id=8]
+[ext_resource path="res://scripts/BtnMain.gd" type="Script" id=8]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -24,14 +25,17 @@ margin_right = 640.0
 margin_bottom = 480.0
 mouse_filter = 2
 
-[node name="Node2D2" parent="Monitor/WindowControl" instance=ExtResource( 7 )]
-position = Vector2( 15, 40 )
-
 [node name="Node2D" parent="Monitor/WindowControl" instance=ExtResource( 1 )]
-position = Vector2( 260, 156 )
+position = Vector2( 214, 163 )
 dimensions = Vector2( 360, 300 )
 color = Color( 0.196078, 1, 0, 1 )
 title = "email"
+
+[node name="Node2D4" parent="Monitor/WindowControl" instance=ExtResource( 6 )]
+position = Vector2( 50, 81 )
+
+[node name="Node2D2" parent="Monitor/WindowControl" instance=ExtResource( 7 )]
+position = Vector2( 202, 46 )
 
 [node name="ColorRect" type="ColorRect" parent="Monitor"]
 margin_right = 640.0
@@ -45,19 +49,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 4 )
 
-[node name="BtnDebug" type="Button" parent="Control"]
-visible = false
-margin_left = 870.0
-margin_top = 484.0
-margin_right = 948.0
-margin_bottom = 504.0
-text = "Playground"
-script = ExtResource( 8 )
-
-[node name="BtnFullscreen" type="Button" parent="Control"]
+[node name="Button" type="Button" parent="Control"]
 margin_left = 870.0
 margin_top = 510.0
 margin_right = 948.0
 margin_bottom = 530.0
 text = "Fullscreen"
 script = ExtResource( 3 )
+
+[node name="BtnMain" type="Button" parent="Control"]
+margin_left = 870.0
+margin_top = 484.0
+margin_right = 948.0
+margin_bottom = 504.0
+text = "Main Scene"
+script = ExtResource( 8 )

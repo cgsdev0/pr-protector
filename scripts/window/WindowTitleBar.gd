@@ -13,15 +13,10 @@ extends Control
 var can_grab = false
 var grabbed_offset = Vector2()
 
-signal move_to_top
-
 func _gui_input(event):
 	if event is InputEventMouseButton:
 		can_grab = event.pressed
 		grabbed_offset = get_owner().position - get_global_mouse_position()
-		if can_grab:
-			accept_event()
-			emit_signal('move_to_top', self)
 
 func _process(delta):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_grab:
