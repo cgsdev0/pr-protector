@@ -12,7 +12,6 @@ func _ready():
 	checkbox = get_parent().find_node("CheckBox")
 	
 func _process(_delta):
-	# this is hardcoded idk how else to do it i'm sorry
-	if get_v_scroll().ratio > 0.86:
+	if get_v_scroll().max_value - get_v_scroll().value == margin_bottom - margin_top:
 		checkbox.disabled = false
 		

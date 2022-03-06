@@ -1,6 +1,5 @@
 extends Button
 
 
-func _gui_input(event):
-	if event is InputEventMouseButton && event.pressed:
+func _pressed():
 		get_parent().visible = false

@@ -27,6 +27,8 @@ func setClosable(is_closable: bool):
 	self.closable = is_closable
 	
 func _process(delta):
+	if !font:
+		font = load("res://fonts/m5x7_small.tres")
 	if !bodyNode:
 		bodyNode = find_node("Body", false)
 	if !titleNode:

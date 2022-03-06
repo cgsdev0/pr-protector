@@ -25,7 +25,7 @@ margin_bottom = 480.0
 mouse_filter = 2
 
 [node name="Node2D2" parent="Monitor/WindowControl" instance=ExtResource( 7 )]
-position = Vector2( 15, 40 )
+position = Vector2( 1, 45 )
 
 [node name="Node2D" parent="Monitor/WindowControl" instance=ExtResource( 1 )]
 position = Vector2( 260, 156 )
