@@ -75,6 +75,8 @@ func _input(event):
 						grabbed_point = smart_mod(i, len(polygon))
 			update()
 	if event is InputEventMouseButton:
+		if event.button_index != 1:
+			return
 		# initial selection of the polygon
 		if event.pressed && !selected && mouse_in && get_owner().focused:
 			selected = true
