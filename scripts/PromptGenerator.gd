@@ -28,7 +28,7 @@ func next_prompt():
 
 func generate_list():
 	for _i in range(1, MAX_PROMPTS):
-		var prompt = data["issues"][rand_idx(data["issues"])].text
+		var prompt = data["reddit"][rand_idx(data["reddit"])].text
 		generated.append(get_prompt(prompt))
 
 func get_prompt(template):
