@@ -21,7 +21,25 @@ var data = {
 			"name": "oil"
 		}
 	],
+	"currencies": [
+		{
+			"name": "dollars"
+		},
+		{
+			"name": "pesos"
+		},
+		{
+			"name": "vbucks"
+		},
+		{
+			"name": "bitcoin"
+		},
+		{
+			"name": "ethereum"
+		}
+	],
 	"companyName": "PKC",
+	"longCompanyName": "Peterson, Kain, and Cousins",
 	"performBad": [
 		{
 			"past": "flopped",
@@ -65,52 +83,429 @@ var data = {
 		}
 	],
 	"reddit": [
+		# positive reddit posts
+		{
+			"isgood": true,
+			"text": "I love my new arm! Thanks <COMPANYNAME>!"
+		},
+		{
+			"isgood": true,
+			"text": "The new <COMPANYNAME> restaurant is heckin fancy :3"
+		},
+		{
+			"isgood": true,
+			"text": "Copped the new <COMPANYNAME> Templar Kicks"
+		},
+		{
+			"isgood": true,
+			"text": "I saved so much with that <COMPANYNAME> coupon app! WOOOOOO"
+		},
+		{
+			"isgood": true,
+			"text": "I WON THE <COMPANYNAME> SPACESHIP RAFFLE HOLY CRAP!!"
+		},
+		{
+			"isgood": true,
+			"text": "<COMPANYNAME> reveals the future of virtual reality!"
+		},
+		{
+			"isgood": true,
+			"text": "God bless the <COMPANYNAME> Cinematic Universe <3"
+		},
+		{
+			"isgood": true,
+			"text": "My body is so ready for <COMPANYNAME> Con!"
+		},
+		{
+			"isgood": true,
+			"text": "Celebrating my 37th at the <COMPANYNAME> Trampoline Arena :)"
+		},
+		# negative reddit posts
 		{
 			"isgood": false,
-			"text": "<COMPANYNAME> dumps <QUANTITY> barrles of oil in the Pacific."
+			"text": "<COMPANYNAME> dumps <QUANTITY> million barrels of oil in the Pacific. Updoot for visibility!"
 		},
 		{
 			"isgood": false,
-			"text": "<COMPANYNAME> in the news again after CFO is caught stealing candy!"
-		},
-		{
-			"isgood": false,
-			"text": "How does <COMPANYNAME> keep getting away with it?"
-		},
-		{
-			"isgood": false,
-			"text": "In <PASTYEAR>, <COMPANYNAME> was caught smuggling <CONTRABAND> through <COUNTRY>"
-		},
-		{
-			"isgood": false,
-			"text": "<COMPANYNAME>'s new film, '<MOVIENAME>', <PERFBAD_PAST> at the box office this weekend"
-		},
-		{
-			"isgood": false,
-			"text": "<COMPANYNAME>'s financials <PERFBAD_FUTURE> coming into the third quarter"
-		},
-		{
-			"isgood": false,
-			"text": "What happened to all of the good products? I blame @<COMPANYNAME>"
-		},
-		{
-			"isgood": false,
-			"text": "<COMPANYNAME> dumps MORE oil in the Pacific. Updoot for visibility!"
-		},
-		{
-			"isgood": false,
-			"text": "<COMPANYNAME> in the news again after the CFO is caught stealing candy (from a baby!)"
+			"text": "<COMPANYNAME> in the news again after CFO is caught stealing candy (again!)"
 		},
 		{
 			"isgood": false,
 			"text": "How does <COMPANYNAME> keep getting away with it??"
+		},
+		{
+			"isgood": false,
+			"text": "TIL that in <PASTYEAR>, <COMPANYNAME> was caught smuggling money through <COUNTRY>."
+		},
+		{
+			"isgood": false,
+			"text": "'<LONGCOMPANYNAME>' caught smuggling tacos during taco drought"
+		},
+		{
+			"isgood": false,
+			"text": "<COMPANYNAME> executive caught money laundering <CURRENCY>"
+		},
+		{
+			"isgood": false,
+			"text": "Why does <COMPANYNAME> keep greenlighting awful movies?? :("
+		},
+		{
+			"isgood": false,
+			"text": "Who even runs <LONGCOMPANYNAME> anymore? Is it just robots doing everything?"
+		},
+		{
+			"isgood": false,
+			"text": "The <COMPANYNAME> Game Jam was crap this year. What a joke…"
+		},
+		{
+			"isgood": false,
+			"text": "I've never seen so much corporate propaganda in the <COMPANYNAME> Film Fest :/"
+		},
+		{
+			"isgood": false,
+			"text": "<LONGCOMPANYNAME> new restaurant rated the worst restaurant of all time"
+		},
+		# {
+		#     "isgood": false,
+		#     "text": "Powerful new pictures from the <COMPANYNAME> land conflict surface:"
+		# },
+		{
+			"isgood": false,
+			"text": "This is how <LONGCOMPANYNAME> treat their 10+ tenured employees:"
+		},
+		{
+			"isgood": false,
+			"text": "<COMPANYNAME> Exec cries during roast"
+		},
+		{
+			"isgood": false,
+			"text": "\"Massive\" car crash caused by \"<COMPANYNAME> CEO\" claims victim"
+		},
+		{
+			"isgood": false,
+			"text": "500 Passenger Flight forced to turnaround because of <LONGCOMPANYNAME> Exec"
+		},
+		{
+			"isgood": false,
+			"text": "There's some corny businessman at this bar playing guitar to any girl that looks at him??"
+		},
+		{
+			"isgood": false,
+			"text": "Why can my children buy knives from the <COMPANYNAME> online store!?"
+		},
+		{
+			"isgood": false,
+			"text": "How to Unsubscribe from any <COMPANYNAME> robocall!"
+		},
+		{
+			"isgood": false,
+			"text": "I can't access any <COMPANYNAME> website unless I turn off my adblock? Can anyone help?"
+		},
+		{
+			"isgood": false,
+			"text": "My brand new <COMPANYNAME> Ultralux Car exploded?? NANI??"
+		},
+		{
+			"isgood": false,
+			"text": "That new Ultraguy flick by /u/<COMPANYNAME> was absolute TRASH"
+		},
+		{
+			"isgood": false,
+			"text": "Who's <COMPANYNAME> luxury company car is this?"
+		},
+		{
+			"isgood": false,
+			"text": "Uhhhh... <COMPANYNAME> is selling laser weapons to aliens?? Wuuuuut?"
+		},
+		{
+			"isgood": false,
+			"text": "Is <COMPANYNAME> dropping an asteroid on Australia? Anyone seeing this??"
+		},
+		{
+			"isgood": false,
+			"text": "Why does this dinosaur have the \"<COMPANYNAME>\" logo on it..."
+		},
+		{
+			"isgood": false,
+			"text": "New archeological findings report a cave-painting that looks like the <COMPANYNAME> logo..."
+		},
+		{
+			"isgood": false,
+			"text": "mY <COMPANYNAME> aUgmeNNTAatioN 1ss mALfuNctioNIng. HeLLppp"
+		},
+		{
+			"isgood": false,
+			"text": "M&S literally stole 9.8 Billion <CURRENCY> from <COUNTRY> and no one is talking about it??"
+		},
+		{
+			"isgood": false,
+			"text": "NEWS: <COMPANYNAME> Acquires Literally Every Movie and Television Studio for a Meager 5 Trillion. Denies it is a Monopoly."
+		}
+	],
+	"twitterGood": [
+		{
+			"text": "Fast and Furious is a great franchise",
+		},
+		{
+			"text": "Super excited to attend a con this year!"
+		},
+		{
+			"text": "I love horses"
+		},
+		{
+			"text": "I want @vindiesel to make a new game already!"
+		},
+		{
+			"text": "When are street sharks coming back?"
+		},
+		{
+			"text": "What music do you guys listen to?"
+		},
+		{
+			"text": "My favorite birds are penguins! :3"
+		},
+		{
+			"text": "Having our 16th baby #clowncar"
+		},
+		{
+			"text": "Llamas or Alpacas, Who would win in a fight?"
+		},
+		{
+			"text": "Has anyone been skydiving before? It sounds really scary"
+		},
+		{
+			"text": "@TwitterSupport i think my account got hacked??? Help"
+		},
+		{
+			"text": "Stop what you're doing and watch this new @pewdiepie video. Now."
+		},
+		{
+			"text": "Twitter is dead, change my mind"
+		},
+		{
+			"text": "Why is no one talking about this???"
+		},
+		{
+			"text":"Just reached 500 followers! Thank you so much!!"
+		},
+		{
+			"text": "thinking about taking up knitting. Anyone have any tips?"
+		},
+		{
+			"text": "Best Action Figure of the year?"
+		},
+		{
+			"text": "Retweet to get a chance to win a case of V Fuel"
+		},
+		{
+			"text": "What that dog doin? :3"
+		},
+		{
+			"text": "LEGO is costing too much these days oof..."
+		},
+		{
+			"text": "#movieoftheweek"
+		},
+		{
+			"text": "Is the new superhero movie out yet?"
+		},
+		{
+			"text": "Someone hold me I'm scared"
+		},
+		{
+			"text": "Wish me luck at the tournament tomorrow night! #nervous"
+		},
+		{
+			"text": "I miss Mr. Humpersnackle <3"
+		},
+		{
+			"text": "This is easy! Pshhh!"
+		},
+		{
+			"text": "Just spent a month off social media. Good to be back"
+		},
+		{
+			"text": "What color of socks should I were today"
+		},
+		{
+			"text": "I'm totally gonna marathon the new @JexseSox lets play later!"
+		},
+		{
+			"text": "Should I buy the new Gamestation or the X Cube Series Y : Electric Boogaloo "
+		},
+		{
+			"text": "Wow…"
+		},
+		{
+			"text": "I'm speechless rn…holy crap!"
+		},
+		{
+			"text": "Did anyone see that? Was it a UFO? #theyarewatching"
+		},
+		{
+			"text": "Am I doing this right?"
+		},
+		{
+			"text": "I hope this gets 100 likes!"
+		},
+		{
+			"text": "50 likes and I'll do a backlip #arachnaman"
+		},
+		{
+			"text": "What should I name my new puppy?"
+		},
+		{
+			"text": "Today is our 4th month anniversary #together4ever"
+		},
+		{
+			"text": "I ducking hate autocorrect!"
+		},
+		{
+			"text": "Anyone eat at that new restaurant between 6th and 9th?"
+		},
+		{
+			"text":"Fave holiday? Mine is crimbus."
+		},
+		{
+			"text": "Anyone see the news lately?"
+		},
+		{
+			"text": "#lobster"
+		},
+		{
+			"text": "I can dance to ANY song >:D"
+		},
+		{
+			"text": "Link your fave song and I'll react to it!"
+		},
+		{
+			"text": "\"VERY NICE\""
+		},
+		{
+			"text": "MFW the guy next to me on the bus is a follower O.o"
+		},
+		{
+			"text": "#wehaveplentybackhome #groceries"
+		},
+		{
+			"text": "Momma and peepaw playing with lil' jakey <3 <3 <3"
+		},
+		{
+			"text": "Wrestling is cool"
+		},
+		{
+			"text": "I love @GickRastleys new album!! #instantclassic"
+		},
+		{
+			"text": "I can't whistle "
+		},
+		{
+			"text": "That new episode was WILD"
+		},
+		{
+			"text": "It's hard out there. Watch out y'all"
 		}
 	],
 	"twitterBad": [
-		
-	],
-	"twitterGood": [
-		
+		{
+			"istopical": false,
+			"text": "Pizza is the WORST food in the world! YOU'RE ALL WRONG"
+		},
+		{
+			"istopical": false,
+			"text": "I like wearing crocs."
+		},
+		{
+			"istopical": false,
+			"text": "Nothing good ever came out of game jams >:("
+		},
+		{
+			"istopical": false,
+			"text": "Nickelback is the best band, hands down."
+		},
+		{
+			"istopical": false,
+			"text": "I'm the ideas guy. #FACTS"
+		},
+		{
+			"istopical": false,
+			"text": "THE JOKER SHOULD HAVE WON THE OSCAR'S"
+		},
+		{
+			"istopical": false,
+			"text": "If you dunk your oreos in milk, you're going to heck."
+		},
+		# {
+		#     "text": "Global warming isn't real!"
+		# },
+		{
+			"istopical": false,
+			"text": "Jar Jar Binks is my favorite Star Wars character"
+		},
+		{
+			"istopical": false,
+			"text": "I just cheated on my SAT! Shhhhh :DDDD"
+		},
+		{
+			"istopical": false,
+			"text": "don't tell anyone I stole the last donut! #ninja"
+		},
+		{
+			"istopical": false,
+			"text": "It's fun to mess with the animals at the #SanDiegoZoo"
+		},
+		{
+			"istopical": false,
+			"text": "Turtles should have no rights"
+		},
+		{
+			"istopical": false,
+			"text": "I HATE CATS! THERE I SAID IT BLAGHGHDJKG"
+		},
+		{
+			"istopical": false,
+			"text": "don't tell my stepmom I stole her credit card lol"
+		},
+		{
+			"istopical": true,
+			"text": "Loving my new <COMPANYNAME> Ultralux Car! I'll never buy anything else <3"
+		},
+		{
+			"istopical": true,
+			"text": "This new <LONGCOMPANYNAME> phone is da BOMB"
+		},
+		{
+			"istopical": true,
+			"text": "<COMPANYNAME> isn't that bad tbh"
+		},
+		{
+			"istopical": true,
+			"text": "So proud of my dad! He just got promoted at <COMPANYNAME>!"
+		},
+		{
+			"istopical": true,
+			"text": "Thanks @<COMPANYNAME>Official for the new ride :) #sponsored"
+		},
+		{
+			"istopical": true,
+			"text": "Always start the morning with my trusty <COMPANYNAME> coffee mug"
+		},
+		{
+			"istopical": true,
+			"text": "@<COMPANYNAME>Official SAVED my ass today y'all have NO idea XD"
+		},
+		{
+			"istopical": true,
+			"text": "How did I get this far without @<COMPANYNAME>Official constantly saving me lmao"
+		},
+		{
+			"istopical": true,
+			"text": "Uhh... I'm gonna be in the next <COMPANYNAME> game... so... yeah... #blessed"
+		},
+		{
+			"istopical": true,
+			"text": "I always fly Air <COMPANYNAME> when I can :D"
+		}
 	],
 	"youtube": [
 		

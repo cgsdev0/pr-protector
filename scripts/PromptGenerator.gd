@@ -54,10 +54,14 @@ func make_prompt(template):
 	var prompt = template.text;
 	
 	x["<COMPANYNAME>"] = data["companyName"]
+	x["<LONGCOMPANYNAME>"] = data["longCompanyName"]
+
 	x["<CURRENTYEAR>"] = OS.get_datetime()["year"]
 	x["<PASTYEAR>"] = (rng.randi_range(1900, x["<CURRENTYEAR>"] - 1))
 	x["<QUANTITY>"] = (rng.randi_range(0, 100))
+
 	x["<COUNTRY>"] = get_rand_data("countries").name
+	x["<CURRENCY>"] = get_rand_data("currencies").name
 	x["<CONTRABAND>"] = get_rand_data("contraband").name
 	x["<MOVIENAME>"] = get_rand_data("movieName").name
 	
