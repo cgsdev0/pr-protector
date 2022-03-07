@@ -24,6 +24,11 @@ config/name="fireside-jam"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Data="*res://scripts/Data.gd"
+PromptGenerator="*res://scripts/PromptGenerator.gd"
+
 [display]
 
 window/size/width=960

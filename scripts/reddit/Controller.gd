@@ -1,5 +1,6 @@
 extends Control
 
+onready var PromptGenerator = get_node("/root/PromptGenerator")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,6 +13,7 @@ var noNew
 func _ready():
 	postBody = find_node("PostBody")
 	noNew = find_node("LabelNoNewPosts")
+	$PostBody/Title.text = PromptGenerator.next_prompt()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,9 +21,9 @@ func _ready():
 #	pass
 
 func vote(up: bool):
-	postBody.visible = false
-	noNew.visible = true
-	
+	# postBody.visible = false
+	# noNew.visible = true
+	$PostBody/Title.text = PromptGenerator.next_prompt()
 
 func _on_BtnUpvote_reddit_upvote():
 	vote(true)
