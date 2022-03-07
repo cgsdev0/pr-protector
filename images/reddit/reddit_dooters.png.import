@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pewds.png-85d59e0c2adf76699fdf427fdad810dc.stex"
+path="res://.import/reddit_dooters.png-1b4ec92952be18a2365f5abc5224ad6d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/pewds.png"
-dest_files=[ "res://.import/pewds.png-85d59e0c2adf76699fdf427fdad810dc.stex" ]
+source_file="res://images/reddit/reddit_dooters.png"
+dest_files=[ "res://.import/reddit_dooters.png-1b4ec92952be18a2365f5abc5224ad6d.stex" ]
 
 [params]
 

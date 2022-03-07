@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/photoshop/space.png" type="Texture" id=2]
+[ext_resource path="res://scripts/photoshop/Cutout.gd" type="Script" id=3]
+
+[node name="Node2D" instance=ExtResource( 1 )]
+dimensions = Vector2( 530, 312 )
+color = Color( 0.168627, 0.223529, 0.8, 1 )
+title = "Photoshop"
+
+[node name="Body" parent="." index="0"]
+margin_right = 530.0
+margin_bottom = 312.0
+
+[node name="Title" parent="Body" index="0"]
+margin_right = 530.0
+
+[node name="WindowClose" parent="Body/Title" index="0"]
+margin_left = 516.0
+margin_right = 530.0
+
+[node name="Space" type="Sprite" parent="Body" index="1"]
+position = Vector2( 265, 163 )
+texture = ExtResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body" index="2"]
+position = Vector2( 265, 163 )
+color = Color( 0, 0, 0, 0 )
+polygon = PoolVector2Array( 84, 36, 40, 36, -18, 22, -18, -28, 7, -61, -54, -89, 22, -75, 38, -85, 89, -85, 125, -64, 145, -28, 145, 21 )
+script = ExtResource( 3 )

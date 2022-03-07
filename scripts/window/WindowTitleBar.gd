@@ -14,7 +14,7 @@ var can_grab = false
 var grabbed_offset = Vector2()
 
 func _gui_input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton && event.button_index == 1:
 		can_grab = event.pressed
 		grabbed_offset = get_owner().position - get_global_mouse_position()
 

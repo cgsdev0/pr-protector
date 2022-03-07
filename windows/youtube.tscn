@@ -1,37 +1,136 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
-[ext_resource path="res://images/pewds.png" type="Texture" id=2]
-[ext_resource path="res://images/youtube_header.png" type="Texture" id=3]
+[ext_resource path="res://images/youtube/pewds.png" type="Texture" id=2]
+[ext_resource path="res://images/youtube/youtube_header.png" type="Texture" id=3]
 [ext_resource path="res://fonts/m5x7_med.tres" type="DynamicFont" id=4]
 [ext_resource path="res://fonts/m5x7_small.tres" type="DynamicFont" id=5]
-[ext_resource path="res://images/YT_user_icon.png" type="Texture" id=6]
+[ext_resource path="res://images/youtube/YT_user_icon.png" type="Texture" id=6]
 [ext_resource path="res://themes/youtube.tres" type="Theme" id=7]
 [ext_resource path="res://scripts/youtube/BtnReport.gd" type="Script" id=8]
-[ext_resource path="res://scripts/Spinner.gd" type="Script" id=9]
+[ext_resource path="res://scripts/ui/Spinner.gd" type="Script" id=9]
 [ext_resource path="res://scripts/youtube/TOS.gd" type="Script" id=10]
 [ext_resource path="res://scripts/youtube/BtnTOS.gd" type="Script" id=11]
-[ext_resource path="res://scripts/BtnOK.gd" type="Script" id=12]
+[ext_resource path="res://scripts/ui/BtnOK.gd" type="Script" id=12]
 [ext_resource path="res://scripts/youtube/ChkBoxTOS.gd" type="Script" id=13]
 [ext_resource path="res://scripts/youtube/BtnCaptchaNext.gd" type="Script" id=14]
 [ext_resource path="res://scripts/youtube/BtnCompleteClaim.gd" type="Script" id=15]
 [ext_resource path="res://scripts/youtube/Randomizer.gd" type="Script" id=16]
+[ext_resource path="res://images/youtube/pewdz_character_sheet_v2.png" type="Texture" id=17]
+[ext_resource path="res://images/ui/spinner.png" type="Texture" id=18]
+[ext_resource path="res://scripts/youtube/AnimationJitter.gd" type="Script" id=19]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 17 )
+region = Rect2( 169, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 17 )
+region = Rect2( 338, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 17 )
+region = Rect2( 507, 0, 169, 95 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 18 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 18 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 18 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 18 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 18 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 18 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 18 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 18 )
+region = Rect2( 512, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 18 )
+region = Rect2( 576, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 18 )
+region = Rect2( 640, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 18 )
+region = Rect2( 704, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 18 )
+region = Rect2( 768, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 18 )
+region = Rect2( 832, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 18 )
+region = Rect2( 896, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 18 )
+region = Rect2( 960, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
 
 [node name="Node2D" instance=ExtResource( 1 )]
-dimensions = Vector2( 480, 360 )
+dimensions = Vector2( 390, 360 )
+color = Color( 0.878431, 0.14902, 0.14902, 1 )
 title = "youtube"
 
 [node name="Body" parent="." index="0"]
-margin_right = 480.0
+margin_right = 390.0
 margin_bottom = 360.0
 
 [node name="Title" parent="Body" index="0"]
-margin_right = 480.0
+margin_right = 390.0
 
 [node name="WindowClose" parent="Body/Title" index="0"]
-visible = false
-margin_left = 466.0
-margin_right = 480.0
+margin_left = 376.0
+margin_right = 390.0
 
 [node name="ReportButton" type="Button" parent="Body" index="1"]
 margin_left = 263.0
@@ -55,82 +154,44 @@ script = ExtResource( 16 )
 mouse_filter = 1
 
 [node name="Pewds" type="Sprite" parent="Body/Control/Layer1" index="0"]
-position = Vector2( 186, 179 )
+position = Vector2( 194, 179 )
 texture = ExtResource( 2 )
 
 [node name="YoutubeHeader" type="Sprite" parent="Body/Control/Layer1" index="1"]
-position = Vector2( 156, 42 )
+position = Vector2( 164, 42 )
 texture = ExtResource( 3 )
 
-[node name="ColorRect2" type="ColorRect" parent="Body/Control/Layer1" index="2"]
-margin_left = 365.0
-margin_top = 99.0
-margin_right = 473.0
-margin_bottom = 173.0
-rect_pivot_offset = Vector2( 30, 85 )
-mouse_filter = 2
-color = Color( 0.917647, 0.929412, 0.941176, 1 )
-
-[node name="ColorRect3" type="ColorRect" parent="Body/Control/Layer1" index="3"]
-margin_left = 365.0
-margin_top = 178.0
-margin_right = 473.0
-margin_bottom = 252.0
-rect_pivot_offset = Vector2( 71, 92 )
-mouse_filter = 2
-color = Color( 0.917647, 0.929412, 0.941176, 1 )
-
-[node name="ColorRect4" type="ColorRect" parent="Body/Control/Layer1" index="4"]
-margin_left = 365.0
-margin_top = 257.0
-margin_right = 473.0
-margin_bottom = 331.0
-rect_pivot_offset = Vector2( 71, 92 )
-mouse_filter = 2
-color = Color( 0.917647, 0.929412, 0.941176, 1 )
-
-[node name="ColorRect5" type="ColorRect" parent="Body/Control/Layer1" index="5"]
-margin_left = 365.0
-margin_top = 336.0
-margin_right = 473.0
-margin_bottom = 360.0
-rect_pivot_offset = Vector2( 71, 92 )
-mouse_filter = 2
-color = Color( 0.917647, 0.929412, 0.941176, 1 )
-
-[node name="VideoTitle" type="Label" parent="Body/Control/Layer1" index="6"]
-margin_left = 15.0
+[node name="VideoTitle" type="Label" parent="Body/Control/Layer1" index="2"]
+margin_left = 23.0
 margin_top = 290.0
-margin_right = 358.0
+margin_right = 366.0
 margin_bottom = 326.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 5 )
 text = "“Swords of Fortune” is NOT worth $60! STOP GIVING M&S YOUR MONEY."
 autowrap = true
 
-[node name="Username" type="Label" parent="Body/Control/Layer1" index="7"]
-margin_left = 50.0
+[node name="Username" type="Label" parent="Body/Control/Layer1" index="3"]
+margin_left = 58.0
 margin_top = 327.0
-margin_right = 191.0
+margin_right = 199.0
 margin_bottom = 353.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 5 )
 text = "Dunc69"
 
-[node name="YtUserIcon" type="Sprite" parent="Body/Control/Layer1" index="8"]
-position = Vector2( 28, 326 )
+[node name="YtUserIcon" type="Sprite" parent="Body/Control/Layer1" index="4"]
+position = Vector2( 36, 326 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="MoreVids" type="Label" parent="Body/Control/Layer1" index="9"]
-margin_left = 365.0
-margin_top = 69.0
-margin_right = 473.0
-margin_bottom = 95.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 4 )
-text = "More Vids"
-align = 1
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Control/Layer1" index="5"]
+position = Vector2( 194, 169 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+script = ExtResource( 19 )
 
 [node name="Layer2" type="Control" parent="Body/Control" index="1"]
 visible = false
@@ -138,30 +199,34 @@ mouse_filter = 1
 
 [node name="OpacityMask" type="ColorRect" parent="Body/Control/Layer2" index="0"]
 margin_top = 14.0
-margin_right = 480.0
+margin_right = 390.0
 margin_bottom = 360.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 0.666667 )
 
 [node name="ColorRect" type="ColorRect" parent="Body/Control/Layer2" index="1"]
-margin_left = 78.0
+margin_left = 34.0
 margin_top = 58.0
-margin_right = 396.0
+margin_right = 352.0
 margin_bottom = 338.0
 mouse_filter = 2
 
-[node name="Spinner" type="Sprite" parent="Body/Control/Layer2" index="2"]
-position = Vector2( 233.75, 183.25 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 9, 18 )
+[node name="Control" type="Control" parent="Body/Control/Layer2" index="2"]
+mouse_filter = 1
+
+[node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
+position = Vector2( 189.75, 183.25 )
+frames = SubResource( 22 )
+playing = true
 script = ExtResource( 9 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Body/Control/Layer2" index="3"]
-margin_left = 88.0
+[node name="RichTextLabel" type="RichTextLabel" parent="Body/Control/Layer2/Control" index="1"]
+visible = false
+margin_left = 44.0
 margin_top = 98.0
-margin_right = 385.0
+margin_right = 341.0
 margin_bottom = 276.0
+mouse_filter = 1
 theme = ExtResource( 7 )
 custom_colors/default_color = Color( 0.541176, 0.541176, 0.541176, 1 )
 text = "If you do not or cannot agree to indemnify the Licensor or any Contributor to the user how to obtain such Source Code of your company or organization. Fee\" means any addition to, deletion from, and/or change to, the modification, by any other entity. Each Contributor represents that to its Contributions set forth herein.
@@ -175,19 +240,21 @@ If the Work to honor the rest of the retrieved font information. Content\" shall
 If you assert a patent infringement litigation, then the reasonable value of any installation facilities provided by any party alleging that the above copyright notice, this list of conditions and the base LaTeX distribution explains the motivation behind the conditions of this Agreement , including but not limited to the Program, the distribution of the date of initial External Deployment, whichever is longer. You should preferably distribute the Program, the Contributor who includes the Program itself (excluding combinations of the work cannot be construed against the other Contributors related to those to whom you made to create or use a modified version that alters or restricts the applicable version of the License, your rights to a jury trial in any way. Notwithstanding the foregoing, if applicable law — for example, indicating this in the edit summary, which is implemented by public license is intended to apply in other circumstances. It is therefore usually in your license should not refer to copyrights, to this License."
 script = ExtResource( 10 )
 
-[node name="Label" type="Label" parent="Body/Control/Layer2" index="4"]
-margin_left = 143.0
+[node name="Label" type="Label" parent="Body/Control/Layer2/Control" index="2"]
+visible = false
+margin_left = 99.0
 margin_top = 62.0
-margin_right = 321.0
+margin_right = 277.0
 margin_bottom = 88.0
 theme = ExtResource( 7 )
 custom_fonts/font = ExtResource( 4 )
 text = "Terms of Service"
 
-[node name="CheckBox" type="CheckBox" parent="Body/Control/Layer2" index="5"]
-margin_left = 86.0
+[node name="CheckBox" type="CheckBox" parent="Body/Control/Layer2/Control" index="3"]
+visible = false
+margin_left = 42.0
 margin_top = 281.0
-margin_right = 104.0
+margin_right = 60.0
 margin_bottom = 305.0
 mouse_filter = 1
 theme = ExtResource( 7 )
@@ -195,7 +262,7 @@ disabled = true
 enabled_focus_mode = 0
 script = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="Body/Control/Layer2/CheckBox" index="0"]
+[node name="Label" type="Label" parent="Body/Control/Layer2/Control/CheckBox" index="0"]
 margin_left = 24.0
 margin_top = 4.0
 margin_right = 277.0
@@ -204,10 +271,11 @@ mouse_filter = 1
 theme = ExtResource( 7 )
 text = "I have read and agree to the terms of service."
 
-[node name="Button" type="Button" parent="Body/Control/Layer2" index="6"]
-margin_left = 337.0
+[node name="Button" type="Button" parent="Body/Control/Layer2/Control" index="4"]
+visible = false
+margin_left = 293.0
 margin_top = 305.0
-margin_right = 385.0
+margin_right = 341.0
 margin_bottom = 329.0
 mouse_filter = 1
 theme = ExtResource( 7 )
@@ -222,22 +290,22 @@ mouse_filter = 1
 
 [node name="OpacityMask" type="ColorRect" parent="Body/Control/Layer3" index="0"]
 margin_top = 14.0
-margin_right = 480.0
+margin_right = 390.0
 margin_bottom = 360.0
 mouse_filter = 1
 color = Color( 0, 0, 0, 0.666667 )
 
 [node name="ColorRect" type="ColorRect" parent="Body/Control/Layer3" index="1"]
-margin_left = 111.0
+margin_left = 73.0
 margin_top = 129.0
-margin_right = 352.0
+margin_right = 314.0
 margin_bottom = 244.0
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="Body/Control/Layer3" index="2"]
-margin_left = 111.0
+margin_left = 73.0
 margin_top = 131.0
-margin_right = 352.0
+margin_right = 314.0
 margin_bottom = 157.0
 theme = ExtResource( 7 )
 custom_fonts/font = ExtResource( 4 )
@@ -245,18 +313,18 @@ text = "Error"
 align = 1
 
 [node name="Label2" type="Label" parent="Body/Control/Layer3" index="3"]
-margin_left = 120.0
+margin_left = 82.0
 margin_top = 168.0
-margin_right = 341.0
+margin_right = 303.0
 margin_bottom = 216.0
 theme = ExtResource( 7 )
 text = "Please read the terms of service before checking the box."
 autowrap = true
 
 [node name="Button" type="Button" parent="Body/Control/Layer3" index="4"]
-margin_left = 300.0
+margin_left = 262.0
 margin_top = 216.0
-margin_right = 348.0
+margin_right = 310.0
 margin_bottom = 240.0
 focus_mode = 0
 mouse_filter = 1
@@ -271,15 +339,15 @@ mouse_filter = 1
 
 [node name="OpacityMask" type="ColorRect" parent="Body/Control/Layer4" index="0"]
 margin_top = 14.0
-margin_right = 480.0
+margin_right = 390.0
 margin_bottom = 360.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 0.666667 )
 
 [node name="ColorRect" type="ColorRect" parent="Body/Control/Layer4" index="1"]
-margin_left = 99.0
+margin_left = 55.0
 margin_top = 83.0
-margin_right = 374.0
+margin_right = 330.0
 margin_bottom = 298.0
 mouse_filter = 2
 
@@ -292,9 +360,9 @@ region_rect = Rect2( 0, 0, 9, 18 )
 script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="Body/Control/Layer4" index="3"]
-margin_left = 99.0
+margin_left = 55.0
 margin_top = 86.0
-margin_right = 374.0
+margin_right = 330.0
 margin_bottom = 112.0
 theme = ExtResource( 7 )
 custom_fonts/font = ExtResource( 4 )
@@ -302,9 +370,9 @@ text = "Captcha"
 align = 1
 
 [node name="Button" type="Button" parent="Body/Control/Layer4" index="4"]
-margin_left = 319.0
+margin_left = 275.0
 margin_top = 267.0
-margin_right = 367.0
+margin_right = 323.0
 margin_bottom = 291.0
 focus_mode = 0
 mouse_filter = 1
@@ -319,22 +387,22 @@ mouse_filter = 1
 
 [node name="OpacityMask" type="ColorRect" parent="Body/Control/Layer5" index="0"]
 margin_top = 14.0
-margin_right = 480.0
+margin_right = 390.0
 margin_bottom = 360.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 0.666667 )
 
 [node name="ColorRect" type="ColorRect" parent="Body/Control/Layer5" index="1"]
-margin_left = 115.0
+margin_left = 72.0
 margin_top = 129.0
-margin_right = 356.0
+margin_right = 313.0
 margin_bottom = 244.0
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="Body/Control/Layer5" index="2"]
-margin_left = 115.0
+margin_left = 72.0
 margin_top = 131.0
-margin_right = 356.0
+margin_right = 313.0
 margin_bottom = 157.0
 theme = ExtResource( 7 )
 custom_fonts/font = ExtResource( 4 )
@@ -342,18 +410,18 @@ text = "File Copyright Claim"
 align = 1
 
 [node name="Label2" type="Label" parent="Body/Control/Layer5" index="3"]
-margin_left = 124.0
+margin_left = 81.0
 margin_top = 168.0
-margin_right = 345.0
+margin_right = 302.0
 margin_bottom = 216.0
 theme = ExtResource( 7 )
 text = "Are you sure? Filing a claim will remove this video from our recommendedations algorithm."
 autowrap = true
 
 [node name="Button" type="Button" parent="Body/Control/Layer5" index="4"]
-margin_left = 266.0
+margin_left = 223.0
 margin_top = 215.0
-margin_right = 351.0
+margin_right = 308.0
 margin_bottom = 239.0
 focus_mode = 0
 mouse_filter = 1
@@ -367,18 +435,18 @@ visible = false
 mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="Body/Control/Layer6" index="0"]
-margin_left = 16.0
+margin_left = 25.0
 margin_top = 74.0
-margin_right = 355.0
+margin_right = 364.0
 margin_bottom = 265.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="Body/Control/Layer6" index="1"]
-margin_left = 14.0
-margin_top = 138.0
-margin_right = 358.0
-margin_bottom = 164.0
+margin_left = 23.0
+margin_top = 148.0
+margin_right = 367.0
+margin_bottom = 174.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 4 )
@@ -386,10 +454,10 @@ text = ":("
 align = 1
 
 [node name="Label2" type="Label" parent="Body/Control/Layer6" index="2"]
-margin_left = 14.0
-margin_top = 168.0
-margin_right = 358.0
-margin_bottom = 216.0
+margin_left = 23.0
+margin_top = 178.0
+margin_right = 367.0
+margin_bottom = 226.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "This video is longer available."

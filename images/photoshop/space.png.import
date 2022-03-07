@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/youtube_header.png-726a51f41b29cd0e3df536fa21276c5f.stex"
+path="res://.import/space.png-cdc0f0a8adbc9ec5218524f3b6541d4b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/youtube_header.png"
-dest_files=[ "res://.import/youtube_header.png-726a51f41b29cd0e3df536fa21276c5f.stex" ]
+source_file="res://images/photoshop/space.png"
+dest_files=[ "res://.import/space.png-cdc0f0a8adbc9ec5218524f3b6541d4b.stex" ]
 
 [params]
 

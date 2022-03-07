@@ -19,8 +19,18 @@ var bodyNode
 var titleNode
 var closeNode
 
+var focused
+
+var focused_color = Color.black
+var unfocused_color = Color.gray
+
+func focus():
+	focused = true
+	update()
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	focused = false
 	font = load("res://fonts/m5x7_small.tres")
 
 func setClosable(is_closable: bool):
@@ -57,6 +67,10 @@ func _process(delta):
 func _draw():
 	draw_rect(Rect2(Vector2(0,0), dimensions), Color.white)
 	draw_rect(Rect2(Vector2(0,0), Vector2(dimensions.x, title_height)), color)
-	draw_line(Vector2(0, title_height), Vector2(dimensions.x,title_height), Color.black)
-	draw_rect(Rect2(Vector2(0,0), dimensions), Color.black, false)
+	
+	var border_color = unfocused_color
+	if focused:
+		border_color = focused_color
+	draw_line(Vector2(0, title_height), Vector2(dimensions.x,title_height), border_color)
+	draw_rect(Rect2(Vector2(0,0), dimensions), border_color, false)
 	draw_string(font, Vector2(floor(dimensions.x / 2 - font.get_string_size(title).x / 2), title_height - 3), title, Color.white)
