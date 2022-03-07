@@ -2,38 +2,56 @@ extends Node
 
 # NOTE (Brian) here are the gross things about this
 # - the keys between the replacements and the actual 'data' object aren't the same
+# - the verb replacement thing might actually just be a really bad idea
 
 onready var data = get_node("/root/Data").data
 
-var generated = []
-var curr = 0
-var MAX_PROMPTS = 1000
+const PROMPT_REDDIT = "reddit"
+const PROMPT_TWITTER_GOOD = "twitterGood"
+const PROMPT_TWITTER_BAD = "twitterBad"
+const PROMPT_YOUTUBE = "youtube"
+
+var generated = {
+	PROMPT_REDDIT = [],
+	PROMPT_TWITTER_BAD = [],
+	PROMPT_TWITTER_GOOD = [],
+	PROMPT_YOUTUBE = []
+}
+
+var BATCH_SIZE = 5
 
 var rng = RandomNumberGenerator.new()
 
 # _ready : called the first time
 func _ready():
 	rng.randomize()
-	generate_list()
+	generated[PROMPT_REDDIT] = generate_list(PROMPT_REDDIT)
+	generated[PROMPT_TWITTER_BAD] = generate_list(PROMPT_TWITTER_BAD)
+	generated[PROMPT_TWITTER_GOOD] = generate_list(PROMPT_TWITTER_GOOD)
+	generated[PROMPT_YOUTUBE] = generate_list(PROMPT_YOUTUBE)
 	pass
 
 # _process : called every frame
 # func _process(delta):
 #	pass
 
-func next_prompt():
-	var prompt = generated[curr % len(generated)]
-	curr += 1
-	return prompt
+func next_prompt(kind):
+	if len(generated[kind]) == 0:
+		generated[kind] = generate_list(kind)
+	return generated[kind].pop_front()
 
-func generate_list():
-	for _i in range(1, MAX_PROMPTS):
-		var prompt = data["issues"][rand_idx(data["issues"])].text
-		generated.append(get_prompt(prompt))
+func generate_list(key):
+	var arr = []
+	for _i in range(1, BATCH_SIZE):
+		var prompt = get_rand_data(key)
+		if prompt != null:
+			arr.append(make_prompt(prompt))
+	return arr
 
-func get_prompt(template):
+func make_prompt(template):
 	var x = {};
-	var prompt = template;
+
+	var prompt = template.text;
 	
 	x["<COMPANYNAME>"] = data["companyName"]
 	x["<CURRENTYEAR>"] = OS.get_datetime()["year"]
@@ -62,11 +80,15 @@ func get_prompt(template):
 	for k in x.keys():
 		prompt = prompt.replace(k, x[k])
 		
-	print(prompt)
+	var ofTheKing = template.duplicate()
 	
-	return prompt
+	ofTheKing.text = prompt
+	
+	return ofTheKing
 
 func get_rand_data(key):
+	if len(data[key]) == 0:
+		return null
 	return data[key][rand_idx(data[key])]
 	
 func rand_idx(arr):

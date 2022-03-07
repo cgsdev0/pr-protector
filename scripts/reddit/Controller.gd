@@ -13,8 +13,7 @@ var noNew
 func _ready():
 	postBody = find_node("PostBody")
 	noNew = find_node("LabelNoNewPosts")
-	$PostBody/Title.text = PromptGenerator.next_prompt()
-
+	$PostBody/Title.text = new_post().text
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -23,7 +22,10 @@ func _ready():
 func vote(up: bool):
 	# postBody.visible = false
 	# noNew.visible = true
-	$PostBody/Title.text = PromptGenerator.next_prompt()
+	$PostBody/Title.text = new_post().text
+	
+func new_post():
+	return PromptGenerator.next_prompt(PromptGenerator.PROMPT_REDDIT)
 
 func _on_BtnUpvote_reddit_upvote():
 	vote(true)

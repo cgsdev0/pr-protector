@@ -83,11 +83,11 @@ var data = {
 		},
 		{
 			"isgood": false,
-			"text": "<COMPANYNAME>'s new film, '<MOVIENAME>', <PERFORMEDBAD> at the box office this weekend"
+			"text": "<COMPANYNAME>'s new film, '<MOVIENAME>', <PERFBAD_PAST> at the box office this weekend"
 		},
 		{
 			"isgood": false,
-			"text": "<COMPANYNAME>'s financials projected to <PERFORMBAD> before their upcoming earnings report"
+			"text": "<COMPANYNAME>'s financials <PERFBAD_FUTURE> coming into the third quarter"
 		},
 		{
 			"isgood": false,
@@ -106,7 +106,13 @@ var data = {
 			"text": "How does <COMPANYNAME> keep getting away with it??"
 		}
 	],
-	"twitter": [
+	"twitterBad": [
+		
+	],
+	"twitterGood": [
+		
+	],
+	"youtube": [
 		
 	],
 	"news": [
