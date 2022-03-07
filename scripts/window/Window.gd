@@ -27,6 +27,10 @@ var unfocused_color = Color.gray
 func focus():
 	focused = true
 	update()
+
+func blur():
+	focused = false
+	update()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
