@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 Data="*res://scripts/Data.gd"
 PromptGenerator="*res://scripts/PromptGenerator.gd"
+Events="*res://scripts/Events.gd"
 
 [display]
 

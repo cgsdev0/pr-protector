@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/photoshop/space.png" type="Texture" id=2]
+[ext_resource path="res://scripts/photoshop/CutoutThenMove.gd" type="Script" id=3]
+[ext_resource path="res://images/photoshop/bad_driver.png" type="Texture" id=4]
+[ext_resource path="res://images/photoshop/bad_driver_cutout.png" type="Texture" id=5]
+
+[node name="Node2D" instance=ExtResource( 1 )]
+dimensions = Vector2( 530, 312 )
+color = Color( 0.168627, 0.223529, 0.8, 1 )
+title = "Photoshop"
+
+[node name="Body" parent="." index="0"]
+margin_right = 530.0
+margin_bottom = 312.0
+
+[node name="Title" parent="Body" index="0"]
+margin_right = 530.0
+
+[node name="WindowClose" parent="Body/Title" index="0"]
+margin_left = 516.0
+margin_right = 530.0
+
+[node name="PhotoshopUI" type="Sprite" parent="Body" index="1"]
+position = Vector2( 265, 163 )
+texture = ExtResource( 2 )
+
+[node name="TargetZone" type="Polygon2D" parent="Body" index="2"]
+position = Vector2( 240.511, 169.954 )
+scale = Vector2( 1.0687, 1.01311 )
+color = Color( 1, 0, 0, 0 )
+polygon = PoolVector2Array( -22, 156, 9, -13, 17, -148, 109, -149, 79, 18, 59, 156 )
+
+[node name="Background" type="Sprite" parent="Body" index="3"]
+position = Vector2( 248, 168 )
+texture = ExtResource( 4 )
+
+[node name="Cutout" type="Sprite" parent="Body" index="4"]
+position = Vector2( 222, 234 )
+texture = ExtResource( 5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Cutout" index="0"]
+process_priority = 100
+position = Vector2( -4, 0 )
+color = Color( 0, 0, 0, 0 )
+polygon = PoolVector2Array( 16, 30, -20, 23, -8, -31, 26, -23 )
+script = ExtResource( 3 )

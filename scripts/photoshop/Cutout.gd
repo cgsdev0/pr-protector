@@ -13,6 +13,9 @@ func _ready():
 	grabbed_point = null
 	connections = {}
 
+func is_cutout_complete():
+	return len(connections) == len(polygon)
+	
 func _draw():
 	# draw outline on initial hover
 	if mouse_in && !selected && get_owner().focused:

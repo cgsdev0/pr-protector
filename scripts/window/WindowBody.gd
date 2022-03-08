@@ -1,6 +1,14 @@
 extends Control
 
+onready var events = get_node("/root/Events")
 
+
+func _on_change_cursor(cursor):
+	set_default_cursor_shape(cursor)
+
+func _ready():
+	events.connect("change_cursor", self, "_on_change_cursor")
+	
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
