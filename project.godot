@@ -29,6 +29,7 @@ config/icon="res://icon.png"
 Data="*res://scripts/Data.gd"
 PromptGenerator="*res://scripts/PromptGenerator.gd"
 Events="*res://scripts/Events.gd"
+Score="*res://scripts/Score.gd"
 
 [display]
 
@@ -39,6 +40,15 @@ window/stretch/mode="viewport"
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+
+[global]
+
+debug=false
+max_remote_stdout_chars_per_second=false
+
+[network]
+
+limits/debugger_stdout/max_chars_per_second=1048576
 
 [physics]
 

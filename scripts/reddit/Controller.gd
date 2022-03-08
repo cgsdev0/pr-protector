@@ -1,5 +1,6 @@
 extends Control
 
+onready var Events = get_node("/root/Events")
 onready var PromptGenerator = get_node("/root/PromptGenerator")
 
 # Declare member variables here. Examples:
@@ -23,13 +24,13 @@ func vote(up: bool):
 	# postBody.visible = false
 	# noNew.visible = true
 	$PostBody/Title.text = new_post().text
-	
+	Events.emit_signal("price_change", 1 if up else -1)
+
 func new_post():
 	return PromptGenerator.next_prompt(PromptGenerator.PROMPT_REDDIT)
 
 func _on_BtnUpvote_reddit_upvote():
 	vote(true)
-
 
 func _on_BtnDownvote_reddit_downvote():
 	vote(false)

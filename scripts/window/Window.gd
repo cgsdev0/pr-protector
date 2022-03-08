@@ -67,7 +67,6 @@ func _process(delta):
 	closeNode.margin_top = 0
 	closeNode.margin_left = dimensions.x - title_height
 
-	
 func _draw():
 	draw_rect(Rect2(Vector2(0,0), dimensions), Color.white)
 	draw_rect(Rect2(Vector2(0,0), Vector2(dimensions.x, title_height)), color)
