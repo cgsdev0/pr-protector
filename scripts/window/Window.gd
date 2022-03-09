@@ -2,10 +2,6 @@ tool
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 
 export var dimensions : Vector2
 export var color : Color = Color.white
@@ -23,6 +19,9 @@ var focused
 
 var focused_color = Color.black
 var unfocused_color = Color.gray
+
+# only used by photoshop windows
+var photoshop_freeze = false
 
 func focus():
 	focused = true

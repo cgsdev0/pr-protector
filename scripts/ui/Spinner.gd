@@ -5,8 +5,8 @@ var triggered = false
 
 var rng = RandomNumberGenerator.new()
 
-export var min_delay : float = 4.0
-export var max_delay : float = 8.0
+export var min_delay : float = 1.0
+export var max_delay : float = 4.0
 
 func _ready():
 	rng.randomize()

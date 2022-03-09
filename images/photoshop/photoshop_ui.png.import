@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/space.png-cdc0f0a8adbc9ec5218524f3b6541d4b.stex"
+path="res://.import/photoshop_ui.png-fb8b845fd43456f6939a7a9d5e393414.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/photoshop/space.png"
-dest_files=[ "res://.import/space.png-cdc0f0a8adbc9ec5218524f3b6541d4b.stex" ]
+source_file="res://images/photoshop/photoshop_ui.png"
+dest_files=[ "res://.import/photoshop_ui.png-fb8b845fd43456f6939a7a9d5e393414.stex" ]
 
 [params]
 

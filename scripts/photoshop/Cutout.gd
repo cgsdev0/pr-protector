@@ -7,16 +7,39 @@ var selected
 var grabbed_point
 var connections
 
+var was_frozen = false
+
+var short_circuit_complete = false
+
+func _process(_delta):
+	if !was_frozen && get_owner().photoshop_freeze:
+		was_frozen = true
+		update()
+
 func _ready():
+	set_owner(get_parent().get_owner())
 	selected = false
 	mouse_in = false
 	grabbed_point = null
 	connections = {}
+	if name == "SAMPLE":
+		var line = ""
+		for point in polygon:
+			if len(line):
+				line += ", "
+			line += "Vector2" + str(point)
+		print("\"cutout_polygon\": ", "[", line, "],")
+		print("\"cutout_position\": Vector2", get_parent().position, ',')
+		print("\"polygon_offset\": Vector2", position, ',')
 
 func is_cutout_complete():
+	if short_circuit_complete:
+		return true
 	return len(connections) == len(polygon)
 	
 func _draw():
+	if get_owner().photoshop_freeze:
+		return
 	# draw outline on initial hover
 	if mouse_in && !selected && get_owner().focused:
 		for i in len(polygon) - 1:
@@ -44,6 +67,8 @@ func _draw():
 
 # returns true when a point has both edges completed
 func is_completed(i: int):
+	if short_circuit_complete:
+		return true
 	if i == len(polygon) - 1:
 		return connections.has(i - 1) && connections.has(-1)
 	return connections.has(i) && connections.has((i - 1) % len(polygon))
@@ -54,6 +79,10 @@ static func smart_mod(a, b):
 	return a % b
 	
 func _input(event):
+	if get_owner().find_node("Loading").visible:
+		return
+	if get_owner().photoshop_freeze:
+		return
 	if event is InputEventMouseMotion:
 		var new_mouse_in = Geometry.is_point_in_polygon(event.position-self.global_position,polygon)
 		if new_mouse_in != mouse_in:

@@ -1,10 +1,16 @@
-[gd_resource type="Theme" load_steps=4 format=2]
+[gd_resource type="Theme" load_steps=6 format=2]
 
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://fonts/m5x7_small.tres" type="DynamicFont" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.117647, 0.117647, 0.117647, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.254902, 0.721569, 0.239216, 1 )
 
 [resource]
 /fonts/grgesrg = SubResource( 1 )
@@ -21,3 +27,7 @@ Button/styles/hover = null
 Button/styles/normal = null
 Button/styles/pressed = null
 Label/fonts/font = ExtResource( 2 )
+ProgressBar/colors/font_color = Color( 0.941176, 0.941176, 0.941176, 1 )
+ProgressBar/fonts/font = ExtResource( 2 )
+ProgressBar/styles/bg = SubResource( 2 )
+ProgressBar/styles/fg = SubResource( 3 )

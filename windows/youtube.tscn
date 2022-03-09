@@ -20,6 +20,7 @@
 [ext_resource path="res://images/ui/spinner.png" type="Texture" id=18]
 [ext_resource path="res://scripts/youtube/AnimationJitter.gd" type="Script" id=19]
 
+
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 169, 95 )

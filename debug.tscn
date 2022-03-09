@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/ui/PixelScale.gd" type="Script" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://windows/reddit.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/ui/BtnMain.gd" type="Script" id=8]
 [ext_resource path="res://windows/photoshop.tscn" type="PackedScene" id=9]
-[ext_resource path="res://windows/photoshop_move.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -40,10 +39,7 @@ position = Vector2( 50, 81 )
 position = Vector2( 202, 46 )
 
 [node name="Node2D3" parent="Monitor/WindowControl" instance=ExtResource( 9 )]
-position = Vector2( 55, 92 )
-
-[node name="Node2D5" parent="Monitor/WindowControl" instance=ExtResource( 10 )]
-position = Vector2( 71, 137 )
+position = Vector2( 62, 77 )
 
 [node name="ColorRect" type="ColorRect" parent="Monitor"]
 margin_right = 640.0

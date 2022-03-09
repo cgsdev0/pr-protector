@@ -510,6 +510,37 @@ var data = {
 	"youtube": [
 		
 	],
+	"photoshop": [
+		{
+			"task": "move",
+			"clean_plate": "res://images/photoshop/bad_driver.png",
+			"cutout": "res://images/photoshop/bad_driver_cutout.png",
+			"cutout_polygon": [Vector2(12, 30), Vector2(-23, 23), Vector2(-11, -31), Vector2(22, -23)],
+			"cutout_position": Vector2(222, 234),
+			"polygon_offset": Vector2(0, 0),
+			"target_zone": [Vector2(-22, 156), Vector2(9, -13), Vector2(17, -148), Vector2(109, -149), Vector2(79, 18), Vector2(59, 156)],
+			"target_zone_position": Vector2(240, 170),
+		},
+		{
+			"task": "replace",
+			"cutout_polygon": [Vector2(195, 222), Vector2(198, 183), Vector2(234, 192), Vector2(202, 125), Vector2(250, 89), Vector2(308, 93), Vector2(388, 161), Vector2(406, 250), Vector2(396, 361), Vector2(276, 361), Vector2(274, 233)],
+			"cutout_position": Vector2(320, 168),
+			"polygon_offset": Vector2(-300, -225),
+			"cutout": "res://images/photoshop/shake_cutout.png",
+			"clean_plate": "res://images/photoshop/shake.png",
+			"target_zone": [Vector2(-22, 156), Vector2(9, -13), Vector2(17, -148), Vector2(109, -149), Vector2(79, 18), Vector2(59, 156)],
+			"target_zone_position": Vector2(240, 170),
+			"replace": "res://images/photoshop/shake_replace.png"
+		},
+		{
+			"task": "delete",
+			"cutout_polygon": [Vector2(84, 36), Vector2(40, 36), Vector2(-18, 22), Vector2(-18, -28), Vector2(0, -64), Vector2(-207, -114), Vector2(-206, -129), Vector2(1, -82), Vector2(38, -85), Vector2(89, -85), Vector2(125, -64), Vector2(145, -28), Vector2(145, 21)],
+			"cutout_position": Vector2(235, 123),
+			"polygon_offset": Vector2(30, 45),
+			"clean_plate": "res://images/photoshop/moon.png",
+			"cutout": "res://images/photoshop/moon_cutout.png"
+		}
+	],
 	"news": [
 		{
 			"text": "CEO of <COMPANYNAME> *FIRES* 500 workers in shift to *DOWNSIZE* company",
