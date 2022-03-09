@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://windows/email.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/ui/PixelScale.gd" type="Script" id=2]
 [ext_resource path="res://scripts/ui/BtnFullscreen.gd" type="Script" id=3]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=4]
@@ -32,10 +32,7 @@ position = Vector2( 25, 193 )
 position = Vector2( 1, 45 )
 
 [node name="Node2D" parent="Monitor/WindowControl" instance=ExtResource( 1 )]
-position = Vector2( 260, 156 )
-dimensions = Vector2( 360, 300 )
-color = Color( 0.196078, 1, 0, 1 )
-title = "email"
+position = Vector2( 260, 154 )
 
 [node name="ColorRect" type="ColorRect" parent="Monitor"]
 margin_right = 640.0

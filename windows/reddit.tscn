@@ -99,6 +99,7 @@ margin_left = 98.0
 margin_top = 37.0
 margin_right = 393.0
 margin_bottom = 72.0
+mouse_filter = 1
 custom_colors/default_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 bbcode_enabled = true
 bbcode_text = "submitted {SOME_TIME} ago by [color=#4d7dd0]gamerpiejess[/color]"

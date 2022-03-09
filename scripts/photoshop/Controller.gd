@@ -1,6 +1,6 @@
 extends Node
 
-onready var data = get_node("/root/Data").data.photoshop[2]
+onready var all_data = get_node("/root/Data").data.photoshop
 onready var events = get_node("/root/Events")
 
 func on_upload():
@@ -11,6 +11,7 @@ var delScr
 var repScr
 
 func _ready():
+	var data = all_data[get_owner().photoshop_index]
 	Events.connect("photoshop_upload", self, "on_upload")
 	# TEMP
 	# return

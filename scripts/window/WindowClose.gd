@@ -2,7 +2,7 @@ extends Control
 
 
 func _gui_input(event):
-	if event is InputEventMouseButton && event.pressed:
+	if event is InputEventMouseButton && event.pressed && event.button_index == 1:
 		if get_owner().focused:
 			var top_owner = get_owner().get_parent()
 			var ind = top_owner.get_child_count() - 2

@@ -22,6 +22,7 @@ var unfocused_color = Color.gray
 
 # only used by photoshop windows
 var photoshop_freeze = false
+var photoshop_index = 0
 
 func focus():
 	focused = true

@@ -10,3 +10,9 @@ signal photoshop_upload
 signal photoshop_enable_upload
 signal photoshop_enable_delete
 signal photoshop_enable_paste
+
+signal open_email(index, email)
+signal delete_email
+signal email_link
+
+signal open_window(node)

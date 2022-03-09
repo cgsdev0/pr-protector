@@ -68,7 +68,7 @@ region = Rect2( 560, 0, 70, 70 )
 
 [node name="Node2D" instance=ExtResource( 1 )]
 dimensions = Vector2( 530, 312 )
-color = Color( 0.168627, 0.223529, 0.8, 1 )
+color = Color( 0.34902, 0.388235, 0.815686, 1 )
 title = "PKC PhotoEdit PRO 2015"
 
 [node name="Body" parent="." index="0"]
