@@ -20,7 +20,6 @@
 [ext_resource path="res://images/ui/spinner.png" type="Texture" id=18]
 [ext_resource path="res://scripts/youtube/AnimationJitter.gd" type="Script" id=19]
 
-
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 169, 95 )
@@ -190,6 +189,7 @@ centered = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
 script = ExtResource( 19 )
 
@@ -217,7 +217,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 13
+frame = 6
 playing = true
 script = ExtResource( 9 )
 

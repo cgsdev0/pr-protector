@@ -15,7 +15,7 @@
 [node name="Node2D" instance=ExtResource( 1 )]
 dimensions = Vector2( 400, 109 )
 color = Color( 0.996078, 0.752941, 0.756863, 1 )
-title = "reddit"
+title = "ribbit"
 
 [node name="Body" parent="." index="0"]
 margin_right = 400.0
@@ -86,34 +86,25 @@ texture = ExtResource( 4 )
 [node name="Title" type="Label" parent="Body/Control/PostBody" index="2"]
 margin_left = 98.0
 margin_top = 9.0
-margin_right = 393.0
+margin_right = 390.0
 margin_bottom = 39.0
 rect_pivot_offset = Vector2( -13, 30 )
 custom_colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 text = "M&S dumps MORE oil in the Pacific. Updoot for visibility!"
 autowrap = true
+clip_text = true
 
-[node name="PostedBy" type="Label" parent="Body/Control/PostBody" index="3"]
+[node name="PostedBy" type="RichTextLabel" parent="Body/Control/PostBody" index="3"]
 margin_left = 98.0
-margin_top = 15.0
+margin_top = 37.0
 margin_right = 393.0
-margin_bottom = 50.0
-custom_colors/font_color = Color( 0.490196, 0.490196, 0.490196, 1 )
-text = "Submitted {SOME_TIME} ago by "
-valign = 2
-autowrap = true
+margin_bottom = 72.0
+custom_colors/default_color = Color( 0.490196, 0.490196, 0.490196, 1 )
+bbcode_enabled = true
+bbcode_text = "submitted {SOME_TIME} ago by [color=#4d7dd0]gamerpiejess[/color]"
+text = "submitted {SOME_TIME} ago by gamerpiejess"
 
-[node name="Username" type="Label" parent="Body/Control/PostBody" index="4"]
-margin_left = 266.0
-margin_top = 15.0
-margin_right = 395.0
-margin_bottom = 50.0
-custom_colors/font_color = Color( 0.301961, 0.490196, 0.815686, 1 )
-text = "gamerpiejess"
-valign = 2
-autowrap = true
-
-[node name="BottomDetails" type="Label" parent="Body/Control/PostBody" index="5"]
+[node name="BottomDetails" type="Label" parent="Body/Control/PostBody" index="4"]
 margin_left = 98.0
 margin_top = 45.0
 margin_right = 393.0
@@ -123,7 +114,7 @@ text = "35 comments  share  save  hide"
 valign = 2
 autowrap = true
 
-[node name="BtnUpvote" type="TextureButton" parent="Body/Control/PostBody" index="6"]
+[node name="BtnUpvote" type="TextureButton" parent="Body/Control/PostBody" index="5"]
 margin_left = 2.0
 margin_top = 8.0
 margin_right = 23.0
@@ -136,7 +127,7 @@ texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 5 )
 script = ExtResource( 9 )
 
-[node name="BtnDownvote" type="TextureButton" parent="Body/Control/PostBody" index="7"]
+[node name="BtnDownvote" type="TextureButton" parent="Body/Control/PostBody" index="6"]
 margin_left = 2.0
 margin_top = 43.0
 margin_right = 23.0

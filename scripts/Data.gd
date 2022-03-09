@@ -235,11 +235,11 @@ var data = {
 		},
 		{
 			"isgood": false,
-			"text": "M&S literally stole 9.8 Billion <CURRENCY> from <COUNTRY> and no one is talking about it??"
+			"text": "M&S literally stole 9.8B <CURRENCY> from <COUNTRY> and no one is talking about it??"
 		},
 		{
 			"isgood": false,
-			"text": "NEWS: <COMPANYNAME> Acquires Literally Every Movie and Television Studio for a Meager 5 Trillion. Denies it is a Monopoly."
+			"text": "NEWS: <COMPANYNAME> Acquires Literally Every Movie + TV Studio for a Meager 5 Trillion; Denies it is a Monopoly"
 		}
 	],
 	"twitterGood": [

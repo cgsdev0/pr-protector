@@ -23,11 +23,20 @@ func _ready():
 func vote(up: bool):
 	# postBody.visible = false
 	# noNew.visible = true
-	$PostBody/Title.text = new_post().text
+	var post = new_post()
+	$PostBody/Title.text = post.text
+	$PostBody/PostedBy.bbcode_text = "submitted " + post.when + " ago by [color=#4d7dd0]" + post.who + "[/color]"
+	$PostBody/BottomDetails.text = str(post.comments) + " comments  share  save  hide"
+	$PostBody/Score.text = str(post.score)
 	Events.emit_signal("price_change", 1 if up else -1)
 
 func new_post():
-	return PromptGenerator.next_prompt(PromptGenerator.PROMPT_REDDIT)
+	var post = PromptGenerator.next_prompt(PromptGenerator.PROMPT_REDDIT)
+	post.when = "6 hours ago"
+	post.who = "badcop_"
+	post.score = 50
+	post.comments = 42
+	return post
 
 func _on_BtnUpvote_reddit_upvote():
 	vote(true)
