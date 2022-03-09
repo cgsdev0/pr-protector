@@ -15,7 +15,7 @@
 [ext_resource path="res://scripts/youtube/ChkBoxTOS.gd" type="Script" id=13]
 [ext_resource path="res://scripts/youtube/BtnCaptchaNext.gd" type="Script" id=14]
 [ext_resource path="res://scripts/youtube/BtnCompleteClaim.gd" type="Script" id=15]
-[ext_resource path="res://scripts/youtube/Randomizer.gd" type="Script" id=16]
+[ext_resource path="res://scripts/youtube/Controller.gd" type="Script" id=16]
 [ext_resource path="res://images/youtube/pewdz_character_sheet_v2.png" type="Texture" id=17]
 [ext_resource path="res://images/ui/spinner.png" type="Texture" id=18]
 [ext_resource path="res://scripts/youtube/AnimationJitter.gd" type="Script" id=19]
@@ -189,7 +189,7 @@ centered = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 script = ExtResource( 19 )
 
@@ -217,7 +217,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 6
+frame = 7
 playing = true
 script = ExtResource( 9 )
 

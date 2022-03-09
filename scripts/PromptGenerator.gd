@@ -11,14 +11,14 @@ const PROMPT_TWITTER_GOOD = "twitterGood"
 const PROMPT_TWITTER_BAD = "twitterBad"
 const PROMPT_YOUTUBE = "youtube"
 
-var generated = {
-	PROMPT_REDDIT = [],
-	PROMPT_TWITTER_BAD = [],
-	PROMPT_TWITTER_GOOD = [],
-	PROMPT_YOUTUBE = []
-}
+const RAND_USERNAME = "usernames"
 
-var BATCH_SIZE = 5
+var generated = {
+	PROMPT_REDDIT = {},
+	PROMPT_TWITTER_BAD = {},
+	PROMPT_TWITTER_GOOD = {},
+	PROMPT_YOUTUBE = {}
+}
 
 var rng = RandomNumberGenerator.new()
 
@@ -36,17 +36,20 @@ func _ready():
 #	pass
 
 func next_prompt(kind):
-	if len(generated[kind]) == 0:
+	if generated[kind].index >= len(generated[kind].array):
 		generated[kind] = generate_list(kind)
-	return generated[kind].pop_front()
+	var result = generated[kind].array[generated[kind].index]
+	generated[kind].index += 1
+	return result
 
 func generate_list(key):
 	var arr = []
-	for _i in range(1, BATCH_SIZE):
-		var prompt = get_rand_data(key)
+	for prompt in data[key]:
 		if prompt != null:
 			arr.append(make_prompt(prompt))
-	return arr
+	randomize()
+	arr.shuffle()
+	return { "array": arr, "index": 0 }
 
 func make_prompt(template):
 	var x = {};

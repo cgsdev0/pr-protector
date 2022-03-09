@@ -35,7 +35,7 @@ func update_to_post(post):
 func new_post():
 	var post = PromptGenerator.next_prompt(PromptGenerator.PROMPT_REDDIT)
 	post.when = "6 hours ago"
-	post.who = "badcop_"
+	post.who = PromptGenerator.get_rand_data(PromptGenerator.RAND_USERNAME)
 	post.score = 50
 	post.comments = 42
 	return post
