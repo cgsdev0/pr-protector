@@ -49,7 +49,7 @@ func _ready():
 
 func _process(delta):
 	if $Loading.visible:
-		$Loading/ProgressBar.value += delta * 15
+		$Loading/ProgressBar.value += delta * 100 # TODO
 		if $Loading/ProgressBar.ratio >= 1.0:
 			yield(get_tree().create_timer(1.0), "timeout")
 			$Loading.visible = false

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" instance=ExtResource( 1 )]
+color = Color( 0.317647, 0.658824, 0.235294, 1 )
+title = "email"

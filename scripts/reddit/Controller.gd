@@ -14,22 +14,24 @@ var noNew
 func _ready():
 	postBody = find_node("PostBody")
 	noNew = find_node("LabelNoNewPosts")
-	$PostBody/Title.text = new_post().text
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	var post = new_post()
+	update_to_post(post)
+
 
 func vote(up: bool):
-	# postBody.visible = false
-	# noNew.visible = true
+
 	var post = new_post()
+	update_to_post(post)
+	
+	Events.emit_signal("price_change", 1 if up else -1)
+
+func update_to_post(post):
 	$PostBody/Title.text = post.text
 	$PostBody/PostedBy.bbcode_text = "submitted " + post.when + " ago by [color=#4d7dd0]" + post.who + "[/color]"
 	$PostBody/BottomDetails.text = str(post.comments) + " comments  share  save  hide"
 	$PostBody/Score.text = str(post.score)
-	Events.emit_signal("price_change", 1 if up else -1)
-
+	
 func new_post():
 	var post = PromptGenerator.next_prompt(PromptGenerator.PROMPT_REDDIT)
 	post.when = "6 hours ago"
