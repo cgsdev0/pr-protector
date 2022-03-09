@@ -3,17 +3,11 @@ extends Control
 onready var Events = get_node("/root/Events")
 onready var PromptGenerator = get_node("/root/PromptGenerator")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-var postBody
-var noNew
+var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	postBody = find_node("PostBody")
-	noNew = find_node("LabelNoNewPosts")
+	rng.randomize()
 
 	var post = new_post()
 	update_to_post(post)
@@ -34,10 +28,10 @@ func update_to_post(post):
 	
 func new_post():
 	var post = PromptGenerator.next_prompt(PromptGenerator.PROMPT_REDDIT)
-	post.when = "6 hours ago"
+	post.when = str(rng.randi_range(5, 40)) + " minutes ago"
 	post.who = PromptGenerator.get_rand_data(PromptGenerator.RAND_USERNAME)
-	post.score = 50
-	post.comments = 42
+	post.score = rng.randi_range(0, 200)
+	post.comments = rng.randi_range(0, 20)
 	return post
 
 func _on_BtnUpvote_reddit_upvote():
