@@ -2,6 +2,7 @@ extends Node
 
 signal change_cursor(cursor)
 signal price_change(amount)
+signal score_balloon(amount)
 
 signal photoshop_delete
 signal photoshop_paste
@@ -19,3 +20,5 @@ signal open_window(node)
 
 signal unpause_game
 signal pause_game
+
+

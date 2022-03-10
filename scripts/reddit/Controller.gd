@@ -18,7 +18,8 @@ func vote(up: bool):
 	var post = new_post()
 	update_to_post(post)
 	
-	Events.emit_signal("price_change", 1 if up else -1)
+	# Events.emit_signal("price_change", 1 if up else -1)
+	Events.emit_signal("score_balloon", 0.5 if up else -0.5)
 
 func update_to_post(post):
 	$PostBody/Title.text = post.text
