@@ -22,7 +22,7 @@ func _ready():
 	mouse_in = false
 	grabbed_point = null
 	connections = {}
-	if name == "SAMPLE":
+	if name == "SAMPLE" && OS.is_debug_build():
 		var line = ""
 		for point in polygon:
 			if len(line):
@@ -31,6 +31,10 @@ func _ready():
 		print("\"cutout_polygon\": ", "[", line, "],")
 		print("\"cutout_position\": Vector2", get_parent().position, ',')
 		print("\"polygon_offset\": Vector2", position, ',')
+		print("\"cutout\": \"", get_parent().texture.resource_path, "\",")
+		print("\"clean_plate\": \"", get_parent().get_parent().find_node("CleanPlate").texture.resource_path, "\",")
+		var task = self.script.resource_path.rsplit('/')[-1].replace("CutoutThen", '').replace(".gd", '').to_lower()
+		print("\"task\": \"", task, "\",")
 
 func is_cutout_complete():
 	if short_circuit_complete:

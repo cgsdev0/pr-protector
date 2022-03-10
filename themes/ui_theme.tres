@@ -1,10 +1,22 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=7 format=2]
 
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://fonts/m5x7_small.tres" type="DynamicFont" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.388235, 0.388235, 0.388235, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.117647, 0.117647, 0.117647, 1 )
@@ -28,6 +40,7 @@ Button/styles/normal = null
 Button/styles/pressed = null
 Label/constants/line_spacing = 1
 Label/fonts/font = ExtResource( 2 )
+Panel/styles/panel = SubResource( 4 )
 ProgressBar/colors/font_color = Color( 0.941176, 0.941176, 0.941176, 1 )
 ProgressBar/fonts/font = ExtResource( 2 )
 ProgressBar/styles/bg = SubResource( 2 )

@@ -11,10 +11,12 @@ var delScr
 var repScr
 
 func _ready():
-	var data = all_data[get_owner().photoshop_index]
 	Events.connect("photoshop_upload", self, "on_upload")
-	# TEMP
 	# return
+	# get_owner().photoshop_index = 7
+	
+	var data = all_data[get_owner().photoshop_index]
+
 	moveScr = preload("CutoutThenMove.gd")
 	delScr = preload("CutoutThenDelete.gd")
 	repScr = preload("CutoutThenReplace.gd")

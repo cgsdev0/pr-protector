@@ -6,7 +6,7 @@ func _gui_input(event):
 		if get_owner().focused:
 			var top_owner = get_owner().get_parent()
 			var ind = top_owner.get_child_count() - 2
-			if ind >= 0:
+			if ind >= 0 && !(top_owner is Viewport):
 				top_owner.get_child(ind).focus()
 		get_owner().queue_free()
 

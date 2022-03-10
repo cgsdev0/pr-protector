@@ -16,3 +16,6 @@ signal delete_email
 signal email_link
 
 signal open_window(node)
+
+signal unpause_game
+signal pause_game

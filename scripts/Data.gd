@@ -215,7 +215,7 @@ var data = {
 		},
 		{
 			"isgood": false,
-			"text": "Uhhhh... <COMPANYNAME> is selling laser weapons to aliens?? Wuuuuut?"
+			"text": "Uhhhh... <COMPANYNAME> is selling laser weapons to aliens?? Wut-----"
 		},
 		{
 			"isgood": false,
@@ -235,7 +235,7 @@ var data = {
 		},
 		{
 			"isgood": false,
-			"text": "M&S literally stole 9.8B <CURRENCY> from <COUNTRY> and no one is talking about it??"
+			"text": "<COMPANYNAME> literally stole 9.8B <CURRENCY> from <COUNTRY> and no one is talking about it??"
 		},
 		{
 			"isgood": false,
@@ -334,10 +334,10 @@ var data = {
 			"text": "Should I buy the new Gamestation or the X Cube Series Y : Electric Boogaloo "
 		},
 		{
-			"text": "Wow…"
+			"text": "Wow........"
 		},
 		{
-			"text": "I'm speechless rn…holy crap!"
+			"text": "I'm speechless rn...holy crap!"
 		},
 		{
 			"text": "Did anyone see that? Was it a UFO? #theyarewatching"
@@ -508,36 +508,44 @@ var data = {
 		}
 	],
 	"youtube": [
-		{ "text": "The Dirty Truth About PKC" },
-		{ "text": "Who TRULY Runs PKC?" },
-		{ "text": "The History of PKC ANIMATED" },
+		{ "text": "The Dirty Truth About <COMPANYNAME>" },
+		{ "text": "Who TRULY Runs <COMPANYNAME>?" },
+		{ "text": "The History of <COMPANYNAME> ANIMATED" },
 		{ "text": "Let's Play #6: Pee Kay See bad" },
-		{ "text": "PKC Crappy Movie Marathon" },
+		{ "text": "<COMPANYNAME> Crappy Movie Marathon" },
 		{ "text": "Top 10 Companies You need to know about." },
-		{ "text": "PKC has failed us and we need to do something about it." },
-		{ "text": "we need to talk about PKC..." },
-		{ "text": "PKC fired my mom :/" },
-		{ "text": "We bought DANGEROUS items from PKC" },
-		{ "text": "Crashing my new PKC Supercar! WATCH TIL' THE END!" },
+		{ "text": "<COMPANYNAME> has failed us and we need to do something about it." },
+		{ "text": "we need to talk about <COMPANYNAME>..." },
+		{ "text": "<COMPANYNAME> fired my mom :/" },
+		{ "text": "We bought DANGEROUS items from <COMPANYNAME>" },
+		{ "text": "Crashing my new <COMPANYNAME> Supercar! WATCH TIL' THE END!" },
 		{ "text": "TOP 5 WORST CEOs" },
 		{ "text": "How I embarrassed my BORING BOSS!" },
-		{ "text": "Whistleblower Tells All in PKC Exposé" },
-		{ "text": "PKC has a Problem with Me..." },
-		{ "text": "Keep PKC out of FRANCE!" },
-		{ "text": "Product Comparisons: PKC vs Generic" },
-		{ "text": "Sooooo I bought the PKC Twin Cycle :I ..." },
-		{ "text": "DON'T GET YOUR BLOOD TESTED IN AN PKC CLINIC!!!" },
+		{ "text": "Whistleblower Tells All in <COMPANYNAME> Exposé" },
+		{ "text": "<COMPANYNAME> has a Problem with Me..." },
+		{ "text": "Keep <COMPANYNAME> out of FRANCE!" },
+		{ "text": "Product Comparisons: <COMPANYNAME> vs Generic" },
+		{ "text": "Sooooo I bought the <COMPANYNAME> Twin Cycle :I ..." },
+		{ "text": "DON'T GET YOUR BLOOD TESTED IN AN <COMPANYNAME> CLINIC!!!" },
 		{ "text": "Daily Vlog #504 | p k c still sucks lol" },
-		{ "text": "Already Fixing my PKC TV" },
-		{ "text": "\"Swords of Fortune\" is NOT worth $60! STOP GIVING PKC YOUR MONEY." },
-		{ "text": "\"Magical Hen\" is the newest PKC trashfire" },
-		{ "text": "\"PKC+\" is a SCAM!" },
-		{ "text": "I bought the PKC-60DSLR so you wouldn't have to and it's...oof" },
-		{ "text": "How to buy PKC Fashion for Cheap" },
-		{ "text": "PKC Deep Dive: The Toxicity goes Deep" },
+		{ "text": "Already Fixing my <COMPANYNAME> TV" },
+		{ "text": "\"Swords of Fortune\" is NOT worth $60! STOP GIVING <COMPANYNAME> YOUR MONEY." },
+		{ "text": "\"Magical Hen\" is the newest <COMPANYNAME> trashfire" },
+		{ "text": "\"<COMPANYNAME>+\" is a SCAM!" },
+		{ "text": "I bought the <COMPANYNAME>-60DSLR so you wouldn't have to and it's...oof" },
+		{ "text": "How to buy <COMPANYNAME> Fashion for Cheap" },
+		{ "text": "<COMPANYNAME> Deep Dive: The Toxicity goes Deep" },
 		{ "text": "The Boycott of the Century Begins >:D" }
 	],
 	"photoshop": [
+		{
+			"cutout_polygon": [Vector2(144, 187), Vector2(169, 171), Vector2(300, 171), Vector2(300, 297), Vector2(169, 297), Vector2(144, 250)],
+			"cutout_position": Vector2(336, 131),
+			"polygon_offset": Vector2(-222, -234),
+			"cutout": "res://images/photoshop/moon_cutout2.png",
+			"clean_plate": "res://images/photoshop/moon.png",
+			"task": "delete"
+		},
 		{
 			"task": "move",
 			"clean_plate": "res://images/photoshop/bad_driver.png",
@@ -566,6 +574,48 @@ var data = {
 			"polygon_offset": Vector2(30, 45),
 			"clean_plate": "res://images/photoshop/moon.png",
 			"cutout": "res://images/photoshop/moon_cutout.png"
+		},
+		{
+			"task": "move",
+			"cutout_polygon": [Vector2(175, 173), Vector2(194, 153), Vector2(210, 187), Vector2(239, 154), Vector2(288, 215), Vector2(244, 250), Vector2(232, 306), Vector2(195, 322), Vector2(177, 286), Vector2(188, 218)],
+			"cutout_position": Vector2(242, 204),
+			"polygon_offset": Vector2(-222, -234),
+			"target_zone": [Vector2(37, 105), Vector2(37, -137), Vector2(189, -138), Vector2(192, 101)],
+			"target_zone_position": Vector2(252, 216),
+			"clean_plate": "res://images/photoshop/trip_lady.png",
+			"cutout": "res://images/photoshop/trip_lady_cutout.png"
+		},
+		{
+			"cutout_polygon": [Vector2(230, 225), Vector2(230, 242), Vector2(214, 242), Vector2(214, 225)],
+			"cutout_position": Vector2(331, 279),
+			"polygon_offset": Vector2(-222, -234),
+			"cutout": "res://images/photoshop/airstrip_cutout.png",
+			"clean_plate": "res://images/photoshop/airstrip.png",
+			"replace": "res://images/photoshop/airstrip_replace.png",
+			"task": "replace",
+			"target_zone": [Vector2(57, 105), Vector2(57, 51), Vector2(-73, 64), Vector2(-74, 99), Vector2(-109, 100), Vector2(-109, 84), Vector2(-136, 83), Vector2(-136, 47), Vector2(-99, 48), Vector2(-99, 57), Vector2(-70, 58), Vector2(58, 45), Vector2(61, 1.00002), Vector2(100, -1.99998), Vector2(99, 48), Vector2(112, 46), Vector2(114, -13), Vector2(147, -14), Vector2(150, 85), Vector2(112, 86), Vector2(113, 52), Vector2(99, 52), Vector2(99, 105)],
+			"target_zone_position": Vector2(252, 216)
+		},
+		{
+			"cutout_polygon": [Vector2(208, 213), Vector2(225, 229), Vector2(245, 232), Vector2(244, 252), Vector2(214, 253), Vector2(198, 228)],
+			"cutout_position": Vector2(401, 273),
+			"polygon_offset": Vector2(-222, -234),
+			"cutout": "res://images/photoshop/goose_cutout.png",
+			"clean_plate": "res://images/photoshop/goose.png",
+			"task": "move",
+			"target_zone": [Vector2(107, -22), Vector2(175, -23), Vector2(179, 34), Vector2(105, 36)],
+			"target_zone_position": Vector2(91, 233)
+		},
+		{
+			"cutout_polygon": [Vector2(174, 236), Vector2(202, 232), Vector2(217, 209), Vector2(271, 211), Vector2(275, 243), Vector2(235, 245), Vector2(179, 260), Vector2(169, 251)],
+			"cutout_position": Vector2(365, 243),
+			"polygon_offset": Vector2(-222, -234),
+			"cutout": "res://images/photoshop/swamp_cutout.png",
+			"clean_plate": "res://images/photoshop/swamp.png",
+			"replace": "res://images/photoshop/swamp_replace.png",
+			"task": "replace",
+			"target_zone": [Vector2(72, 152), Vector2(101, -36), Vector2(265, -35), Vector2(322, -47), Vector2(397, -68), Vector2(497, -87), Vector2(495, 155)],
+			"target_zone_position": Vector2(-51, 165)
 		}
 	],
 	"news": [

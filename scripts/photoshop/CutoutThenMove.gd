@@ -29,7 +29,7 @@ func _ready():
 				line += ", "
 			line += "Vector2" + str(point)
 		print("\"target_zone\": ", "[", line, "],")
-		print("\"target_zone_position\": Vector2", target_zone.position, ',')
+		print("\"target_zone_position\": Vector2", target_zone.position)
 	
 
 func minv(curvec,newvec):
@@ -101,12 +101,13 @@ func _process(_delta):
 			get_parent().position.y = 308 - box.size.y - position.y - box.position.y
 		if(get_parent().position.y + position.y + box.position.y < 27):
 			get_parent().position.y = 27 - position.y - box.position.y
-		# print(is_contained(polygon, target_zone.polygon, self.global_position, target_zone.global_position))
+		if OS.is_debug_build():
+			print(is_contained(polygon, target_zone.polygon, self.global_position, target_zone.global_position))
 		return
 	# process cursor state
 	if !get_owner().focused:
 		return
-	if !is_cutout_complete():
+	if !is_cutout_complete() || wait_for_replacement:
 		return
 	if mouse_in && !prev_mouse_in:
 		prev_mouse_in = true
