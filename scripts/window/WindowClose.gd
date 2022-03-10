@@ -1,5 +1,6 @@
 extends Control
 
+onready var events = get_node("/root/Events")
 
 func _gui_input(event):
 	if event is InputEventMouseButton && event.pressed && event.button_index == 1:
@@ -8,6 +9,7 @@ func _gui_input(event):
 			var ind = top_owner.get_child_count() - 2
 			if ind >= 0 && !(top_owner is Viewport):
 				top_owner.get_child(ind).focus()
+		events.emit_signal("close_window")
 		get_owner().queue_free()
 
 func _draw():

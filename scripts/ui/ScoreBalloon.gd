@@ -19,8 +19,6 @@ var down_dests = [Vector2(480, 480), Vector2(860, 530)]
 var jitter = Vector2(0, 0)
 var change
 
-var velocity
-
 func _ready():
 	if change < 0:
 		dests = down_dests
@@ -30,21 +28,6 @@ func _ready():
 		color = up_color
 		
 	dests[0] += jitter
-
-	# new
-	# velocity = speed * position.move_toward(dests[0], 1)
-	
-#func _physics_process(delta):
-#	var dest = dests[phase]
-#	position = position.move_toward(dest, speed * delta)
-#	if phase == 0:
-#		speed = max(0, speed - delta * 600)
-#	else:
-#		speed = min(1000, 1500 * delta + speed)
-#	if position == dest && phase == 1:
-#		queue_free()
-#	if phase == 0 && speed == 0:
-#		phase = 1
 
 func _process(delta):
 	var dest = dests[phase]

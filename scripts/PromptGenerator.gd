@@ -29,7 +29,16 @@ func _ready():
 	generated[PROMPT_TWITTER_BAD] = generate_list(PROMPT_TWITTER_BAD)
 	generated[PROMPT_TWITTER_GOOD] = generate_list(PROMPT_TWITTER_GOOD)
 	generated[PROMPT_YOUTUBE] = generate_list(PROMPT_YOUTUBE)
-	pass
+	
+	var good = 0
+	var bad = 0
+	for prompt in generated[PROMPT_REDDIT].array:
+		if prompt.isgood:
+			good += 1
+		else:
+			bad += 1
+	print("good: ", good)
+	print("bad:  ", bad)
 
 # _process : called every frame
 # func _process(delta):
@@ -58,6 +67,8 @@ func make_prompt(template):
 	
 	x["<COMPANYNAME>"] = data["companyName"]
 	x["<LONGCOMPANYNAME>"] = data["longCompanyName"]
+	
+	x["<COMPETITORNAME>"] = data["competitorName"]
 
 	x["<CURRENTYEAR>"] = OS.get_datetime()["year"]
 	x["<PASTYEAR>"] = (rng.randi_range(1900, x["<CURRENTYEAR>"] - 1))

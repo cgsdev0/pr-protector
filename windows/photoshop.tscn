@@ -150,7 +150,7 @@ texture = ExtResource( 5 )
 [node name="TargetZone" type="Polygon2D" parent="Body/Controller" index="1"]
 position = Vector2( -51, 165 )
 color = Color( 1, 0.819608, 0, 0.258824 )
-polygon = PoolVector2Array( 72, 152, 101, -36, 265, -35, 322, -47, 397, -68, 497, -87, 495, 155 )
+polygon = PoolVector2Array( 171, 164, 187, -173, 539, -182, 551, 170 )
 
 [node name="Cutout" type="Sprite" parent="Body/Controller" index="2"]
 position = Vector2( 365, 243 )

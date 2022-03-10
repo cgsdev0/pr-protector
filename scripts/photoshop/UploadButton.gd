@@ -10,5 +10,6 @@ func on_enable():
 
 func _pressed():
 	get_owner().photoshop_freeze = true
+	events.emit_signal("photoshop_freeze")
 	events.emit_signal("photoshop_upload")
 	get_parent().visible = false

@@ -1,5 +1,7 @@
 extends Button
 
+onready var events = get_node("/root/Events")
+
 func _pressed():
 		disabled = true
 		mouse_default_cursor_shape = Control.CURSOR_ARROW
@@ -9,3 +11,4 @@ func _pressed():
 		get_owner().find_node("Layer5").visible = false
 		get_owner().find_node("Layer6").visible = true
 		get_owner().setClosable(true)
+		events.emit_signal("score_balloon", 5, -0.5, 0.9)

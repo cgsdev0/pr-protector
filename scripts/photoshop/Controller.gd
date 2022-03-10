@@ -11,7 +11,7 @@ var delScr
 var repScr
 
 func _ready():
-	Events.connect("photoshop_upload", self, "on_upload")
+	events.connect("photoshop_upload", self, "on_upload")
 	# return
 	# get_owner().photoshop_index = 7
 	

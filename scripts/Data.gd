@@ -40,6 +40,7 @@ var data = {
 	],
 	"companyName": "PKC",
 	"longCompanyName": "Peterson, Kain, and Cousins",
+	"competitorName": "JDF",
 	"performBad": [
 		{
 			"past": "flopped",
@@ -85,83 +86,103 @@ var data = {
 	"reddit": [
 		# positive reddit posts
 		{
+			"image_index": 1,
 			"isgood": true,
 			"text": "I love my new arm! Thanks <COMPANYNAME>!"
 		},
 		{
+			"image_index": 2,
 			"isgood": true,
 			"text": "The new <COMPANYNAME> restaurant is heckin fancy :3"
 		},
 		{
+			"image_index": 3,
 			"isgood": true,
 			"text": "Copped the new <COMPANYNAME> Templar Kicks"
 		},
 		{
+			"image_index": 4,
 			"isgood": true,
 			"text": "I saved so much with that <COMPANYNAME> coupon app! WOOOOOO"
 		},
 		{
+			"image_index": 0,
 			"isgood": true,
-			"text": "I WON THE <COMPANYNAME> SPACESHIP RAFFLE HOLY CRAP!!"
+			"text": "I WON THE <COMPANYNAME> SPACESHIP RAFFLE HOLY CRAP LOIS!!"
 		},
 		{
+			"image_index": 10,
 			"isgood": true,
 			"text": "<COMPANYNAME> reveals the future of virtual reality!"
 		},
 		{
+			"image_index": 11,
 			"isgood": true,
 			"text": "God bless the <COMPANYNAME> Cinematic Universe <3"
 		},
 		{
+			"image_index": 12,
 			"isgood": true,
 			"text": "My body is so ready for <COMPANYNAME> Con!"
 		},
 		{
+			"image_index": 13,
 			"isgood": true,
 			"text": "Celebrating my 37th at the <COMPANYNAME> Trampoline Arena :)"
 		},
 		# negative reddit posts
 		{
+			"image_index": 5,
 			"isgood": false,
 			"text": "<COMPANYNAME> dumps <QUANTITY> million barrels of oil in the Pacific. Updoot for visibility!"
 		},
 		{
+			"image_index": 6,
 			"isgood": false,
 			"text": "<COMPANYNAME> in the news again after CFO is caught stealing candy (again!)"
 		},
 		{
+			"image_index": 7,
 			"isgood": false,
 			"text": "How does <COMPANYNAME> keep getting away with it??"
 		},
 		{
+			"image_index": 35,
 			"isgood": false,
 			"text": "TIL that in <PASTYEAR>, <COMPANYNAME> was caught smuggling money through <COUNTRY>."
 		},
 		{
+			"image_index": 9,
 			"isgood": false,
 			"text": "'<LONGCOMPANYNAME>' caught smuggling tacos during taco drought"
 		},
 		{
+			"image_index": 35,
 			"isgood": false,
 			"text": "<COMPANYNAME> executive caught money laundering <CURRENCY>"
 		},
 		{
+			"image_index": 15,
 			"isgood": false,
 			"text": "Why does <COMPANYNAME> keep greenlighting awful movies?? :("
 		},
 		{
+			"image_index": 16,
 			"isgood": false,
 			"text": "Who even runs <LONGCOMPANYNAME> anymore? Is it just robots doing everything?"
 		},
 		{
+			"image_index": 17,
 			"isgood": false,
-			"text": "The <COMPANYNAME> Game Jam was crap this year. What a joke…"
+			"text": "The <COMPANYNAME> Game Jam was crap this year. What a joke..."
 		},
 		{
+			"image_index": 18,
 			"isgood": false,
 			"text": "I've never seen so much corporate propaganda in the <COMPANYNAME> Film Fest :/"
 		},
 		{
+			"image_index": 19,
 			"isgood": false,
 			"text": "<LONGCOMPANYNAME> new restaurant rated the worst restaurant of all time"
 		},
@@ -170,77 +191,170 @@ var data = {
 		#     "text": "Powerful new pictures from the <COMPANYNAME> land conflict surface:"
 		# },
 		{
-			"isgood": false,
+			"image_index": 2,
+			"isgood": true,
 			"text": "This is how <LONGCOMPANYNAME> treat their 10+ tenured employees:"
 		},
 		{
+			"image_index": 21,
 			"isgood": false,
 			"text": "<COMPANYNAME> Exec cries during roast"
 		},
 		{
+			"image_index": 22,
 			"isgood": false,
 			"text": "\"Massive\" car crash caused by \"<COMPANYNAME> CEO\" claims victim"
 		},
 		{
+			"image_index": 23,
 			"isgood": false,
 			"text": "500 Passenger Flight forced to turnaround because of <LONGCOMPANYNAME> Exec"
 		},
 		{
+			"image_index": 24,
 			"isgood": false,
 			"text": "There's some corny businessman at this bar playing guitar to any girl that looks at him??"
 		},
 		{
+			"image_index": 25,
 			"isgood": false,
 			"text": "Why can my children buy knives from the <COMPANYNAME> online store!?"
 		},
 		{
+			"image_index": 26,
 			"isgood": false,
 			"text": "How to Unsubscribe from any <COMPANYNAME> robocall!"
 		},
 		{
+			"image_index": 27,
 			"isgood": false,
 			"text": "I can't access any <COMPANYNAME> website unless I turn off my adblock? Can anyone help?"
 		},
 		{
+			"image_index": 28,
 			"isgood": false,
 			"text": "My brand new <COMPANYNAME> Ultralux Car exploded?? NANI??"
 		},
 		{
+			"image_index": 29,
 			"isgood": false,
-			"text": "That new Ultraguy flick by /u/<COMPANYNAME> was absolute TRASH"
+			"text": "That new Ultraguy flick by <COMPANYNAME> was absolute TRASH"
 		},
 		{
+			"image_index": 30,
 			"isgood": false,
 			"text": "Who's <COMPANYNAME> luxury company car is this?"
 		},
 		{
+			"image_index": 16,
 			"isgood": false,
 			"text": "Uhhhh... <COMPANYNAME> is selling laser weapons to aliens?? Wut-----"
 		},
 		{
+			"image_index": 31,
 			"isgood": false,
 			"text": "Is <COMPANYNAME> dropping an asteroid on Australia? Anyone seeing this??"
 		},
 		{
+			"image_index": 32,
 			"isgood": false,
 			"text": "Why does this dinosaur have the \"<COMPANYNAME>\" logo on it..."
 		},
 		{
+			"image_index": 33,
 			"isgood": false,
 			"text": "New archeological findings report a cave-painting that looks like the <COMPANYNAME> logo..."
 		},
 		{
+			"image_index": 1,
 			"isgood": false,
 			"text": "mY <COMPANYNAME> aUgmeNNTAatioN 1ss mALfuNctioNIng. HeLLppp"
 		},
 		{
+			"image_index": 34,
+			"isgood": false,
+			"text": "m <COMPANYNAME> c0MPTER 1snt WOrrrrKn. HeLLppp :("
+		},
+		{
+			"image_index": 35,
 			"isgood": false,
 			"text": "<COMPANYNAME> literally stole 9.8B <CURRENCY> from <COUNTRY> and no one is talking about it??"
 		},
 		{
+			"image_index": 18,
 			"isgood": false,
 			"text": "NEWS: <COMPANYNAME> Acquires Literally Every Movie + TV Studio for a Meager 5 Trillion; Denies it is a Monopoly"
-		}
+		},
+		{
+			"image_index": 36,
+			"isgood": true,
+			"text": "The <COMPANYNAME> Games Direct was awesome! So many new titles announced ahhhh"
+		},
+		{
+			"image_index": 37,
+			"isgood": true,
+			"text": "I love PK-Cat! He’s so cute!!"
+		},
+		{
+			"image_index": 25,
+			"isgood": true,
+			"text": "This <COMPANYNAME> knife is literally the sharpest knife I've ever owned. 10/10"
+		},
+		{
+			"image_index": 29,
+			"isgood": true,
+			"text": "These retro <COMPANYNAME> superhero films are my JAM"
+		},
+		{
+			"image_index": 9,
+			"isgood": true,
+			"text": "unpopular opinion: Del <COMPANYNAME> Bell always hits the spot"
+		},
+		{
+			"image_index": 3,
+			"isgood": false,
+			"text": "<COMPANYNAME> sent me counterfeit shoes??? wtf"
+		},
+		{
+			"image_index": 20,
+			"isgood": true,
+			"text": "good guy <COMPANYNAME> plants 100 trees"
+		},
+		{
+			"image_index": 34,
+			"isgood": true,
+			"text": "this is why you should always buy <COMPANYNAME> parts"
+		},
+		{
+			"image_index": 26,
+			"isgood": true,
+			"text": "my stupid <COMPETITORNAME> phone keeps getting spam calls"
+		},
+		{
+			"image_index": 14,
+			"isgood": false,
+			"text": "<COMPANYNAME>oin is a massive flop shortly after launch"
+		},
+		{
+			"image_index": 32,
+			"isgood": true,
+			"text": "HELLLA excited for Jurassic <COMPANYNAME> Park to open!!"
+		},
+		{
+			"image_index": 17,
+			"isgood": true,
+			"text": "[Devlog] how I won <COMPANYNAME> Jam #23"
+		},
+		{
+			"image_index": 0,
+			"isgood": true,
+			"text": "<COMPANYNAME>'s latest space launch: mission success"
+		},
+		{
+			"image_index": 21,
+			"isgood": true,
+			"text": "mfw they run out of <COMPANYNAME> stuffed crust pizza on a friday"
+		},
 	],
 	"twitterGood": [
 		{
@@ -563,8 +677,8 @@ var data = {
 			"polygon_offset": Vector2(-300, -225),
 			"cutout": "res://images/photoshop/shake_cutout.png",
 			"clean_plate": "res://images/photoshop/shake.png",
-			"target_zone": [Vector2(-22, 156), Vector2(9, -13), Vector2(17, -148), Vector2(109, -149), Vector2(79, 18), Vector2(59, 156)],
-			"target_zone_position": Vector2(240, 170),
+			"target_zone": [Vector2(171, 164), Vector2(187, -173), Vector2(539, -182), Vector2(551, 170)],
+			"target_zone_position": Vector2(-51, 165),
 			"replace": "res://images/photoshop/shake_replace.png"
 		},
 		{

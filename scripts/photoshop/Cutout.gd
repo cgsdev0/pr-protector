@@ -1,6 +1,8 @@
 extends Polygon2D
 
 
+onready var events = get_node("/root/Events")
+
 var mouse_in
 var selected
 
@@ -11,6 +13,14 @@ var was_frozen = false
 
 var short_circuit_complete = false
 
+var challenge_success = false
+
+func on_upload():
+	if challenge_success:
+		events.emit_signal("score_balloon", 5, -0.4, 1.0)
+	else:
+		events.emit_signal("score_balloon", -10, -2.0, 0.99)
+		
 func _process(_delta):
 	if !was_frozen && get_owner().photoshop_freeze:
 		was_frozen = true
@@ -18,6 +28,7 @@ func _process(_delta):
 
 func _ready():
 	set_owner(get_parent().get_owner())
+	events.connect("photoshop_upload", self, "on_upload")
 	selected = false
 	mouse_in = false
 	grabbed_point = null

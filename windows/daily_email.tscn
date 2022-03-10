@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/email/BtnDailyDelete.gd" type="Script" id=1]
+[ext_resource path="res://images/ui/trash.png" type="Texture" id=7]
+[ext_resource path="res://themes/email.tres" type="Theme" id=14]
+
+[node name="Node2D" type="Control"]
+rect_min_size = Vector2( 400, 340 )
+theme = ExtResource( 14 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 359.0
+margin_bottom = 285.0
+rect_min_size = Vector2( 400, 340 )
+rect_pivot_offset = Vector2( 69, 34 )
+mouse_filter = 1
+
+[node name="BodyContainer" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 63.0
+margin_right = 380.0
+margin_bottom = 325.0
+custom_constants/separation = 10
+
+[node name="Body" type="RichTextLabel" parent="BodyContainer"]
+margin_right = 360.0
+margin_bottom = 262.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 14 )
+text = "Hi,
+
+sooo, unfortunate news; Today was actually my last day. 
+
+Since the company has yet to hire my replacement, it seems all of my workload will be falling directly onto you (sorry!)
+
+I wish you the best of luck; I know you're more than capable of keeping this company afloat on your own.
+
+Best Wishes,
+Michael S.
+
+
+P.S. there was a bit of an insider trading scandal this morning, so expect the stock price to be *extra* volatile today...."
+
+[node name="Divider" type="ColorRect" parent="."]
+margin_top = 52.0
+margin_right = 400.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 145, 42 )
+mouse_filter = 1
+color = Color( 0.843137, 0.843137, 0.843137, 1 )
+
+[node name="Divider2" type="ColorRect" parent="."]
+margin_top = 34.0
+margin_right = 400.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 145, 42 )
+mouse_filter = 1
+color = Color( 0.843137, 0.843137, 0.843137, 1 )
+
+[node name="Subject" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 17.0
+margin_right = 365.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Farewell"
+clip_text = true
+
+[node name="TextSubjectLabel" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 2.0
+margin_right = 353.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 0.756863, 0.756863, 0.756863, 1 )
+text = "Subject:"
+
+[node name="From" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 36.0
+margin_right = 353.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.52549, 0.52549, 0.52549, 1 )
+text = "From: Michael S. (michael.s@pkcbusiness.com)"
+
+[node name="BtnDelete" type="TextureButton" parent="."]
+margin_left = 373.0
+margin_top = 9.0
+margin_right = 405.0
+margin_bottom = 41.0
+focus_mode = 0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+script = ExtResource( 1 )

@@ -1,12 +1,5 @@
 extends "Cutout.gd"
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-onready var events = get_node("/root/Events")
-
 var prev_mouse_in = false
 var can_grab = false
 var grabbed_offset
@@ -19,8 +12,12 @@ var target_zone
 
 var wait_for_replacement = false
 
+func on_freeze():
+	challenge_success = is_contained(polygon, target_zone.polygon, self.global_position, target_zone.global_position)
+
 func _ready():
 	target_zone = get_owner().find_node("TargetZone")
+	events.connect("photoshop_freeze", self, "on_freeze")
 	on_change_my_poly()
 	if name == "SAMPLE":
 		var line = ""

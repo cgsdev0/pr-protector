@@ -1,6 +1,4 @@
 extends "Cutout.gd"
-
-onready var events = get_node("/root/Events")
 	
 var was_done = false
 
@@ -11,6 +9,7 @@ func _process(_delta):
 
 func _ready():
 	Events.connect("photoshop_delete", self, "on_delete")
+	challenge_success = true
 	
 func on_delete():
 	get_owner().photoshop_freeze = true

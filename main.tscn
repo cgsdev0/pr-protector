@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://windows/email.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/ui/PixelScale.gd" type="Script" id=2]
@@ -16,7 +16,10 @@
 [ext_resource path="res://scripts/ui/BtnPause.gd" type="Script" id=14]
 [ext_resource path="res://scripts/ui/BtnQuit.gd" type="Script" id=15]
 [ext_resource path="res://scripts/ui/Score.gd" type="Script" id=16]
+[ext_resource path="res://scripts/gameplay/DamageTimer.gd" type="Script" id=17]
 [ext_resource path="res://scripts/ui/ScoreBalloonMgr.gd" type="Script" id=18]
+[ext_resource path="res://windows/daily_email.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scripts/email/DailyController.gd" type="Script" id=20]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 13 )
@@ -57,13 +60,13 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 9 )
 
 [node name="Stonks" parent="Monitor/WindowControl" instance=ExtResource( 6 )]
-position = Vector2( 25, 193 )
+position = Vector2( 25, 198 )
 
 [node name="Node2D2" parent="Monitor/WindowControl" instance=ExtResource( 7 )]
-position = Vector2( 1, 45 )
+position = Vector2( 64, 58 )
 
 [node name="Node2D" parent="Monitor/WindowControl" instance=ExtResource( 1 )]
-position = Vector2( 260, 154 )
+position = Vector2( 582, 109 )
 
 [node name="Taskbar" type="ColorRect" parent="Monitor"]
 margin_top = 510.0
@@ -98,6 +101,29 @@ outline_color = Color( 0.129412, 0.278431, 0.607843, 1 )
 
 [node name="ScoreBalloons" type="Node2D" parent="."]
 script = ExtResource( 18 )
+
+[node name="DailyEmail" type="Control" parent="."]
+pause_mode = 2
+visible = false
+margin_right = 960.0
+margin_bottom = 540.0
+theme = ExtResource( 4 )
+script = ExtResource( 20 )
+
+[node name="ColorRect" type="ColorRect" parent="DailyEmail"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.6 )
+
+[node name="CenterContainer" type="CenterContainer" parent="DailyEmail"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Node2D" parent="DailyEmail/CenterContainer" instance=ExtResource( 19 )]
+margin_left = 280.0
+margin_top = 100.0
+margin_right = 680.0
+margin_bottom = 440.0
 
 [node name="Settings" type="Control" parent="."]
 pause_mode = 2
@@ -170,3 +196,8 @@ margin_right = 86.0
 margin_bottom = 142.0
 text = "Quit"
 script = ExtResource( 15 )
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+script = ExtResource( 17 )

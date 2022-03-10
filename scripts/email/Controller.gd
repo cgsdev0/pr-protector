@@ -3,6 +3,8 @@ extends Control
 
 onready var events = get_node("/root/Events")
 onready var ListItem = preload("res://windows/email_list_item.tscn")
+onready var Photoshop = preload("res://windows/photoshop.tscn")
+onready var Youtube = preload("res://windows/youtube.tscn")
 
 var opened_ind = 0
 
@@ -28,13 +30,13 @@ func on_email_link():
 		var window = Photoshop.instance()
 		window.photoshop_index = row.email.photoshop_index
 		events.emit_signal("open_window", window)
+	if row.email.has("youtube"):
+		events.emit_signal("open_window", Youtube.instance())
 	row.queue_free()
 	yield(get_tree().create_timer(0.5), "timeout")
 	$EmailPopover.visible = false
 
-onready var Photoshop = preload("res://windows/photoshop.tscn")
-
-func insert_email(email):
+func on_insert_email(email):
 	var row = ListItem.instance()
 	row.email = email
 	$ScrollContainer/VBoxContainer.add_child(row)
@@ -43,10 +45,11 @@ func insert_email(email):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	insert_email({"subject": "We need to talk.", "from": "Human Resources", "body": "a\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\n", "link": "yeet.com", "photoshop_index": 0})
 	events.connect("open_email", self, "on_open_email")
 	events.connect("delete_email", self, "on_delete_email")
 	events.connect("email_link", self, "on_email_link")
+	events.connect("insert_email", self, "on_insert_email")
+	events.emit_signal("insert_email", {"subject": "We need to talk.", "from": "Human Resources", "body": "a\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\n", "link": "yeet.com", "youtube": 0})
 	pass # Replace with function body.
 
 func _process(delta):

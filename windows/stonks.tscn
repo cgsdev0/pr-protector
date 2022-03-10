@@ -4,6 +4,10 @@
 [ext_resource path="res://scripts/stonks/Graph.gd" type="Script" id=2]
 
 [node name="Node2D" instance=ExtResource( 1 )]
+color = Color( 0.666667, 0.133333, 0.670588, 1 )
+title = "$PKC stock price"
 
 [node name="Control" type="Control" parent="Body" index="1"]
 script = ExtResource( 2 )
+label_colors = Color( 0.411765, 0.411765, 0.411765, 1 )
+bg_color = Color( 0.215686, 0.215686, 0.215686, 1 )
