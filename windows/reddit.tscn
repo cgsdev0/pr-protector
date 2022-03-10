@@ -14,7 +14,7 @@
 
 [node name="Node2D" instance=ExtResource( 1 )]
 dimensions = Vector2( 400, 109 )
-color = Color( 0.996078, 0.752941, 0.756863, 1 )
+color = Color( 0.427451, 0.788235, 0.784314, 1 )
 title = "ribbit"
 
 [node name="Body" parent="." index="0"]

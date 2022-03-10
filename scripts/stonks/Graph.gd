@@ -8,6 +8,7 @@ var scores = []
 var curr_time = 0
 
 var tick = -1
+var tick2 = -1
 
 var time_range = 40
 
@@ -52,6 +53,8 @@ func _physics_process(delta):
 		bounds.max_score = lerp(prev_max, bounds.max_score, factor)
 	prev_min = bounds.min_score
 	prev_max = bounds.max_score
+#	if tick2 < curr_time:
+#		tick2 = curr_time + 0.8
 	update()
 
 func color_by_score(score):
