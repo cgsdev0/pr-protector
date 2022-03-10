@@ -1,6 +1,80 @@
 extends Node
 
 var data = {
+	"rewards": {
+		"photoshop": {
+			"good": {
+				"base": 5,
+				"range_lower": -0.4,
+				"range_upper": 1.0
+			},
+			"bad": {
+				"base": -10,
+				"range_lower": -2.0,
+				"range_upper": 0.99
+			},
+		},
+		"reddit": {
+			"good": {
+				"base": 1.5,
+				"range_lower": -0.1,
+				"range_upper": 0.1
+			},
+			"bad": {
+				"base": -4.5,
+				"range_lower": -0.6,
+				"range_upper": 0.6
+			},
+		},
+		"youtube": {
+			"good": {
+				"base": 5,
+				"range_lower": -0.5,
+				"range_upper": 0.9,
+			},
+		}
+	},
+	"levels": [
+		{
+			"multiplier": 2,
+			"damage_rate": 4,
+			"reddit_sequencer": [5, 5, 5, 5, 12, 18, 18, 20, 30, 31, 32, 33, 34, 35, 40, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 55],
+			"start_email": "day_5_start",
+			"email_sequencer": [
+				{
+					"time": 5,
+					"email": "youtuber",
+				}
+			]
+		}
+	],
+	"emails": {
+		"day_5_start": {
+			"subject": "Farewell",
+			"from": "Michael S. <michael.s@pkcbusiness.com>",
+			"body": """Hi,
+
+sooo, unfortunate news; yesterday was actually my last day. 
+
+Since the company has yet to hire my replacement, it seems all of my workload will be falling directly onto you (sorry!)
+
+I wish you the best of luck; I know you're more than capable of keeping this company afloat on your own.
+
+Best Wishes,
+Michael S.
+
+
+P.S. there was a bit of an insider trading scandal this morning, so expect the stock price to be *extra* volatile today....
+"""
+		},
+		"youtuber": {
+			"subject": "hey",
+			"from": "PKC Airlines",
+			"body": "bro wtf deal with this",
+			"link": "youtube.com",
+			"youtube": true
+		}
+	},
 	"contraband": [
 		{
 			"name": "money"
@@ -84,7 +158,6 @@ var data = {
 		}
 	],
 	"reddit": [
-		# positive reddit posts
 		{
 			"image_index": 1,
 			"isgood": true,
@@ -130,7 +203,6 @@ var data = {
 			"isgood": true,
 			"text": "Celebrating my 37th at the <COMPANYNAME> Trampoline Arena :)"
 		},
-		# negative reddit posts
 		{
 			"image_index": 5,
 			"isgood": false,
@@ -186,10 +258,6 @@ var data = {
 			"isgood": false,
 			"text": "<LONGCOMPANYNAME> new restaurant rated the worst restaurant of all time"
 		},
-		# {
-		#     "isgood": false,
-		#     "text": "Powerful new pictures from the <COMPANYNAME> land conflict surface:"
-		# },
 		{
 			"image_index": 2,
 			"isgood": true,
@@ -293,7 +361,7 @@ var data = {
 		{
 			"image_index": 37,
 			"isgood": true,
-			"text": "I love PK-Cat! He’s so cute!!"
+			"text": "I love PK-Cat! He's so cute!!"
 		},
 		{
 			"image_index": 25,
@@ -388,13 +456,13 @@ var data = {
 			"text": "Has anyone been skydiving before? It sounds really scary"
 		},
 		{
-			"text": "@TwitterSupport i think my account got hacked??? Help"
+			"text": "@CluckerSupport i think my account got hacked??? Help"
 		},
 		{
 			"text": "Stop what you're doing and watch this new @pewdiepie video. Now."
 		},
 		{
-			"text": "Twitter is dead, change my mind"
+			"text": "Clucker is dead, change my mind"
 		},
 		{
 			"text": "Why is no one talking about this???"
@@ -549,9 +617,6 @@ var data = {
 			"istopical": false,
 			"text": "If you dunk your oreos in milk, you're going to heck."
 		},
-		# {
-		#     "text": "Global warming isn't real!"
-		# },
 		{
 			"istopical": false,
 			"text": "Jar Jar Binks is my favorite Star Wars character"
@@ -651,8 +716,8 @@ var data = {
 		{ "text": "<COMPANYNAME> Deep Dive: The Toxicity goes Deep" },
 		{ "text": "The Boycott of the Century Begins >:D" }
 	],
-	"photoshop": [
-		{
+	"photoshop": {
+		"moon_building": {
 			"cutout_polygon": [Vector2(144, 187), Vector2(169, 171), Vector2(300, 171), Vector2(300, 297), Vector2(169, 297), Vector2(144, 250)],
 			"cutout_position": Vector2(336, 131),
 			"polygon_offset": Vector2(-222, -234),
@@ -660,7 +725,7 @@ var data = {
 			"clean_plate": "res://images/photoshop/moon.png",
 			"task": "delete"
 		},
-		{
+		"bad_driver": {
 			"task": "move",
 			"clean_plate": "res://images/photoshop/bad_driver.png",
 			"cutout": "res://images/photoshop/bad_driver_cutout.png",
@@ -670,7 +735,7 @@ var data = {
 			"target_zone": [Vector2(-22, 156), Vector2(9, -13), Vector2(17, -148), Vector2(109, -149), Vector2(79, 18), Vector2(59, 156)],
 			"target_zone_position": Vector2(240, 170),
 		},
-		{
+		"shake": {
 			"task": "replace",
 			"cutout_polygon": [Vector2(195, 222), Vector2(198, 183), Vector2(234, 192), Vector2(202, 125), Vector2(250, 89), Vector2(308, 93), Vector2(388, 161), Vector2(406, 250), Vector2(396, 361), Vector2(276, 361), Vector2(274, 233)],
 			"cutout_position": Vector2(320, 168),
@@ -681,7 +746,7 @@ var data = {
 			"target_zone_position": Vector2(-51, 165),
 			"replace": "res://images/photoshop/shake_replace.png"
 		},
-		{
+		"moon_laser": {
 			"task": "delete",
 			"cutout_polygon": [Vector2(84, 36), Vector2(40, 36), Vector2(-18, 22), Vector2(-18, -28), Vector2(0, -64), Vector2(-207, -114), Vector2(-206, -129), Vector2(1, -82), Vector2(38, -85), Vector2(89, -85), Vector2(125, -64), Vector2(145, -28), Vector2(145, 21)],
 			"cutout_position": Vector2(235, 123),
@@ -689,7 +754,7 @@ var data = {
 			"clean_plate": "res://images/photoshop/moon.png",
 			"cutout": "res://images/photoshop/moon_cutout.png"
 		},
-		{
+		"trip_lady": {
 			"task": "move",
 			"cutout_polygon": [Vector2(175, 173), Vector2(194, 153), Vector2(210, 187), Vector2(239, 154), Vector2(288, 215), Vector2(244, 250), Vector2(232, 306), Vector2(195, 322), Vector2(177, 286), Vector2(188, 218)],
 			"cutout_position": Vector2(242, 204),
@@ -699,7 +764,7 @@ var data = {
 			"clean_plate": "res://images/photoshop/trip_lady.png",
 			"cutout": "res://images/photoshop/trip_lady_cutout.png"
 		},
-		{
+		"airstrip": {
 			"cutout_polygon": [Vector2(230, 225), Vector2(230, 242), Vector2(214, 242), Vector2(214, 225)],
 			"cutout_position": Vector2(331, 279),
 			"polygon_offset": Vector2(-222, -234),
@@ -710,7 +775,7 @@ var data = {
 			"target_zone": [Vector2(57, 105), Vector2(57, 51), Vector2(-73, 64), Vector2(-74, 99), Vector2(-109, 100), Vector2(-109, 84), Vector2(-136, 83), Vector2(-136, 47), Vector2(-99, 48), Vector2(-99, 57), Vector2(-70, 58), Vector2(58, 45), Vector2(61, 1.00002), Vector2(100, -1.99998), Vector2(99, 48), Vector2(112, 46), Vector2(114, -13), Vector2(147, -14), Vector2(150, 85), Vector2(112, 86), Vector2(113, 52), Vector2(99, 52), Vector2(99, 105)],
 			"target_zone_position": Vector2(252, 216)
 		},
-		{
+		"goose": {
 			"cutout_polygon": [Vector2(208, 213), Vector2(225, 229), Vector2(245, 232), Vector2(244, 252), Vector2(214, 253), Vector2(198, 228)],
 			"cutout_position": Vector2(401, 273),
 			"polygon_offset": Vector2(-222, -234),
@@ -720,7 +785,7 @@ var data = {
 			"target_zone": [Vector2(107, -22), Vector2(175, -23), Vector2(179, 34), Vector2(105, 36)],
 			"target_zone_position": Vector2(91, 233)
 		},
-		{
+		"swamp": {
 			"cutout_polygon": [Vector2(174, 236), Vector2(202, 232), Vector2(217, 209), Vector2(271, 211), Vector2(275, 243), Vector2(235, 245), Vector2(179, 260), Vector2(169, 251)],
 			"cutout_position": Vector2(365, 243),
 			"polygon_offset": Vector2(-222, -234),
@@ -731,7 +796,7 @@ var data = {
 			"target_zone": [Vector2(72, 152), Vector2(101, -36), Vector2(265, -35), Vector2(322, -47), Vector2(397, -68), Vector2(497, -87), Vector2(495, 155)],
 			"target_zone_position": Vector2(-51, 165)
 		}
-	],
+	},
 	"news": [
 		{
 			"text": "CEO of <COMPANYNAME> *FIRES* 500 workers in shift to *DOWNSIZE* company",
@@ -797,7 +862,19 @@ var data = {
 		"cheeeeesecakeeee",
 		"pancakes4ever",
 		"marshmallows5ever",
-		"birdsarecool22"
+		"birdsarecool22",
+		"disasterus959",
+		"yesyesyesyesh",
+		"cyal8ralig8r",
+		"pingpongchamp0",
+		"ProudDad16",
+		"excited4pkc",
+		"jdf_is_better",
+		"i_love_jdf",
+		"pkc_stan",
+		"jdf_stan",
+		"megamindbestmovie",
+		"buzzlightyrjr"
 	],
 	"countries": [
 		{

@@ -1,6 +1,6 @@
 extends TextureButton
 
-signal reddit_downvote
+onready var events = get_node("/root/Events")
 
 func _pressed():
-	emit_signal("reddit_downvote")
+	events.emit_signal("reddit_downvote")

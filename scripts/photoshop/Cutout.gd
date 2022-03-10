@@ -2,6 +2,7 @@ extends Polygon2D
 
 
 onready var events = get_node("/root/Events")
+onready var Score = get_node("/root/Score")
 
 var mouse_in
 var selected
@@ -16,10 +17,7 @@ var short_circuit_complete = false
 var challenge_success = false
 
 func on_upload():
-	if challenge_success:
-		events.emit_signal("score_balloon", 5, -0.4, 1.0)
-	else:
-		events.emit_signal("score_balloon", -10, -2.0, 0.99)
+	Score.complete_task("photoshop", challenge_success)
 		
 func _process(_delta):
 	if !was_frozen && get_owner().photoshop_freeze:

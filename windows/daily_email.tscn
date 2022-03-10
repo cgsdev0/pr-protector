@@ -28,19 +28,9 @@ margin_bottom = 262.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 14 )
-text = "Hi,
+text = "if you're seeing this email, the game broke
 
-sooo, unfortunate news; Today was actually my last day. 
-
-Since the company has yet to hire my replacement, it seems all of my workload will be falling directly onto you (sorry!)
-
-I wish you the best of luck; I know you're more than capable of keeping this company afloat on your own.
-
-Best Wishes,
-Michael S.
-
-
-P.S. there was a bit of an insider trading scandal this morning, so expect the stock price to be *extra* volatile today...."
+jams be like that :("
 
 [node name="Divider" type="ColorRect" parent="."]
 margin_top = 52.0
@@ -64,7 +54,7 @@ margin_top = 17.0
 margin_right = 365.0
 margin_bottom = 34.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Farewell"
+text = "Oh god why"
 clip_text = true
 
 [node name="TextSubjectLabel" type="Label" parent="."]
@@ -81,7 +71,7 @@ margin_top = 36.0
 margin_right = 353.0
 margin_bottom = 50.0
 custom_colors/font_color = Color( 0.52549, 0.52549, 0.52549, 1 )
-text = "From: Michael S. (michael.s@pkcbusiness.com)"
+text = "From: badcop"
 
 [node name="BtnDelete" type="TextureButton" parent="."]
 margin_left = 373.0

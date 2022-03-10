@@ -19,7 +19,6 @@ signal delete_email
 signal email_link
 signal insert_email(email)
 signal delete_daily_email
-signal show_daily_email
 
 signal open_window(node)
 signal close_window
@@ -27,4 +26,8 @@ signal close_window
 signal unpause_game
 signal pause_game
 
+signal reddit_upvote
+signal reddit_downvote
+signal reddit_queue
 
+signal new_level(level)

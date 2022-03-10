@@ -22,7 +22,7 @@ var unfocused_color = Color("#4f4f4f")
 
 # only used by photoshop windows
 var photoshop_freeze = false
-var photoshop_index = 0
+var photoshop_index = "moon_building"
 
 func focus():
 	focused = true

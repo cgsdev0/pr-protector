@@ -1,6 +1,7 @@
 extends Button
 
 onready var events = get_node("/root/Events")
+onready var Score = get_node("/root/Score")
 
 func _pressed():
 		disabled = true
@@ -11,4 +12,4 @@ func _pressed():
 		get_owner().find_node("Layer5").visible = false
 		get_owner().find_node("Layer6").visible = true
 		get_owner().setClosable(true)
-		events.emit_signal("score_balloon", 5, -0.5, 0.9)
+		Score.complete_task("youtube", true)

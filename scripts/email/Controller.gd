@@ -49,8 +49,7 @@ func _ready():
 	events.connect("delete_email", self, "on_delete_email")
 	events.connect("email_link", self, "on_email_link")
 	events.connect("insert_email", self, "on_insert_email")
-	events.emit_signal("insert_email", {"subject": "We need to talk.", "from": "Human Resources", "body": "a\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\n", "link": "yeet.com", "youtube": 0})
-	pass # Replace with function body.
+	# events.emit_signal("insert_email", {"subject": "We need to talk.", "from": "Human Resources", "body": "a\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\n", "link": "yeet.com", "youtube": 0})
 
 func _process(delta):
 	$NoNew.visible = ($ScrollContainer/VBoxContainer.get_child_count() == 0)

@@ -37,7 +37,7 @@ func _physics_process(delta):
 		scores.append(scoremap)
 	if tick < curr_time:
 		tick = floor(curr_time) + 1.5
-		scores.append({ time = curr_time, score = 0.0 if Score.score == 0.0 else Score.score + rng.randf_range(-0.3, 0.8)})
+		scores.append({ time = curr_time, score = Score.score if Score.lost || Score.won else Score.score + rng.randf_range(-0.3, 0.8)})
 	
 	bounds = calcMinMax()
 	bounds.min_score = min(bounds.average - suggested_window / 2, bounds.min_score - 2)

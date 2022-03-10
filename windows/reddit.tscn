@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
 [ext_resource path="res://fonts/m5x7_med.tres" type="DynamicFont" id=3]
-[ext_resource path="res://images/reddit/placeholder.png" type="Texture" id=4]
+[ext_resource path="res://images/reddit/icons.png" type="Texture" id=4]
 [ext_resource path="res://images/reddit/updoot_pressed.tres" type="Texture" id=5]
 [ext_resource path="res://images/reddit/downdoot_pressed.tres" type="Texture" id=6]
 [ext_resource path="res://images/reddit/downdoot_normal.tres" type="Texture" id=7]
@@ -11,6 +11,166 @@
 [ext_resource path="res://scripts/reddit/BtnUpvote.gd" type="Script" id=9]
 [ext_resource path="res://scripts/reddit/BtnDownvote.gd" type="Script" id=10]
 [ext_resource path="res://scripts/reddit/Controller.gd" type="Script" id=11]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 256, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 320, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 320, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 320, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=39]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Node2D" instance=ExtResource( 1 )]
 dimensions = Vector2( 400, 109 )
@@ -76,12 +236,13 @@ text = "65"
 align = 1
 valign = 1
 
-[node name="Image" type="TextureRect" parent="Body/Control/PostBody" index="1"]
-margin_left = 27.0
-margin_top = 5.0
-margin_right = 91.0
-margin_bottom = 69.0
-texture = ExtResource( 4 )
+[node name="MarginContainer" type="MarginContainer" parent="Body/Control/PostBody" index="1"]
+margin_left = 58.0
+margin_top = 36.0
+mouse_filter = 2
+
+[node name="Image" type="AnimatedSprite" parent="Body/Control/PostBody/MarginContainer" index="0"]
+frames = SubResource( 39 )
 
 [node name="Title" type="Label" parent="Body/Control/PostBody" index="2"]
 margin_left = 98.0
@@ -103,7 +264,7 @@ mouse_filter = 1
 custom_colors/default_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 bbcode_enabled = true
 bbcode_text = "submitted {SOME_TIME} ago by [color=#4d7dd0]gamerpiejess[/color]"
-text = "submitted {SOME_TIME} ago by gamerpiejess"
+text = "submitted {SOME_TIME} ago by [color=#4d7dd0]gamerpiejess[/color]"
 
 [node name="BottomDetails" type="Label" parent="Body/Control/PostBody" index="4"]
 margin_left = 98.0
@@ -140,6 +301,3 @@ enabled_focus_mode = 0
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
 script = ExtResource( 10 )
-
-[connection signal="reddit_upvote" from="Body/Control/PostBody/BtnUpvote" to="Body/Control" method="_on_BtnUpvote_reddit_upvote"]
-[connection signal="reddit_downvote" from="Body/Control/PostBody/BtnDownvote" to="Body/Control" method="_on_BtnDownvote_reddit_downvote"]
