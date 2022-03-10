@@ -37,7 +37,7 @@ func _process(delta):
 	else:
 		speed = min(1000, 1500 * delta + speed)
 	if position == dest && phase == 1:
-		events.emit_signal("price_change", change)
+		events.emit_signal("price_change_user", change)
 		queue_free()
 	if phase == 0 && speed == 0:
 		phase = 1

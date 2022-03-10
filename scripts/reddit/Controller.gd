@@ -17,15 +17,25 @@ func _ready():
 	rng.randomize()
 	
 	post = update_with(new_post())
+	update_title()
 
+func update_title():
+	if !queued && !post:
+		get_owner().title = "ribbit"
+	else:
+		get_owner().title = "ribbit ({COUNT})".format({ "COUNT": queued + 1 })
+	get_owner().update()
+	
 func on_queue():
 	queued += 1
 	if !post && queued:
 		post = update_with(new_post())
+	update_title()
 
 func vote(up: bool):
 	Score.complete_task("reddit", up == post.isgood)
 	post = update_with(new_post())
+	update_title()
 
 func update_with(p):
 	if !p:

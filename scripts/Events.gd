@@ -2,6 +2,7 @@ extends Node
 
 signal change_cursor(cursor)
 signal price_change(amount)
+signal price_change_user(amount)
 signal score_balloon(amount, btm, top)
 signal damage_tick
 
@@ -31,3 +32,6 @@ signal reddit_downvote
 signal reddit_queue
 
 signal new_level(level)
+signal next_level
+signal win_level
+signal lose_level

@@ -17,7 +17,7 @@ func on_open_email(ind, email):
 	$EmailPopover/BodyContainer/Attachment.visible = email.has("link")
 	if email.has("link"):
 		$EmailPopover/BodyContainer/Attachment/LinkText.text = email.link
-	$EmailPopover/BodyContainer/Body.text = email.body
+	$EmailPopover/BodyContainer/Body.bbcode_text = email.body
 	
 func on_delete_email():
 	$EmailPopover.visible = false

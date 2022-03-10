@@ -13,7 +13,7 @@ var repScr
 func _ready():
 	events.connect("photoshop_upload", self, "on_upload")
 	# return
-	# get_owner().photoshop_index = 7
+	# get_owner().photoshop_index = "swamp"
 	
 	var data = all_data[get_owner().photoshop_index]
 
@@ -52,7 +52,7 @@ func _ready():
 
 func _process(delta):
 	if $Loading.visible:
-		$Loading/ProgressBar.value += delta * 100 # TODO
+		$Loading/ProgressBar.value += delta * 30 # TODO
 		if $Loading/ProgressBar.ratio >= 1.0:
 			yield(get_tree().create_timer(1.0), "timeout")
 			$Loading.visible = false

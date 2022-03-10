@@ -9,6 +9,7 @@ onready var data = get_node("/root/Data").data
 onready var Events = get_node("/root/Events")
 
 var score
+var prev_score
 
 # various game state
 var curr_time
@@ -18,14 +19,18 @@ var task_windows
 var reddit_tasks
 var level_duration
 
-var level_multiplier
+var level
 
 var lost
 var won
 var completed
 
+var mistakes
+var successes
+
 func _ready():
-	Events.connect("price_change", self, "on_price_change")
+	Events.connect("price_change", self, "on_price_change", [false])
+	Events.connect("price_change_user", self, "on_price_change", [true])
 	Events.connect("insert_email", self, "on_change_email_count", [1])
 	Events.connect("email_link", self, "on_change_email_count", [{"link": true}, -1])
 	Events.connect("delete_email", self, "on_change_email_count", [{}, -1])
@@ -45,8 +50,8 @@ func _process(delta):
 		if !lost:
 			won = true
 			print("YOU BEAT THE LEVEL")
-			yield(get_tree().create_timer(5.0), "timeout")
-			# TODO: show daily report
+			yield(get_tree().create_timer(3.0), "timeout")
+			Events.emit_signal("win_level", level)
 		
 	
 func reset_state(reset_score: bool):
@@ -58,10 +63,12 @@ func reset_state(reset_score: bool):
 	junk_emails = 0
 	task_windows = 0
 	reddit_tasks = 0
+	successes = 0
+	mistakes = 0
 	level_duration = 60
-	level_multiplier = 1
 	if reset_score:
 		score = 30.0
+	prev_score = score
 
 func max_sequencer(level):
 	var m = 0
@@ -70,25 +77,34 @@ func max_sequencer(level):
 	if level.has("email_sequencer"):
 		m = max(m, level.email_sequencer[-1].time)
 	return m
+
+func on_delete_daily_email():
+	self.started = true
 	
-func on_change_level(level):
+func on_change_level(lev):
 	reset_state(false)
-	level_multiplier = level.multiplier
-	level_duration = max_sequencer(level)
+	self.level_duration = max_sequencer(lev)
+	self.level = lev
 	
 func on_change_reddit_queue(amount):
 	reddit_tasks += amount
 	print_game_state()
 	
-func on_price_change(amount):
+func on_price_change(amount, user):
 	if won:
 		return
+	if user:
+		if amount > 0:
+			successes += 1
+		else:
+			mistakes += 1
 	if score > 0:
 		score = max(0.0, score + amount)
+		
 	if score == 0 && !lost:
 		lost = true
-		yield(get_tree().create_timer(5), "timeout")
-		# TODO: show loss screen
+		yield(get_tree().create_timer(3.0), "timeout")
+		Events.emit_signal("lose_level")
 
 func print_game_state():
 	print ("========================")

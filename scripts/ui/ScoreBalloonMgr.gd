@@ -18,10 +18,14 @@ func rand_round(a, b):
 	return floor(rng.randf_range(-0.3, 0.3) * 100) / 100.0
 
 func on_damage_tick():
-	var level_multiplier = 2 # TODO
-	var task_count = Score.task_emails + (Score.junk_emails * 0.25) + Score.task_windows
+	var level_multiplier = Score.level.multiplier
+	var task_count = Score.task_emails \
+						+ (Score.junk_emails * 0.25) \
+						+ Score.task_windows \
+						+ Score.reddit_tasks * 0.1
 	var task_multiplier = 1 + (task_count / 5.0)
-	events.emit_signal("price_change", (-0.7 + rand_round(-0.25, 0.17)) * task_multiplier * level_multiplier)
+	print("MULT: ", task_multiplier * level_multiplier)
+	events.emit_signal("price_change", (-1.0 + rand_round(-0.11, 0.08)) * task_multiplier * level_multiplier)
 	
 func on_score_balloon(change, btm, top):
 	var node = Node2D.new()

@@ -81,7 +81,6 @@ mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="EmailPopover" type="Control" parent="Body/Controller" index="4"]
-visible = false
 mouse_filter = 1
 
 [node name="Background" type="ColorRect" parent="Body/Controller/EmailPopover" index="0"]
@@ -99,22 +98,18 @@ margin_bottom = 281.0
 custom_constants/separation = 10
 
 [node name="Body" type="RichTextLabel" parent="Body/Controller/EmailPopover/BodyContainer" index="0"]
-margin_right = 314.0
-margin_bottom = 153.0
+margin_right = 328.0
+margin_bottom = 147.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 14 )
-text = "Dear employee,
-
-Please find attached an image of an oopsy woopsy. I did a little upsy dupsy; please correct the image so it looks like my car is actually driving on the right side of the road.
-
-Classic mistake.
-
-Thanks, CEO"
+bbcode_enabled = true
+bbcode_text = "You should never be reading this message. If you are, the game is broken. :("
+text = "You should never be reading this message. If you are, the game is broken. :("
 
 [node name="Attachment" type="ColorRect" parent="Body/Controller/EmailPopover/BodyContainer" index="1"]
 margin_top = 157.0
-margin_right = 314.0
+margin_right = 313.0
 margin_bottom = 203.0
 rect_min_size = Vector2( 313, 46 )
 rect_pivot_offset = Vector2( -166, -45 )
@@ -159,7 +154,7 @@ margin_top = 22.0
 margin_right = 312.0
 margin_bottom = 35.0
 custom_colors/font_color = Color( 0.301961, 0.490196, 0.815686, 1 )
-text = "CEO_driving_mistakes.jpg"
+text = "mistakes_were_made.png"
 clip_text = true
 
 [node name="BtnBack" type="TextureButton" parent="Body/Controller/EmailPopover" index="2"]
@@ -198,7 +193,7 @@ margin_top = 32.0
 margin_right = 382.0
 margin_bottom = 49.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "VERY URGENT TASK"
+text = "oh dear"
 clip_text = true
 
 [node name="TextSubjectLabel" type="Label" parent="Body/Controller/EmailPopover" index="6"]
@@ -215,7 +210,7 @@ margin_top = 51.0
 margin_right = 370.0
 margin_bottom = 65.0
 custom_colors/font_color = Color( 0.52549, 0.52549, 0.52549, 1 )
-text = "From: CEO"
+text = "From: badcop"
 
 [node name="BtnDelete" type="TextureButton" parent="Body/Controller/EmailPopover" index="8"]
 margin_left = 332.0

@@ -35,16 +35,26 @@ var data = {
 		}
 	},
 	"levels": [
+		{},
+		{},
+		{},
+		{},
 		{
+			"title": "Red Friday",
+			"rescale_damage": true,
 			"multiplier": 2,
 			"damage_rate": 4,
-			"reddit_sequencer": [5, 5, 5, 5, 12, 18, 18, 20, 30, 31, 32, 33, 34, 35, 40, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 55],
+			"reddit_sequencer": [3, 3, 3, 12, 18, 18, 20, 30, 31, 32, 33, 34, 35, 40, 50, 50, 50.1, 50.2, 50.3, 50.4, 50.5, 50.6, 50.7, 50.8, 55],
 			"start_email": "day_5_start",
 			"email_sequencer": [
 				{
-					"time": 5,
-					"email": "youtuber",
-				}
+					"time": 7,
+					"email": "ceo_youtuber",
+				},
+				{
+					"time": 20.8,
+					"email": "photoshop_moon_laser",
+				},
 			]
 		}
 	],
@@ -52,7 +62,7 @@ var data = {
 		"day_5_start": {
 			"subject": "Farewell",
 			"from": "Michael S. <michael.s@pkcbusiness.com>",
-			"body": """Hi,
+			"body": """yo,
 
 sooo, unfortunate news; yesterday was actually my last day. 
 
@@ -67,13 +77,47 @@ Michael S.
 P.S. there was a bit of an insider trading scandal this morning, so expect the stock price to be *extra* volatile today....
 """
 		},
-		"youtuber": {
-			"subject": "hey",
-			"from": "PKC Airlines",
-			"body": "bro wtf deal with this",
+		"ceo_youtuber": {
+			"subject": "hi - semi urgent",
+			"from": "Chad Peterson (CEO)",
+			"body": """hi can you deal with this? see attached
+			
+thank u
+
+
+Sent from my PalmPilot 1000
+""",
 			"link": "youtube.com",
 			"youtube": true
-		}
+		},
+		"photoshop_moon_laser": {
+			"subject": "NASA again -_-",
+			"from": "Abigail Peterson (Head of Public Relations)",
+			"body": """It seems NASA has acquired more imagery of our space operations.
+
+I trust you can handle this task; I'm still too busy with the whole dictator thing.
+""",
+			"link": "space_laser.jpg",
+			"photoshop_index": "moon_laser",
+		},
+		"photoshop_intro": {
+			"subject": "NASA problem",
+			"from": "Abigail Peterson (Head of Public Relations)",
+			"body": """Hello,
+
+I'm Abigail Peterson, the Head of Public Relations here at PKC. I come to you today with a bit of an odd request.
+
+NASA has somehow acquired images of our top secret moon base. They're threatening to go public.
+
+Your resumé stated that you are proficient with Photoshop; your skills should transfer seamlessly to our internal tool, PKC PhotoEdit PRO.
+
+Please [u]edit out the base[/u] from the image.
+
+I trust you can handle this task; I'm too busy with this whole dictator fiasco.
+""",
+			"link": "moon_base.jpg",
+			"photoshop_index": "moon_building",
+		},
 	},
 	"contraband": [
 		{

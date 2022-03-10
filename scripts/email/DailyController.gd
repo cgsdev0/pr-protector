@@ -17,6 +17,7 @@ func on_pause(level):
 	$CenterContainer/Node2D/Subject.text = email.subject
 	$CenterContainer/Node2D/BodyContainer/Body.text = email.body
 	get_tree().paused = true
+	yield(get_tree().create_timer(2.5), "timeout")
 	visible = true
 	
 func on_unpause():

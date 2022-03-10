@@ -264,7 +264,7 @@ mouse_filter = 1
 custom_colors/default_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 bbcode_enabled = true
 bbcode_text = "submitted {SOME_TIME} ago by [color=#4d7dd0]gamerpiejess[/color]"
-text = "submitted {SOME_TIME} ago by [color=#4d7dd0]gamerpiejess[/color]"
+text = "submitted {SOME_TIME} ago by gamerpiejess"
 
 [node name="BottomDetails" type="Label" parent="Body/Control/PostBody" index="4"]
 margin_left = 98.0
