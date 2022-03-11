@@ -51,6 +51,11 @@ func _physics_process(delta):
 			if task.has("reddit"):
 				events.emit_signal("reddit_queue", task.reddit)
 			
+			if task.has("email"):
+				print("opening email ", task.email)
+				assert(data.emails.has(task.email))
+				events.emit_signal("insert_email", data.emails[task.email].duplicate())
+			
 			# gross hack :(
 			yield(get_tree().create_timer(0.1), "timeout")
 			delaying_linear_task = false

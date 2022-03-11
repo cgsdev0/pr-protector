@@ -5,8 +5,10 @@ onready var events = get_node("/root/Events")
 onready var ListItem = preload("res://windows/email_list_item.tscn")
 onready var Photoshop = preload("res://windows/photoshop.tscn")
 onready var Youtube = preload("res://windows/youtube.tscn")
+onready var Twitter = preload("res://windows/twitter.tscn")
 
 var opened_ind = 0
+var first_email = true
 
 func on_open_email(ind, email):
 	opened_ind = ind
@@ -32,12 +34,17 @@ func on_email_link():
 		events.emit_signal("open_window", window)
 	if row.email.has("youtube"):
 		events.emit_signal("open_window", Youtube.instance())
+	if row.email.has("twitter"):
+		events.emit_signal("open_window", Twitter.instance())
 	row.queue_free()
 	yield(get_tree().create_timer(0.5), "timeout")
 	$EmailPopover.visible = false
 
 func on_insert_email(email):
 	var row = ListItem.instance()
+	if first_email:
+		first_email = false
+		email.first = true
 	row.email = email
 	$ScrollContainer/VBoxContainer.add_child(row)
 	$ScrollContainer/VBoxContainer.move_child(row, 0)

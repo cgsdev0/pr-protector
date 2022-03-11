@@ -9,13 +9,18 @@ var queued = 0
 
 var rng = RandomNumberGenerator.new()
 
+func on_level_start(level):
+	if level.index == 0:
+		$PostBody/Buttons/AnimationPlayer.play("Flash")
+		
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	events.connect("reddit_upvote", self, "vote", [true])
 	events.connect("reddit_downvote", self, "vote", [false])
 	events.connect("reddit_queue", self, "on_queue")
+	events.connect("new_level", self, "on_level_start")
 	rng.randomize()
-	
+		
 	post = update_with(new_post())
 	update_title()
 
@@ -33,6 +38,7 @@ func on_queue(n):
 	update_title()
 
 func vote(up: bool):
+	$PostBody/Buttons/AnimationPlayer.stop(true)
 	Score.complete_task("reddit", up == post.isgood)
 	post = update_with(new_post())
 	update_title()

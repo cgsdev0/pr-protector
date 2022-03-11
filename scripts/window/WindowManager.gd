@@ -17,7 +17,7 @@ func _ready():
 			body.connect('move_to_top', self, 'move_window_to_top')	
 
 func on_window_open(node):
-	node.position = Vector2(80 + rng.randi_range(0, 50), 80 + rng.randi_range(0, 50))
+	node.position = Vector2(80 + rng.randi_range(0, 50), 35 + rng.randi_range(0, 50))
 	# short delay to get focus
 	yield(get_tree().create_timer(0.1), "timeout")
 	add_child(node)

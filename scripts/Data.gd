@@ -155,6 +155,18 @@ Michael S.
 P.S. there was a bit of an insider trading scandal this morning, so expect the stock price to be *extra* volatile today....
 """
 		},
+		"youtube_tutorial": {
+			"subject": "TODO tuber",
+			"from": "Michael S. <michael.s@pkcbusiness.com>",
+			"body": """I came across one of those video bloggers I was telling you about and figured I'd let you take care of this one.
+
+just report the video and file a copyright claim. don't feel too bad about it, the video is riddled with lies! They should be grateful we don't sue.
+
+Thanks, Michael S.
+""",
+			"link": "youtube.com",
+			"youtube": true,
+		},
 		"ceo_youtuber": {
 			"subject": "hi - semi urgent",
 			"from": "Chad Peterson (CEO)",
@@ -166,7 +178,7 @@ thank u
 Sent from my PalmPilot 1000
 """,
 			"link": "youtube.com",
-			"youtube": true
+			"youtube": true,
 		},
 		"photoshop_moon_laser": {
 			"subject": "NASA again -_-",

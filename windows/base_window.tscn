@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/window/Window.gd" type="Script" id=1]
 [ext_resource path="res://scripts/window/WindowTitleBar.gd" type="Script" id=2]
 [ext_resource path="res://scripts/window/WindowBody.gd" type="Script" id=3]
 [ext_resource path="res://scripts/window/WindowClose.gd" type="Script" id=4]
+[ext_resource path="res://images/ui/hint_arrow.png" type="Texture" id=5]
+[ext_resource path="res://images/ui/close.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Flash"
@@ -19,6 +21,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 0.420448, 2.21914 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NagArrows:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 0.42, 2.21 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -10 ), Vector2( 0, 0 ) ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -51,3 +65,14 @@ script = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Title/WindowClose"]
 anims/Flash = SubResource( 1 )
+
+[node name="CloseSprite" type="Sprite" parent="Body/Title/WindowClose"]
+
+[node name="Close" type="Sprite" parent="Body/Title/WindowClose/CloseSprite"]
+position = Vector2( 6, 7 )
+texture = ExtResource( 6 )
+
+[node name="NagArrows" type="Sprite" parent="Body/Title/WindowClose"]
+visible = false
+texture = ExtResource( 5 )
+offset = Vector2( 7, -13 )

@@ -12,6 +12,8 @@ func _process(delta):
 	if curr_time > 7 && !flash:
 		flash = true
 		$AnimationPlayer.play("Flash")
+		# $NagArrows.self_modulate = get_owner().color
+		$NagArrows.visible = true
 	if flash:
 		update()
 		
@@ -38,7 +40,7 @@ func draw_round_rect(rect: Rect2, color: Color):
 func _draw():
 	var title_height = margin_bottom - margin_top - 4
 	var offset = 2
-	draw_round_rect(Rect2(Vector2(offset, offset), Vector2(title_height, title_height)), modulate)
-	draw_rect(Rect2(Vector2(offset, offset + 1), Vector2(title_height - 1, title_height - 1)), modulate)
-	draw_line(Vector2(offset, offset + 1), Vector2(offset + title_height - 1, offset + title_height), get_owner().title_color)
-	draw_line(Vector2(offset + title_height - 1, offset + 1), Vector2(offset, offset + title_height), get_owner().title_color)
+	# draw_round_rect(Rect2(Vector2(offset, offset), Vector2(title_height, title_height)), modulate)
+	# draw_rect(Rect2(Vector2(offset, offset + 1), Vector2(title_height - 1, title_height - 1)), modulate)
+	# draw_line(Vector2(offset, offset + 1), Vector2(offset + title_height - 1, offset + title_height), get_owner().title_color)
+	# draw_line(Vector2(offset + title_height - 1, offset + 1), Vector2(offset, offset + title_height), get_owner().title_color)

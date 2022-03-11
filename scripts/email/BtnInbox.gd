@@ -8,8 +8,10 @@ var email
 func _ready():
 	set_owner(get_parent().get_owner())
 	if email:
-		$Subject.text = email.subject
-		$From.text = "From: " + email.from
+		$Content/Subject.text = email.subject
+		$Content/From.text = "From: " + email.from
+		if email.has("first"):
+			$Content/AnimationPlayer.play("Flash")
 
 func _gui_input(event):
 	if event is InputEventMouseButton && event.pressed && event.button_index == 1:
