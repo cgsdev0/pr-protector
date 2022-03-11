@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/youtube/pewds.png" type="Texture" id=2]
@@ -19,6 +19,20 @@
 [ext_resource path="res://images/youtube/pewdz_character_sheet_v2.png" type="Texture" id=17]
 [ext_resource path="res://images/ui/spinner.png" type="Texture" id=18]
 [ext_resource path="res://scripts/youtube/AnimationJitter.gd" type="Script" id=19]
+[ext_resource path="res://images/youtube/captcha/witness.png" type="Texture" id=20]
+[ext_resource path="res://images/youtube/captcha/texas.png" type="Texture" id=21]
+[ext_resource path="res://images/youtube/captcha/california.png" type="Texture" id=22]
+[ext_resource path="res://images/youtube/captcha/base.png" type="Texture" id=23]
+[ext_resource path="res://images/youtube/captcha/colorado.png" type="Texture" id=24]
+[ext_resource path="res://scripts/youtube/States.gd" type="Script" id=25]
+[ext_resource path="res://images/youtube/captcha/florida.png" type="Texture" id=26]
+[ext_resource path="res://images/youtube/captcha/nevada.png" type="Texture" id=27]
+[ext_resource path="res://images/youtube/captcha/michigan.png" type="Texture" id=28]
+[ext_resource path="res://images/youtube/captcha/nebraska.png" type="Texture" id=29]
+[ext_resource path="res://images/youtube/captcha/new york.png" type="Texture" id=30]
+[ext_resource path="res://images/youtube/captcha/washington.png" type="Texture" id=31]
+[ext_resource path="res://images/youtube/captcha/montana.png" type="Texture" id=32]
+[ext_resource path="res://scripts/youtube/RelocationLabel.gd" type="Script" id=33]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 17 )
@@ -116,6 +130,55 @@ animations = [ {
 "speed": 15.0
 } ]
 
+[sub_resource type="Animation" id=23]
+resource_name = "Shake"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 8, 0 ), Vector2( -8, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 20, 30 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 20 )
+region = Rect2( 20, 0, 20, 30 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 20 )
+region = Rect2( 40, 0, 20, 30 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 20 )
+region = Rect2( 60, 0, 20, 30 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 20 )
+region = Rect2( 80, 0, 20, 30 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 20 )
+region = Rect2( 100, 0, 20, 30 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
 [node name="Node2D" instance=ExtResource( 1 )]
 dimensions = Vector2( 390, 360 )
 color = Color( 0.878431, 0.14902, 0.14902, 1 )
@@ -178,7 +241,7 @@ margin_right = 199.0
 margin_bottom = 353.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 5 )
-text = "Dunc69"
+text = "pewpewdie"
 
 [node name="YtUserIcon" type="Sprite" parent="Body/Control/Layer1" index="4"]
 position = Vector2( 36, 326 )
@@ -217,7 +280,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 6
+frame = 15
 playing = true
 script = ExtResource( 9 )
 
@@ -349,7 +412,7 @@ color = Color( 0, 0, 0, 0.666667 )
 margin_left = 55.0
 margin_top = 83.0
 margin_right = 330.0
-margin_bottom = 298.0
+margin_bottom = 339.0
 mouse_filter = 2
 
 [node name="Spinner" type="Sprite" parent="Body/Control/Layer4" index="2"]
@@ -370,17 +433,154 @@ custom_fonts/font = ExtResource( 4 )
 text = "Captcha"
 align = 1
 
-[node name="Button" type="Button" parent="Body/Control/Layer4" index="4"]
+[node name="Label2" type="Label" parent="Body/Control/Layer4" index="4"]
+margin_left = 69.0
+margin_top = 121.0
+margin_right = 330.0
+margin_bottom = 150.0
+theme = ExtResource( 7 )
+text = "Please protect the witness to prove you are human. Relocate them to"
+autowrap = true
+
+[node name="RelocationLabel" type="Label" parent="Body/Control/Layer4" index="5"]
+margin_left = 202.0
+margin_top = 137.0
+margin_right = 344.0
+margin_bottom = 157.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0.878431, 0.14902, 0.14902, 1 )
+text = "Texas"
+autowrap = true
+script = ExtResource( 33 )
+
+[node name="Button" type="Button" parent="Body/Control/Layer4" index="6"]
 margin_left = 275.0
-margin_top = 267.0
+margin_top = 307.0
 margin_right = 323.0
-margin_bottom = 291.0
+margin_bottom = 331.0
 focus_mode = 0
 mouse_filter = 1
 theme = ExtResource( 7 )
+disabled = true
 enabled_focus_mode = 0
 text = "Next"
 script = ExtResource( 14 )
+
+[node name="CaptchaGame" type="Node2D" parent="Body/Control/Layer4" index="7"]
+position = Vector2( 196, 238 )
+
+[node name="Base" type="Sprite" parent="Body/Control/Layer4/CaptchaGame" index="0"]
+texture = ExtResource( 23 )
+script = ExtResource( 25 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Control/Layer4/CaptchaGame/Base" index="0"]
+anims/Shake = SubResource( 23 )
+
+[node name="States" type="Node2D" parent="Body/Control/Layer4/CaptchaGame/Base" index="1"]
+modulate = Color( 0.878431, 0.14902, 0.14902, 0.705882 )
+position = Vector2( 100, -46 )
+
+[node name="California" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="0"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -191, 51 )
+texture = ExtResource( 22 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/California" index="0"]
+visible = false
+polygon = PoolVector2Array( -23, -27, -22, -7, -8, 18, 10, 33, 28, 23, -2, -6, -3, -8, -3, -26 )
+
+[node name="Colorado" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="1"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -139.5, 44.5 )
+texture = ExtResource( 24 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/Colorado" index="0"]
+visible = false
+polygon = PoolVector2Array( -12.5, 8.5, -12.5, -8.5, 12.5, -8.5, 12.5, 8.5 )
+
+[node name="Texas" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="2"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -121, 78.5 )
+texture = ExtResource( 21 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/Texas" index="0"]
+visible = false
+polygon = PoolVector2Array( 3, -22.5, -10, -22.5, -22, -2.5, -22, 24.5, 29, 24.5, 29, -14.5 )
+
+[node name="New York" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="3"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -27.5, 25 )
+texture = ExtResource( 30 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/New York" index="0"]
+visible = false
+polygon = PoolVector2Array( 10.5, 18, 0.5, 12, -10.5, 9, -18.5, 3, -9.5, -6, 2.5, -16, 11.5, -17, 20.5, 16 )
+
+[node name="Montana" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="4"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -157.5, 3.5 )
+texture = ExtResource( 32 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/Montana" index="0"]
+visible = false
+polygon = PoolVector2Array( -23.5, -16.5, -22.5, -5.5, -17.5, -0.5, -16.5, 4.5, -12.5, 10.5, -10.5, 12.5, -2.5, 10.5, -0.5, 8.5, 24.5, 9.5, 27.5, -16.5 )
+
+[node name="Washington" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="5"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -197.5, -0.5 )
+texture = ExtResource( 31 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/Washington" index="0"]
+visible = false
+polygon = PoolVector2Array( 14.5, 14.5, 15.5, -13.5, -17.5, -12.5, -14.5, 12.5 )
+
+[node name="Nevada" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="6"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -182.5, 45 )
+texture = ExtResource( 27 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/Nevada" index="0"]
+visible = false
+polygon = PoolVector2Array( 6.5, 16, -1.5, 6, -4.5, 6, -10.5, 0, -10.5, -16, 10.5, -16, 10.5, 8 )
+
+[node name="Nebraska" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="7"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -117.5, 30.5 )
+texture = ExtResource( 29 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/Nebraska" index="0"]
+visible = false
+polygon = PoolVector2Array( -8.5, 4.5, -17.5, 4.5, -17.5, -10.5, 17.5, -10.5, 19.5, 11.5, -8.5, 12.5 )
+
+[node name="Michigan" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="8"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -66, 15.5 )
+texture = ExtResource( 28 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/Michigan" index="0"]
+visible = false
+polygon = PoolVector2Array( 16, 17.5, 20, -2.5, 11, -14.5, -7, -15.5, -15, -9.5, -4, 17.5 )
+
+[node name="Florida" type="Sprite" parent="Body/Control/Layer4/CaptchaGame/Base/States" index="9"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -56.5, 93 )
+texture = ExtResource( 26 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/States/Florida" index="0"]
+visible = false
+polygon = PoolVector2Array( 3.5, 13, -3.5, 4, -18.5, -9, -16.5, -17, 14.5, -19, 22.5, 8, 13.5, 18 )
+
+[node name="Witness" type="Node2D" parent="Body/Control/Layer4/CaptchaGame/Base" index="2"]
+position = Vector2( 101, -41 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Body/Control/Layer4/CaptchaGame/Base/Witness" index="0"]
+frames = SubResource( 30 )
+offset = Vector2( 1, -10 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Body/Control/Layer4/CaptchaGame/Base/Witness" index="1"]
+visible = false
+position = Vector2( 2, -9 )
+polygon = PoolVector2Array( 13, 15, 13, -15, -15, -16, -14, 17 )
 
 [node name="Layer5" type="Control" parent="Body/Control" index="4"]
 visible = false

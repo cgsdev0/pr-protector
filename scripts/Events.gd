@@ -35,3 +35,6 @@ signal new_level(level)
 signal next_level
 signal win_level
 signal lose_level
+
+signal select_state(state)
+signal beat_captcha

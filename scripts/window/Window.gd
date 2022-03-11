@@ -5,6 +5,7 @@ extends Node2D
 
 export var dimensions : Vector2
 export var color : Color = Color.white
+export var bg_color : Color = Color.white
 export var title : String
 export var closable : bool
 
@@ -82,7 +83,7 @@ func lighten(color: Color):
 	
 func _draw():
 	var nudge = Vector2(1, 0)
-	draw_rect(Rect2(Vector2(0,0), dimensions - nudge), Color.white)
+	draw_rect(Rect2(Vector2(0,0), dimensions - nudge), bg_color)
 	
 	var title_color = color
 	var border_color = unfocused_color
