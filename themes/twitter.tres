@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[ext_resource path="res://fonts/m5x7_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://images/twitter/button_primary.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 80, 32 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 80, 32 )
+modulate_color = Color( 0.462745, 0.560784, 0.654902, 1 )
+
+[resource]
+Button/fonts/font = ExtResource( 1 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 2 )
+Button/styles/pressed = SubResource( 3 )
+Label/colors/font_color = Color( 0.858824, 0.858824, 0.858824, 1 )
+Label/fonts/font = ExtResource( 1 )

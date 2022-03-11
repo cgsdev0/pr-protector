@@ -1,44 +1,98 @@
 extends Node
 
 var data = {
-	"rewards": {
-		"photoshop": {
-			"good": {
-				"base": 5,
-				"range_lower": -0.4,
-				"range_upper": 1.0
+	"tweakables": {
+		"starting_score": 90,
+		"global_scalar": 3,
+		"rewards": {
+			"photoshop": {
+				"good": {
+					"base": 5,
+					"range_lower": -0.4,
+					"range_upper": 1.0
+				},
+				"bad": {
+					"base": -10,
+					"range_lower": -2.0,
+					"range_upper": 0.99
+				},
 			},
-			"bad": {
-				"base": -10,
-				"range_lower": -2.0,
-				"range_upper": 0.99
+			"reddit": {
+				"good": {
+					"base": 1.5,
+					"range_lower": -0.1,
+					"range_upper": 0.1
+				},
+				"bad": {
+					"base": -4.5,
+					"range_lower": -0.6,
+					"range_upper": 0.6
+				},
 			},
+			"twitter": {
+				"good": {
+					"base": 4,
+					"range_lower": -0.4,
+					"range_upper": 0.4
+				},
+				"bad": {
+					"base": -6,
+					"range_lower": -1.6,
+					"range_upper": 1.6
+				},
+			},
+			"youtube": {
+				"good": {
+					"base": 5,
+					"range_lower": -0.5,
+					"range_upper": 0.9,
+				},
+			}
 		},
-		"reddit": {
-			"good": {
-				"base": 1.5,
-				"range_lower": -0.1,
-				"range_upper": 0.1
-			},
-			"bad": {
-				"base": -4.5,
-				"range_lower": -0.6,
-				"range_upper": 0.6
-			},
-		},
-		"youtube": {
-			"good": {
-				"base": 5,
-				"range_lower": -0.5,
-				"range_upper": 0.9,
-			},
-		}
 	},
 	"levels": [
-		{},
-		{},
-		{},
-		{},
+		{
+			"title": "The New Job",
+			"multiplier": 1,
+			"start_email": "day_1_start",
+			"damage_rate": 5,
+			"self_correct_price": true,
+			"linear_sequencer": [
+				{
+					"reddit": 3 
+				},
+				{
+					"email": "twitter_tutorial"
+				},
+				{
+					"reddit": 4
+				}
+			]
+		},
+		{
+			"title": "idk what to name day 2",
+			"multiplier": 1,
+			"start_email": "day_2_start",
+			"damage_rate": 5,
+			"self_correct_price": true,
+			"linear_sequencer": [
+				{
+					"reddit": 3 
+				},
+				{
+					"email": "youtube_tutorial"
+				},
+				{
+					"reddit": 2
+				},
+				{
+					"email": "twitter_tutorial" # PLACEHOLDER
+				},
+				{
+					"email": "youtube_tutorial" # PLACEHOLDER
+				},
+			]
+		},
 		{
 			"title": "Red Friday",
 			"rescale_damage": true,
@@ -59,6 +113,30 @@ var data = {
 		}
 	],
 	"emails": {
+		"day_1_start": {
+			"subject": "Welcome to PKC!",
+			"from": "Michael S. <michael.s@pkcbusiness.com>",
+			"body": """Woo! About time!
+
+I FINALLY got you in! Here's the gist: Our job is to protect the image of our dear PKC (GLORY TO PKC!) family! 
+
+That means we gotta updoot company praise, downdoot company h8trs (DOWN WITH JDF), and cancel those who dare to spew anti-PKC propaganda on Clucker!
+
+You can make a couple of mistakes here or there, but if you screw up too much, the company's share price goes down, and you and I are booted straight from the 186th floor straight to the 1st via the PKC Ex-Employment Express Gravity S.H.A.F.T.
+
+Cheers! Michael S.
+"""
+		},
+		"day_2_start": {
+			"subject": "Nice work!!!!",
+			"from": "Michael S. <michael.s@pkcbusiness.com>",
+			"body": """Amazing job yesterday! You really showed those haters what's up! The higher ups are really digging all the work you put in to protect our precious family, so they've decided to give you some extra work!
+
+That awful site \"YoockToob\" has been stirring a muck with a buncha people thinking they're slick making all these videos attacking and \"exposing\" us, but we'll show them! We're gonna hit 'em, report 'em, and take 'em down before anyone's the wiser! 
+
+Have fun! Michael S.
+"""
+		},
 		"day_5_start": {
 			"subject": "Farewell",
 			"from": "Michael S. <michael.s@pkcbusiness.com>",
@@ -99,6 +177,14 @@ I trust you can handle this task; I'm still too busy with the whole dictator thi
 """,
 			"link": "space_laser.jpg",
 			"photoshop_index": "moon_laser",
+		},
+		"twitter_tutorial": {
+			"subject": "twitter tutorial",
+			"from": "TODO",
+			"body": """ALSO TODO
+""",
+			"link": "clucker.com",
+			"twitter": true,
 		},
 		"photoshop_intro": {
 			"subject": "NASA problem",

@@ -25,16 +25,19 @@ signal open_window(node)
 signal close_window
 
 signal unpause_game
-signal pause_game
+signal pause_game(already_paused)
 
 signal reddit_upvote
 signal reddit_downvote
-signal reddit_queue
+signal reddit_queue(n)
 
 signal new_level(level)
+signal linear_level_completed
 signal next_level
 signal win_level
 signal lose_level
 
 signal select_state(state)
 signal beat_captcha
+
+signal tweet_clicked

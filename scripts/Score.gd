@@ -11,6 +11,8 @@ onready var Events = get_node("/root/Events")
 var score
 var prev_score
 
+var tweakables
+
 # various game state
 var curr_time
 var task_emails
@@ -18,6 +20,7 @@ var junk_emails
 var task_windows
 var reddit_tasks
 var level_duration
+var linear_complete
 
 var level
 
@@ -29,6 +32,7 @@ var mistakes
 var successes
 
 func _ready():
+	tweakables = data.tweakables
 	Events.connect("price_change", self, "on_price_change", [false])
 	Events.connect("price_change_user", self, "on_price_change", [true])
 	Events.connect("insert_email", self, "on_change_email_count", [1])
@@ -36,15 +40,26 @@ func _ready():
 	Events.connect("delete_email", self, "on_change_email_count", [{}, -1])
 	Events.connect("open_window", self, "on_change_window_count", [1])
 	Events.connect("close_window", self, "on_change_window_count", [{}, -1])
-	Events.connect("reddit_queue", self, "on_change_reddit_queue", [1])
+	Events.connect("reddit_queue", self, "on_change_reddit_queue")
 	Events.connect("reddit_upvote", self, "on_change_reddit_queue", [-1])
 	Events.connect("reddit_downvote", self, "on_change_reddit_queue", [-1])
 	Events.connect("new_level", self, "on_change_level")
+	Events.connect("linear_level_completed", self, "on_linear_level_complete")
 	reset_state(true)
 
+func has_pending_tasks():
+	return task_emails || task_windows || reddit_tasks
+	
 func _process(delta):
 	curr_time += delta
-	if curr_time > level_duration && !task_emails && !task_windows && !reddit_tasks && !lost && !completed:
+	
+	# win condition
+	if curr_time > level_duration \
+			&& (linear_complete || !level.has("linear_sequencer")) \
+			&& !has_pending_tasks() \
+			&& !lost \
+			&& !completed:
+				
 		completed = true
 		yield(get_tree().create_timer(2.0), "timeout")
 		if !lost:
@@ -53,11 +68,14 @@ func _process(delta):
 			yield(get_tree().create_timer(3.0), "timeout")
 			Events.emit_signal("win_level", level)
 		
+func on_linear_level_complete():
+	linear_complete = true
 	
 func reset_state(reset_score: bool):
 	lost = false
 	won = false
 	completed = false
+	linear_complete = false
 	curr_time = 0
 	task_emails = 0
 	junk_emails = 0
@@ -67,7 +85,7 @@ func reset_state(reset_score: bool):
 	mistakes = 0
 	level_duration = 60
 	if reset_score:
-		score = 30.0
+		score = tweakables.starting_score
 	prev_score = score
 
 func max_sequencer(level):
@@ -126,5 +144,10 @@ func on_change_window_count(node, count):
 	
 # HELPER FUNCTION FOR COMPLETING A TASK
 func complete_task(category: String, good: bool):
-	var r = data.rewards[category]["good" if good else "bad"]
-	Events.emit_signal("score_balloon", r.base, r.range_lower, r.range_upper)
+	var r = data.tweakables.rewards[category]["good" if good else "bad"]
+	Events.emit_signal(
+		"score_balloon", 
+		r.base * tweakables.global_scalar, 
+		r.range_lower * tweakables.global_scalar, 
+		r.range_upper * tweakables.global_scalar
+		)

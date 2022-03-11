@@ -18,6 +18,14 @@ func rand_round(a, b):
 	return floor(rng.randf_range(-0.3, 0.3) * 100) / 100.0
 
 func on_damage_tick():
+	var rng_damge = (-1.0 + rand_round(-0.11, 0.08)) * Score.tweakables.global_scalar
+	
+	var correcting = Score.level.has("self_correct_price") && Score.level.self_correct_price
+	var losses = Score.tweakables.starting_score - Score.score
+	if losses > 0 && correcting:
+		events.emit_signal("price_change", max(losses / 2, min(losses, -rng_damge)))
+		return
+		
 	var level_multiplier = Score.level.multiplier
 	var task_count = Score.task_emails \
 						+ (Score.junk_emails * 0.25) \
@@ -25,7 +33,7 @@ func on_damage_tick():
 						+ Score.reddit_tasks * 0.1
 	var task_multiplier = 1 + (task_count / 5.0)
 	print("MULT: ", task_multiplier * level_multiplier)
-	events.emit_signal("price_change", (-1.0 + rand_round(-0.11, 0.08)) * task_multiplier * level_multiplier)
+	events.emit_signal("price_change", (rng_damge) * task_multiplier * level_multiplier)
 	
 func on_score_balloon(change, btm, top):
 	var node = Node2D.new()

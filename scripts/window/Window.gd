@@ -15,6 +15,7 @@ var font
 var bodyNode
 var titleNode
 var closeNode
+var title_color
 
 var focused
 
@@ -83,9 +84,11 @@ func lighten(color: Color):
 	
 func _draw():
 	var nudge = Vector2(1, 0)
+	var shadow_color = Color(0,0,0, 0.1)
+	draw_rect(Rect2(Vector2(6,6), dimensions - nudge), shadow_color)
 	draw_rect(Rect2(Vector2(0,0), dimensions - nudge), bg_color)
 	
-	var title_color = color
+	title_color = color
 	var border_color = unfocused_color
 	if focused:
 		border_color = focused_color

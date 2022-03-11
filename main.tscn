@@ -187,20 +187,22 @@ script = ExtResource( 18 )
 
 [node name="DailyEmail" type="Control" parent="."]
 pause_mode = 2
-visible = false
 margin_right = 960.0
 margin_bottom = 540.0
+mouse_filter = 2
 theme = ExtResource( 4 )
 script = ExtResource( 20 )
 
 [node name="ColorRect" type="ColorRect" parent="DailyEmail"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 0.6 )
 
 [node name="CenterContainer" type="CenterContainer" parent="DailyEmail"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="Node2D" parent="DailyEmail/CenterContainer" instance=ExtResource( 19 )]
 margin_left = 280.0

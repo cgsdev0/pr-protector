@@ -13,7 +13,6 @@ func _ready():
 
 
 func on_pause(level):
-	get_tree().paused = true
 	$CenterContainer/Node2D/Body.bbcode_text = """
 	
 	
@@ -41,6 +40,5 @@ Keep up the hard work! Remember - we're all a part of the PKC family!
 	visible = true
 	
 func on_unpause():
-	get_tree().paused = false
 	yield(get_tree().create_timer(1.0), "timeout")
 	visible = false

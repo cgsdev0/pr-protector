@@ -26,8 +26,8 @@ func update_title():
 		get_owner().title = "ribbit ({COUNT})".format({ "COUNT": queued + 1 })
 	get_owner().update()
 	
-func on_queue():
-	queued += 1
+func on_queue(n):
+	queued += n
 	if !post && queued:
 		post = update_with(new_post())
 	update_title()

@@ -81,6 +81,7 @@ mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="EmailPopover" type="Control" parent="Body/Controller" index="4"]
+visible = false
 mouse_filter = 1
 
 [node name="Background" type="ColorRect" parent="Body/Controller/EmailPopover" index="0"]

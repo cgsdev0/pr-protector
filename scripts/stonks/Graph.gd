@@ -24,6 +24,7 @@ export var bg_color: Color = Color.white
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	suggested_window *= Score.tweakables.global_scalar
 	rng.randomize()
 	
 func _physics_process(delta):
