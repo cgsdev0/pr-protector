@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/youtube/pewds.png" type="Texture" id=2]
@@ -33,6 +33,14 @@
 [ext_resource path="res://images/youtube/captcha/washington.png" type="Texture" id=31]
 [ext_resource path="res://images/youtube/captcha/montana.png" type="Texture" id=32]
 [ext_resource path="res://scripts/youtube/RelocationLabel.gd" type="Script" id=33]
+[ext_resource path="res://images/youtube/captcha2/soccerdude1.png" type="Texture" id=34]
+[ext_resource path="res://images/youtube/captcha2/socerball.png" type="Texture" id=35]
+[ext_resource path="res://images/youtube/captcha2/play_button.png" type="Texture" id=36]
+[ext_resource path="res://images/youtube/captcha2/field.png" type="Texture" id=37]
+[ext_resource path="res://scripts/youtube/CaptchaBlocker.gd" type="Script" id=38]
+[ext_resource path="res://scripts/youtube/SoccerDude.gd" type="Script" id=39]
+[ext_resource path="res://images/youtube/captcha2/net.png" type="Texture" id=40]
+[ext_resource path="res://scripts/youtube/SoccerBall.gd" type="Script" id=41]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 17 )
@@ -179,6 +187,22 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 35 )
+region = Rect2( 0, 0, 19, 19 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 35 )
+region = Rect2( 19, 0, 19, 19 )
+
+[sub_resource type="SpriteFrames" id=33]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
 [node name="Node2D" instance=ExtResource( 1 )]
 dimensions = Vector2( 390, 360 )
 color = Color( 0.878431, 0.14902, 0.14902, 1 )
@@ -252,7 +276,7 @@ centered = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 script = ExtResource( 19 )
 
@@ -280,7 +304,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 3
+frame = 9
 playing = true
 script = ExtResource( 9 )
 
@@ -398,7 +422,6 @@ text = "OK"
 script = ExtResource( 12 )
 
 [node name="Layer4" type="Control" parent="Body/Control" index="3"]
-visible = false
 mouse_filter = 1
 
 [node name="OpacityMask" type="ColorRect" parent="Body/Control/Layer4" index="0"]
@@ -433,27 +456,7 @@ custom_fonts/font = ExtResource( 4 )
 text = "Captcha"
 align = 1
 
-[node name="Label2" type="Label" parent="Body/Control/Layer4" index="4"]
-margin_left = 69.0
-margin_top = 121.0
-margin_right = 330.0
-margin_bottom = 150.0
-theme = ExtResource( 7 )
-text = "Please protect the witness to prove you are human. Relocate them to"
-autowrap = true
-
-[node name="RelocationLabel" type="Label" parent="Body/Control/Layer4" index="5"]
-margin_left = 202.0
-margin_top = 137.0
-margin_right = 344.0
-margin_bottom = 157.0
-theme = ExtResource( 7 )
-custom_colors/font_color = Color( 0.878431, 0.14902, 0.14902, 1 )
-text = "Texas"
-autowrap = true
-script = ExtResource( 33 )
-
-[node name="Button" type="Button" parent="Body/Control/Layer4" index="6"]
+[node name="Button" type="Button" parent="Body/Control/Layer4" index="4"]
 margin_left = 275.0
 margin_top = 307.0
 margin_right = 323.0
@@ -466,10 +469,31 @@ enabled_focus_mode = 0
 text = "Next"
 script = ExtResource( 14 )
 
-[node name="CaptchaGame" type="Node2D" parent="Body/Control/Layer4" index="7"]
+[node name="CaptchaGame" type="Node2D" parent="Body/Control/Layer4" index="5"]
+visible = false
 position = Vector2( 196, 238 )
 
-[node name="Base" type="Sprite" parent="Body/Control/Layer4/CaptchaGame" index="0"]
+[node name="Label2" type="Label" parent="Body/Control/Layer4/CaptchaGame" index="0"]
+margin_left = -127.0
+margin_top = -117.0
+margin_right = 134.0
+margin_bottom = -88.0
+theme = ExtResource( 7 )
+text = "Please protect the witness to prove you are human. Relocate them to"
+autowrap = true
+
+[node name="RelocationLabel" type="Label" parent="Body/Control/Layer4/CaptchaGame" index="1"]
+margin_left = 6.0
+margin_top = -101.0
+margin_right = 148.0
+margin_bottom = -81.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0.878431, 0.14902, 0.14902, 1 )
+text = "Texas"
+autowrap = true
+script = ExtResource( 33 )
+
+[node name="Base" type="Sprite" parent="Body/Control/Layer4/CaptchaGame" index="2"]
 texture = ExtResource( 23 )
 script = ExtResource( 25 )
 
@@ -581,6 +605,76 @@ offset = Vector2( 1, -10 )
 visible = false
 position = Vector2( 2, -9 )
 polygon = PoolVector2Array( 13, 15, 13, -15, -15, -16, -14, 17 )
+
+[node name="CaptchaGame2" type="Node2D" parent="Body/Control/Layer4" index="6"]
+position = Vector2( 196, 238 )
+
+[node name="Label2" type="Label" parent="Body/Control/Layer4/CaptchaGame2" index="0"]
+margin_left = -114.0
+margin_top = -117.0
+margin_right = 147.0
+margin_bottom = -88.0
+theme = ExtResource( 7 )
+text = "Protect the goal to prove you are human."
+autowrap = true
+
+[node name="Base" type="Sprite" parent="Body/Control/Layer4/CaptchaGame2" index="1"]
+position = Vector2( -5, -19 )
+texture = ExtResource( 37 )
+
+[node name="YSort" type="YSort" parent="Body/Control/Layer4/CaptchaGame2/Base" index="0"]
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="Body/Control/Layer4/CaptchaGame2/Base/YSort" index="0"]
+script = ExtResource( 39 )
+
+[node name="Soccerdude1" type="Sprite" parent="Body/Control/Layer4/CaptchaGame2/Base/YSort/KinematicBody2D2" index="0"]
+position = Vector2( -1, -34 )
+texture = ExtResource( 34 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body/Control/Layer4/CaptchaGame2/Base/YSort/KinematicBody2D2" index="1"]
+position = Vector2( -4.01596e-07, 4.59372 )
+rotation = 3.14159
+scale = Vector2( 1, 1.174 )
+polygon = PoolVector2Array( -7, 29, -7, 27, 9, 27, 9, 29 )
+one_way_collision = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Body/Control/Layer4/CaptchaGame2/Base/YSort" index="1"]
+position = Vector2( 0, 67 )
+script = ExtResource( 41 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body/Control/Layer4/CaptchaGame2/Base/YSort/KinematicBody2D" index="0"]
+polygon = PoolVector2Array( -6, -5, -2, -8, 2, -8, 6, -5, 8, -2, 8, 2, 5, 6, 2, 8, -2, 8, -5, 6, -8, 2, -8, -2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Control/Layer4/CaptchaGame2/Base/YSort/KinematicBody2D" index="1"]
+frames = SubResource( 33 )
+
+[node name="Net" type="Sprite" parent="Body/Control/Layer4/CaptchaGame2/Base" index="1"]
+position = Vector2( 0, -59 )
+texture = ExtResource( 40 )
+
+[node name="Net" type="StaticBody2D" parent="Body/Control/Layer4/CaptchaGame2/Base/Net" index="0"]
+
+[node name="Net" type="CollisionPolygon2D" parent="Body/Control/Layer4/CaptchaGame2/Base/Net/Net" index="0"]
+polygon = PoolVector2Array( -45, -15, 45, -15, 45, 15, 43, 15, 43, -11, -43, -11, -43, 15, -45, 15 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Body/Control/Layer4/CaptchaGame2/Base" index="2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body/Control/Layer4/CaptchaGame2/Base/StaticBody2D" index="0"]
+polygon = PoolVector2Array( -49, -43, -49, -73, -104, -73, -104, 79, 104, 79, 104, -74, 49, -74, 49, -43, 44, -43, 44, -84, 115, -84, 122, 89, -123, 88, -123, -89, -44, -83, -44, -43 )
+
+[node name="ColorRect" type="ColorRect" parent="Body/Control/Layer4/CaptchaGame2" index="2"]
+visible = false
+margin_left = -115.0
+margin_top = -99.0
+margin_right = 105.0
+margin_bottom = 61.0
+mouse_filter = 1
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 38 )
+
+[node name="PlayButton" type="Sprite" parent="Body/Control/Layer4/CaptchaGame2/ColorRect" index="0"]
+position = Vector2( 110, 77 )
+texture = ExtResource( 36 )
 
 [node name="Layer5" type="Control" parent="Body/Control" index="4"]
 visible = false

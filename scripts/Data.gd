@@ -757,7 +757,7 @@ I trust you can handle this task; I'm too busy with this whole dictator fiasco.
 		},
 		{
 			"istopical": false,
-			"text": "If you dunk your oreos in milk, you're going to heck."
+			"text": "If you dunk your oreos in milk, you're going to hell."
 		},
 		{
 			"istopical": false,

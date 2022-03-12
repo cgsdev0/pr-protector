@@ -1,0 +1,203 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://fonts/m5x7_med.tres" type="DynamicFont" id=1]
+[ext_resource path="res://images/ui/fireside.png" type="Texture" id=2]
+[ext_resource path="res://images/ui/burnt_brian.png" type="Texture" id=3]
+[ext_resource path="res://fonts/m5x7_giant.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/m5x7_big.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scripts/menu/BtnPlay.gd" type="Script" id=6]
+[ext_resource path="res://scripts/ui/PixelScale.gd" type="Script" id=7]
+[ext_resource path="res://themes/menu_theme.tres" type="Theme" id=8]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 11.0
+} ]
+
+[sub_resource type="Animation" id=10]
+resource_name = "SlideIn"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.31864, 2.21914 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 60, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "SlideIn"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.31864, 2.21914 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 60, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "SlideIn"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.31864, 2.21914 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 60, 0 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Control" type="Control" parent="."]
+mouse_filter = 2
+theme = ExtResource( 8 )
+
+[node name="Credits" type="Control" parent="Control"]
+
+[node name="Label" type="Label" parent="Control/Credits"]
+margin_left = 505.0
+margin_top = 375.0
+margin_right = 935.0
+margin_bottom = 524.0
+custom_fonts/font = ExtResource( 1 )
+text = "Mari Locsin
+Sarah Schulte
+Jesse Mendez
+Brian Chrzanowski
+Made for the 2022 Fireside Game Jam   "
+align = 2
+
+[node name="BurntBrian" type="Sprite" parent="Control/Credits"]
+position = Vector2( 912, 477 )
+texture = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Credits"]
+position = Vector2( 921, 500 )
+frames = SubResource( 9 )
+playing = true
+
+[node name="Label" type="Label" parent="Control"]
+margin_top = 49.0
+margin_right = 959.0
+margin_bottom = 218.0
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 8
+custom_fonts/font = ExtResource( 4 )
+text = "PR PROTECTOR"
+align = 1
+
+[node name="BtnPlay" type="ReferenceRect" parent="Control"]
+margin_left = -17.0
+margin_top = 267.0
+margin_right = 342.0
+margin_bottom = 327.0
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Control/BtnPlay"]
+margin_right = 330.0
+margin_bottom = 51.0
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+custom_fonts/font = ExtResource( 5 )
+text = ">  START"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/BtnPlay"]
+reset_on_save = false
+anims/SlideIn = SubResource( 10 )
+
+[node name="BtnFullscreen" type="ReferenceRect" parent="Control"]
+margin_left = -17.0
+margin_top = 327.0
+margin_right = 342.0
+margin_bottom = 387.0
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Control/BtnFullscreen"]
+margin_right = 330.0
+margin_bottom = 51.0
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+custom_fonts/font = ExtResource( 5 )
+text = ">  FULLSCREEN"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/BtnFullscreen"]
+reset_on_save = false
+anims/SlideIn = SubResource( 11 )
+
+[node name="BtnQuit" type="ReferenceRect" parent="Control"]
+margin_left = -17.0
+margin_top = 387.0
+margin_right = 342.0
+margin_bottom = 447.0
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Control/BtnQuit"]
+margin_right = 330.0
+margin_bottom = 51.0
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+custom_fonts/font = ExtResource( 5 )
+text = ">  QUIT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/BtnQuit"]
+reset_on_save = false
+anims/SlideIn = SubResource( 12 )
+
+[connection signal="mouse_entered" from="Control/BtnPlay" to="Control/BtnPlay" method="_on_BtnPlay_mouse_entered"]
+[connection signal="mouse_exited" from="Control/BtnPlay" to="Control/BtnPlay" method="_on_BtnPlay_mouse_exited"]
+[connection signal="mouse_entered" from="Control/BtnFullscreen" to="Control/BtnFullscreen" method="_on_BtnPlay_mouse_entered"]
+[connection signal="mouse_exited" from="Control/BtnFullscreen" to="Control/BtnFullscreen" method="_on_BtnPlay_mouse_exited"]
+[connection signal="mouse_entered" from="Control/BtnQuit" to="Control/BtnQuit" method="_on_BtnPlay_mouse_entered"]
+[connection signal="mouse_exited" from="Control/BtnQuit" to="Control/BtnQuit" method="_on_BtnPlay_mouse_exited"]

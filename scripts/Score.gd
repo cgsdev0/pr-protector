@@ -54,7 +54,7 @@ func _process(delta):
 	curr_time += delta
 	
 	# win condition
-	if curr_time > level_duration \
+	if level && curr_time > level_duration \
 			&& (linear_complete || !level.has("linear_sequencer")) \
 			&& !has_pending_tasks() \
 			&& !lost \

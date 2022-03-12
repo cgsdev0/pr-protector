@@ -9,6 +9,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	events.connect('open_window', self, "on_window_open")
+	Events.connect("close_window", self, "on_window_close")
 	for window in get_children():
 		if window is Control:
 			continue
@@ -16,6 +17,9 @@ func _ready():
 		if body:
 			body.connect('move_to_top', self, 'move_window_to_top')	
 
+func on_window_close():
+	blur_all()
+	
 func on_window_open(node):
 	node.position = Vector2(80 + rng.randi_range(0, 50), 35 + rng.randi_range(0, 50))
 	# short delay to get focus
