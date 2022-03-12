@@ -26,6 +26,12 @@ var unfocused_color = Color("#4f4f4f")
 var photoshop_freeze = false
 var photoshop_index = "moon_building"
 
+# only used by youtube windows
+var youtube_username
+var youtube_image_path
+var youtube_captcha
+var youtube_title
+
 func focus():
 	focused = true
 	update()

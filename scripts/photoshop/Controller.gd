@@ -3,7 +3,9 @@ extends Node
 onready var all_data = get_node("/root/Data").data.photoshop
 onready var events = get_node("/root/Events")
 
-func on_upload():
+func on_upload(id):
+	if id != get_owner().get_instance_id():
+		return
 	$Uploading.visible = true
 
 var moveScr
@@ -13,7 +15,7 @@ var repScr
 func _ready():
 	events.connect("photoshop_upload", self, "on_upload")
 	# return
-	# get_owner().photoshop_index = "swamp"
+	#get_owner().photoshop_index = "hospital_check"
 	
 	var data = all_data[get_owner().photoshop_index]
 

@@ -30,7 +30,7 @@ func on_damage_tick():
 	var task_count = Score.task_emails \
 						+ (Score.junk_emails * 0.25) \
 						+ Score.task_windows \
-						+ Score.reddit_tasks * 0.1
+						+ Score.reddit_tasks * 0.17
 	var task_multiplier = 1 + (task_count / 5.0)
 	print("MULT: ", task_multiplier * level_multiplier)
 	events.emit_signal("price_change", (rng_damge) * task_multiplier * level_multiplier)

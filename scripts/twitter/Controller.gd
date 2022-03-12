@@ -47,7 +47,9 @@ func _ready():
 	$TwitterHeader/Username.text = "@%s" % who
 	$TwitterHeader/AvatarColor.modulate = Color.from_hsv(rng.randf_range(0.0, 6.0), 0.7, 0.8)
 	
-func on_tweet_clicked(index):
+func on_tweet_clicked(index, id):
+	if id != get_owner().get_instance_id():
+		return
 	if !confirmed:
 		$Confirm.visible = true
 		cached_index = index

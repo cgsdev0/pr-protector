@@ -33,7 +33,18 @@ func on_email_link():
 		window.photoshop_index = row.email.photoshop_index
 		events.emit_signal("open_window", window)
 	if row.email.has("youtube"):
-		events.emit_signal("open_window", Youtube.instance())
+		var youtube = Youtube.instance()
+		var yt = row.email.youtube
+		if typeof(yt) == TYPE_DICTIONARY:
+			if yt.has("username"):
+				youtube.youtube_username = yt.username
+			if yt.has("image_path"):
+				youtube.youtube_image_path = yt.image_path
+			if yt.has("title"):
+				youtube.youtube_title = yt.title
+			if yt.has("captcha"):
+				youtube.youtube_captcha = yt.captcha
+		events.emit_signal("open_window", youtube)
 	if row.email.has("twitter"):
 		events.emit_signal("open_window", Twitter.instance())
 	row.queue_free()

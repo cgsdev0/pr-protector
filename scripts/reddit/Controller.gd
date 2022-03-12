@@ -39,6 +39,7 @@ func on_queue(n):
 
 func vote(up: bool):
 	$PostBody/Buttons/AnimationPlayer.stop(true)
+	$PostBody/Buttons.modulate = Color.white
 	Score.complete_task("reddit", up == post.isgood)
 	post = update_with(new_post())
 	update_title()

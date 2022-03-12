@@ -187,6 +187,7 @@ script = ExtResource( 18 )
 
 [node name="DailyEmail" type="Control" parent="."]
 pause_mode = 2
+visible = false
 margin_right = 960.0
 margin_bottom = 540.0
 mouse_filter = 2
@@ -241,6 +242,7 @@ margin_bottom = 285.0
 rect_min_size = Vector2( 400, 340 )
 rect_pivot_offset = Vector2( 69, 34 )
 mouse_filter = 1
+color = Color( 0.94902, 0.941176, 0.745098, 1 )
 
 [node name="Label" type="Label" parent="ReportCard/CenterContainer/Node2D"]
 margin_top = -5.0
@@ -258,7 +260,7 @@ margin_bottom = 26.0
 rect_min_size = Vector2( 0, 1 )
 rect_pivot_offset = Vector2( 145, 42 )
 mouse_filter = 1
-color = Color( 0.843137, 0.843137, 0.843137, 1 )
+color = Color( 0.823529, 0.760784, 0.654902, 1 )
 
 [node name="Body" type="RichTextLabel" parent="ReportCard/CenterContainer/Node2D"]
 margin_left = 61.0
@@ -306,6 +308,7 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="DayTransition" type="Control" parent="."]
 pause_mode = 2
+visible = false
 margin_right = 960.0
 margin_bottom = 540.0
 theme = ExtResource( 4 )

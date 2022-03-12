@@ -12,7 +12,9 @@ var target_zone
 
 var wait_for_replacement = false
 
-func on_freeze():
+func on_freeze(id):
+	if id != get_owner().get_instance_id():
+		return
 	challenge_success = is_contained(polygon, target_zone.polygon, self.global_position, target_zone.global_position)
 
 func _ready():
@@ -50,7 +52,7 @@ func _draw():
 func _input(event):
 	if event is InputEventMouseButton && event.button_index == 1:
 		if !event.pressed && dragged:
-			events.emit_signal("photoshop_enable_upload")
+			events.emit_signal("photoshop_enable_upload", get_owner().get_instance_id())
 			
 		can_grab = event.pressed && \
 			mouse_in && \

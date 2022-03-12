@@ -7,12 +7,12 @@ var data = {
 		"rewards": {
 			"photoshop": {
 				"good": {
-					"base": 5,
+					"base": 8,
 					"range_lower": -0.4,
 					"range_upper": 1.0
 				},
 				"bad": {
-					"base": -10,
+					"base": -7.5,
 					"range_lower": -2.0,
 					"range_upper": 0.99
 				},
@@ -21,7 +21,7 @@ var data = {
 				"good": {
 					"base": 1.5,
 					"range_lower": -0.1,
-					"range_upper": 0.1
+					"range_upper": 0.25
 				},
 				"bad": {
 					"base": -4.5,
@@ -31,7 +31,7 @@ var data = {
 			},
 			"twitter": {
 				"good": {
-					"base": 4,
+					"base": 4.8,
 					"range_lower": -0.4,
 					"range_upper": 0.4
 				},
@@ -52,7 +52,7 @@ var data = {
 	},
 	"levels": [
 		{
-			"title": "The New Job",
+			"title": "Orientation",
 			"multiplier": 1,
 			"start_email": "day_1_start",
 			"damage_rate": 5,
@@ -70,7 +70,7 @@ var data = {
 			]
 		},
 		{
-			"title": "idk what to name day 2",
+			"title": "A Change of View",
 			"multiplier": 1,
 			"start_email": "day_2_start",
 			"damage_rate": 5,
@@ -86,12 +86,63 @@ var data = {
 					"reddit": 2
 				},
 				{
-					"email": "twitter_tutorial" # PLACEHOLDER
+					"email": "generic_twitter",
 				},
 				{
-					"email": "youtube_tutorial" # PLACEHOLDER
+					"email": "generic_youtube"
 				},
 			]
+		},
+		{
+			"title": "You Can Tell By the Pixels",
+			"multiplier": 1,
+			"start_email": "day_3_start",
+			"damage_rate": 5,
+			"self_correct_price": true,
+			"linear_sequencer": [
+				{
+					"email": "photoshop_tutorial",
+				},
+				{
+					"reddit": 2
+				},
+				# do another photoshop here
+				{
+					"email": "generic_twitter",
+				},
+				{
+					"email": "generic_youtube",
+				},
+			]
+		},
+		{
+			"title": "Death of a PR Man",
+			"multiplier": 1,
+			"start_email": "day_4_start",
+			"damage_rate": 5,
+			"reddit_sequencer": [1, 1, 1, 2, 5, 5, 6.5, 6.5, 6.5, 6.6, 6.7, 6.9, 40, 40, 40], # ADD
+			"email_sequencer": [
+				{
+					"time": 7,
+					"email": "generic_youtube"
+				},
+				{
+					"time": 7.2,
+					"email": "generic_twitter"
+				},
+				{
+					"time": 20.8,
+					"email": "photoshop_moon_laser", # CHANGE
+				},
+				{
+					"time": 60,
+					"email": "michael_plot_thread",
+				},
+				{
+					"time": 64,
+					"email": "generic_twitter",
+				},
+			],
 		},
 		{
 			"title": "Red Friday",
@@ -132,31 +183,58 @@ Cheers! Michael S.
 			"from": "Michael S. <michael.s@pkcbusiness.com>",
 			"body": """Amazing job yesterday! You really showed those haters what's up! The higher ups are really digging all the work you put in to protect our precious family, so they've decided to give you some extra work!
 
-That awful site \"YoockToob\" has been stirring a muck with a buncha people thinking they're slick making all these videos attacking and \"exposing\" us, but we'll show them! We're gonna hit 'em, report 'em, and take 'em down before anyone's the wiser! 
+That awful site \"YouView\" has been stirring a muck with a buncha people thinking they're slick making all these videos attacking and \"exposing\" us, but we'll show them! We're gonna hit 'em, report 'em, and take 'em down before anyone's the wiser! 
 
 Have fun! Michael S.
 """
 		},
-		"day_5_start": {
-			"subject": "Farewell",
+		"day_3_start": {
+			"subject": "=D",
 			"from": "Michael S. <michael.s@pkcbusiness.com>",
-			"body": """yo,
+			"body": """How are you so good at this!?? You're making me look bad haha!
 
-sooo, unfortunate news; yesterday was actually my last day. 
+Seeing as how you're such a master at the PR hustle, let's kick it up a notch with some PKC PhotoEdit! Don't worry! It's not that hard!
 
-Since the company has yet to hire my replacement, it seems all of my workload will be falling directly onto you (sorry!)
+Just find the thing we gotta cut out or alter then select the appropriate option! Move it, delete it, or copy and paste it! You can do it!! (I love that movie lol)
 
-I wish you the best of luck; I know you're more than capable of keeping this company afloat on your own.
+Your fellow artist; Michael S.
+"""
+		},
+		"day_4_start": {
+			"subject": "Hello Colleague",
+			"from": "MICHAEL <donotreply@PKCBusiness.com>",
+			"body": """Hi friend. My name is Michael S. Our wonderful company has decided not to require my service and friendly, playful communication to further advance your skills and expand your opportunities.
 
-Best Wishes,
-Michael S.
+See you again in the near future. Maybe not. Perhaps we will never meet again. Don't let our glorious PKC family down and work hard.
+
+Goodbye.
 
 
-P.S. there was a bit of an insider trading scandal this morning, so expect the stock price to be *extra* volatile today....
+
+
+Hi.
+"""
+		},
+		"day_5_start": {
+			"subject": "TO ALL: INSIDER TRADING INFO",
+			"from": "Chad Peterson (CEO)",
+			"body": """hi everyone,
+
+some insider trading rumors have started going around; wanted to get ahead of this thing and let you all know that the stock price will probably be a tad volatile today
+
+ps. to those of you who work in the pr department. i expect to see you here tomorrow morning if you want to keep your job
+"""
+		},
+		"michael_plot_thread": {
+			"subject": "still alive",
+			"from": "michael.s@hotmail.com",
+			"body": """don't have a lot of time, but as you can tell I'm not there anymore. They fired me yesterday..
+
+			Sorry in advance about how the market is going to treat you now, because I landed a gig over at JDF. I guess that makes us enemies now?
 """
 		},
 		"youtube_tutorial": {
-			"subject": "TODO tuber",
+			"subject": "YouView Vlogger",
 			"from": "Michael S. <michael.s@pkcbusiness.com>",
 			"body": """I came across one of those video bloggers I was telling you about and figured I'd let you take care of this one.
 
@@ -164,8 +242,12 @@ just report the video and file a copyright claim. don't feel too bad about it, t
 
 Thanks, Michael S.
 """,
-			"link": "youtube.com",
-			"youtube": true,
+			"link": "youview.com",
+			"youtube": {
+				"username": "jdf_corporate_media",
+				"title": "PKC LITERALLY KILLED MY PET??",
+				"captcha": "witness",
+			},
 		},
 		"ceo_youtuber": {
 			"subject": "hi - semi urgent",
@@ -177,7 +259,7 @@ thank u
 
 Sent from my PalmPilot 1000
 """,
-			"link": "youtube.com",
+			"link": "youview.com",
 			"youtube": true,
 		},
 		"photoshop_moon_laser": {
@@ -198,7 +280,7 @@ I trust you can handle this task; I'm still too busy with the whole dictator thi
 			"link": "clucker.com",
 			"twitter": true,
 		},
-		"photoshop_intro": {
+		"photoshop_tutorial": {
 			"subject": "NASA problem",
 			"from": "Abigail Peterson (Head of Public Relations)",
 			"body": """Hello,
@@ -215,6 +297,131 @@ I trust you can handle this task; I'm too busy with this whole dictator fiasco.
 """,
 			"link": "moon_base.jpg",
 			"photoshop_index": "moon_building",
+		},
+		"generic_twitter": {
+			"subject": [
+				"Outspoken clucker user",
+				"Got another clucker",
+				"Take care of this clucker?",
+				"CLUCK ON THIS",
+				"what the cluck",
+				"Got another one",
+				"Here:",
+				"Got one.",
+				"Stop. Them. Now.",
+				"We're looking into this one:",
+			],
+			"from": [
+				"<ANONYMOUS@DARKNET.WEB>",
+				"Unknown User <259290@pkcbusiness.com>",
+				"No Reply <noreply@pkcbusiness.com>",
+				"Corporate <corporate@pkcbusiness.com>",
+				"[REDACTED]",
+				"Bill K. <billy@pkcbusiness.com>",
+				"<nottheceo@pkcbusiness.com>",
+				"<sportscarvroom@pkcbusiness.com>",
+				"BIG RICHARD",
+				"Quemel Zima",
+				"Jackie C.",
+				"<stephen.q@pkcbusiness.com>",
+				"<xavier.b@pkcbusiness.com>",
+				"<hamilton.s@pkcbusiness.com>",
+				"Logan Herman",
+				"Grungedam",
+				"RidermanHero1996",
+				"<joeswansong@gmail.com>",
+				"<lois.gryffindor@gmail.com>",
+				"<chr0makey@cgs.dev>",
+				"<hello@badcop.games>",
+			],
+			"body": [
+				"Take care of this one:",
+				"This loud mouth needs to shut up",
+				"Got another one for you:",
+				"Here:",
+				"We have another target(crossout) user for you.",
+				"A loud mouth negative nelly who hates the proud PKC family brand",
+				"They think we're playing smh. Show them what's what ;)",
+				"Kill this account for us? Kthx",
+				"Yo, broooooo I heard you take care of things for us yeah?? Do I just drop the link here?",
+				"Meanie :(",
+				"Corporate needs some help with a thingie. Don't ask.",
+				"Corporate needs help again.",
+				"my mom is an exec and she said you had to help me destroy this guy who TOTALLY CHEATED on Modern Duty Combat 2 >:(",
+				"End themmmmmmmmm AHHHHHHHHHH",
+				"What a weirdo lol. Mess em up.",
+				"Hola. ¿Me puedes ayudar?",
+				"This ex-employee just leaked the color palette of our new game logo. Teach them a lesson:",
+			],
+			"twitter": true,
+			"link": "clucker.com",
+		},
+		"generic_youtube": {
+			"subject": [
+				"People ACTUALLY watch this garbage?",
+				"not worth anyone's time:",
+				"Coming in hot:",
+				"YouViewers again...",
+				"Another YouViewer",
+				"another problematic YouView",
+				"****** YOUVIEW",
+				".......",
+				"hello",
+				"RE: RE: RE: RE: YouView",
+				"can you look at this",
+				"sharon told me to FWD this to u",
+				"hi again",
+				"you're my hero for dealing with this",
+				"pls",
+				"anti-pkc garbage",
+			],
+			"from": [
+				"<janet.k@pkcbusiness.com>",
+				"<samantha_a@pkcbusiness.com>",
+				"<kev.lawson@pkcbusiness.com>",
+				"<mike_themike_mikerson@pkcbusiness.com>",
+				"<billykidman@pkcbusiness.com>",
+				"<philip@pkcbusiness.com>",
+				"Shotaro.Hidari",
+				"Peter G.",
+				"<joeswansong@gmail.com>",
+				"<lois.gryffindor@gmail.com>",
+				"<chr0makey@cgs.dev>",
+				"<hello@badcop.games>",
+				"<max.v@pkcbusiness.com>",
+				"<dutybro445@pkcbusiness.com>",
+				"<giantiron@pkcbusiness.com>",
+				"<totocoyote@pkcbusiness.com>",
+				"<manndersonn@pkcbusiness.com>",
+				"<christian.c@pkcbusiness.com>",
+				"<bwt@pkcbusiness.com>",
+				"<pauline.ackerman@pkcbusiness.com>",
+				"Eugine Patrick",
+				"Yuki Wauman",
+				"Sebastian Skeele",
+			],
+			"body": [
+				"These people have WAYYY too much time on their hands:",
+				"People ACTUALLY watch this garbage?",
+				"I can't believe people sit down and watch 3 hour long videos criticizing our family.",
+				"not worth anyone's time:",
+				"Take care of this",
+				"Coming in hot:",
+				"Show them how we do things in the PKC family",
+				"Shame we have to delete this one. The animations are so cute.",
+				"Dang... I was a huge fan of theirs too...",
+				"Time for them to unsub... FROM THE INTERNET!",
+				"Welp... hope they didn't work too hard for this one... ",
+				"This person is talking about really \"sensitive\" company things... That needs to be changed....",
+				"We need this one done, like, yesterday. Hurry it up.",
+				"This needs to be taken down ASAP:",
+				# "(Chad Peterson - CEO) If you do this one quick I'll give you a pay raise.\n\nJk I won't lmao",
+				"Remove this guy from website yes? Thank you pleases sir or miss sir",
+				"This link is coming to you late. Do not expect any more mistakes from that person.",
+				"Can you take this video down for us? Thanks in advance for helping me out with this.",
+			],
+			"youtube": true,
+			"link": "youview.com",
 		},
 	},
 	"contraband": [
@@ -859,6 +1066,17 @@ I trust you can handle this task; I'm too busy with this whole dictator fiasco.
 		{ "text": "The Boycott of the Century Begins >:D" }
 	],
 	"photoshop": {
+		"hospital_check": {
+			"cutout_polygon": [Vector2(189.5, 224.5), Vector2(259.5, 224.5), Vector2(259.5, 242.5), Vector2(189.5, 242.5)],
+			"cutout_position": Vector2(251.5, 185.5),
+			"polygon_offset": Vector2(-222, -234),
+			"cutout": "res://images/photoshop/check_cutout.png",
+			"replace": "res://images/photoshop/check_cutout.png",
+			"clean_plate": "res://images/photoshop/check.png",
+			"task": "replace",
+			"target_zone": [Vector2(283, 43), Vector2(283, 3), Vector2(365, 3), Vector2(366, 43)],
+			"target_zone_position": Vector2(-30, 160),
+		},
 		"moon_building": {
 			"cutout_polygon": [Vector2(144, 187), Vector2(169, 171), Vector2(300, 171), Vector2(300, 297), Vector2(169, 297), Vector2(144, 250)],
 			"cutout_position": Vector2(336, 131),

@@ -5,7 +5,9 @@ onready var events = get_node("/root/Events")
 func _ready():
 	events.connect("beat_captcha", self, "on_enable")
 	
-func on_enable():
+func on_enable(id):
+	if id != get_owner().get_instance_id():
+		return
 	disabled = false
 	
 func _pressed():

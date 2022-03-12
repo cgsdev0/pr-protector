@@ -28,4 +28,4 @@ func _gui_input(event):
 	if disabled:
 		return
 	if event is InputEventMouseButton && event.pressed && event.button_index == 1:
-		events.emit_signal("tweet_clicked", get_index())
+		events.emit_signal("tweet_clicked", get_index(), get_owner().get_instance_id())

@@ -38,7 +38,7 @@ func _input(event):
 					locked_in = false
 					$Witness.position = witness_original_pos
 				else:
-					events.emit_signal("beat_captcha")
+					events.emit_signal("beat_captcha", get_owner().get_instance_id())
 					$Witness/Sprite.play()
 			
 	if event is InputEventMouseMotion:

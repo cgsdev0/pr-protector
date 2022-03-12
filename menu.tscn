@@ -126,6 +126,7 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Credits"]
 position = Vector2( 921, 500 )
 frames = SubResource( 9 )
+frame = 3
 playing = true
 
 [node name="Label" type="Label" parent="Control"]

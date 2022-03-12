@@ -4,11 +4,12 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+onready var events = get_node("/root/Events")
 
 var direction = Vector2(0, -2)
 var speed = 15000
 var decel = 2500
-var restitution = 0.7
+var restitution = 0.4
 var net_restitution = 0.1
 var kicked = false
 var failed = false
@@ -22,7 +23,6 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	start_pos = position
-	kick_after_delay()
 	
 func kick_after_delay():
 	direction.x = rng.randf_range(-0.7, 0.7)
@@ -55,11 +55,17 @@ func _physics_process(delta):
 		if failed || win_count < 2:
 			if !failed:
 				win_count += 1
+				get_owner().find_node("ScoreLabel").text = str(win_count) + "/3"
 			position = start_pos
 			kick_after_delay()
 		else:
-			print("yey")
+			get_owner().find_node("ScoreLabel").text = "3/3"
+			events.emit_signal("beat_captcha", get_owner().get_instance_id())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_ColorRect_soccer_game_start():
+	kick_after_delay()

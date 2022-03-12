@@ -5,7 +5,7 @@ onready var data = get_node("/root/Data").data
 onready var events = get_node("/root/Events")
 onready var Score = get_node("/root/Score")
 
-var level_index = -1
+var level_index = 3 # TODO -1
 var curr_time = 0
 var level
 
@@ -34,6 +34,20 @@ func on_next_level():
 		transition.get_node("Title").get_node("Subtitle").text = "Thanks for playing!"
 	
 
+func send_email(email_index):
+	randomize()
+	var email = data.emails[email_index].duplicate()
+	if typeof(email.subject) == TYPE_ARRAY:
+			email.subject.shuffle()
+			email.subject = email.subject[0]
+	if typeof(email.from) == TYPE_ARRAY:
+			email.from.shuffle()
+			email.from = email.from[0]
+	if typeof(email.body) == TYPE_ARRAY:
+			email.body.shuffle()
+			email.body = email.body[0]
+	events.emit_signal("insert_email", email)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if !level:
@@ -54,7 +68,7 @@ func _physics_process(delta):
 			if task.has("email"):
 				print("opening email ", task.email)
 				assert(data.emails.has(task.email))
-				events.emit_signal("insert_email", data.emails[task.email].duplicate())
+				send_email(task.email)
 			
 			# gross hack :(
 			yield(get_tree().create_timer(0.1), "timeout")
@@ -71,5 +85,5 @@ func _physics_process(delta):
 	if level.has("email_sequencer"):
 		while len(level.email_sequencer) && level.email_sequencer[0].time <= curr_time:
 			var email_index = level.email_sequencer.pop_front().email
-			events.emit_signal("insert_email", data.emails[email_index].duplicate())
+			send_email(email_index)
 

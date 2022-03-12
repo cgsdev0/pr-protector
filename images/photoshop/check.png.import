@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/soccerdude1.png-d263f6eede9565970fc3dceaa377b0fb.stex"
+path="res://.import/check.png-a147f888ec0294bdf57b21af2057fb6d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/youtube/captcha2/soccerdude1.png"
-dest_files=[ "res://.import/soccerdude1.png-d263f6eede9565970fc3dceaa377b0fb.stex" ]
+source_file="res://images/photoshop/check.png"
+dest_files=[ "res://.import/check.png-a147f888ec0294bdf57b21af2057fb6d.stex" ]
 
 [params]
 

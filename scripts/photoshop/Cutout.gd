@@ -16,7 +16,9 @@ var short_circuit_complete = false
 
 var challenge_success = false
 
-func on_upload():
+func on_upload(id):
+	if id != get_owner().get_instance_id():
+		return
 	Score.complete_task("photoshop", challenge_success)
 		
 func _process(_delta):
