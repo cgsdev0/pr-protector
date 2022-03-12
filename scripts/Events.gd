@@ -31,6 +31,8 @@ signal reddit_upvote
 signal reddit_downvote
 signal reddit_queue(n)
 
+signal open_email_as_daily(level)
+
 signal new_level(level)
 signal linear_level_completed
 signal next_level

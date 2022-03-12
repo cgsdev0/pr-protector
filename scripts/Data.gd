@@ -106,7 +106,9 @@ var data = {
 				{
 					"reddit": 2
 				},
-				# do another photoshop here
+				{
+					"email": "photoshop_barrels",
+				},
 				{
 					"email": "generic_twitter",
 				},
@@ -135,11 +137,11 @@ var data = {
 					"email": "photoshop_moon_laser", # CHANGE
 				},
 				{
-					"time": 60,
-					"email": "michael_plot_thread",
+					"time": 48,
+					"email": "generic_youtube",
 				},
 				{
-					"time": 64,
+					"time": 55,
 					"email": "generic_twitter",
 				},
 			],
@@ -159,6 +161,10 @@ var data = {
 				{
 					"time": 20.8,
 					"email": "photoshop_moon_laser",
+				},
+				{
+					"time": 60,
+					"email": "michael_plot_thread",
 				},
 			]
 		}
@@ -227,10 +233,19 @@ ps. to those of you who work in the pr department. i expect to see you here tomo
 		},
 		"michael_plot_thread": {
 			"subject": "still alive",
+			"use_daily_viewer": true,
 			"from": "michael.s@hotmail.com",
-			"body": """don't have a lot of time, but as you can tell I'm not there anymore. They fired me yesterday..
+			"body": """DON'T TRUST ANYONE AT PKC.
 
-			Sorry in advance about how the market is going to treat you now, because I landed a gig over at JDF. I guess that makes us enemies now?
+there's some shady s*** going on over there, and I can't believe I was so blind to it before.
+
+don't want to take too much of your time, but as you can tell I'm not there anymore. They fired me yesterday.
+
+Sorry in advance about how the market is going to treat you now, because I just landed a gig over at JDF. I guess that makes us enemies now?
+
+
+I'll see you on the web.
+Michael S.
 """
 		},
 		"youtube_tutorial": {
@@ -297,6 +312,82 @@ I trust you can handle this task; I'm too busy with this whole dictator fiasco.
 """,
 			"link": "moon_base.jpg",
 			"photoshop_index": "moon_building",
+		},
+		"photoshop_barrels": {
+			"subject": "PhotoEdit job for you (barrels)",
+			"from": "Dr. Edna K. (Env. Sci Dept.)",
+			"body": """Some eco schmuck found our totally safe barrels that we put in the Louisiana swamps 7 years ago.
+
+We need you to replace them with some cute gators or something and stop all this!
+""",
+			"link": "oil_spill.jpg",
+			"photoshop_index": "swamp",
+		},
+		"photoshop_shake": {
+			"subject": "URGENT INTER-GALACTIC SPACE TROUBLE",
+			"from": "Boris Q. (EA to CFO)",
+			"body": """Our CFO Jackson Kain recently met with the Garmaxian-Seculonulack Overlord; Xoach Jexxrey and the media DOES NOT like when we make deals with intergalactic space hive overlords without clearing it with the UN first.
+
+So can you replace Xoach with a cute puppy? Marketing says puppies get 94% positive engagement rates. 
+""",
+			"link": "intergalactic_crisis.bmp",
+			"photoshop_index": "shake",
+		},
+		"photoshop_hospital": {
+			"subject": "Underwhelming Hospital Donation",
+			"from": "Erik Withakay (President of Charitable Contributions)",
+			"body": """
+APPARENTLY hospitals are greedy nowadays! \"1,000 is absolutely nothing for a company like you guys!\". Whatever.
+
+We need you to move a couple zeros around so that our donation clears for media.
+
+Thanks plenty.
+""",
+			"link": "donation_check.jpg",
+			"photoshop_index": "hospital_check",
+		},
+		"photoshop_trip_lady": {
+			"from": "Boris X. <boris.x@pkcbusiness.com>",
+			"body": """Do you know Norris? He works up at financing as an executive, and he said it would be really funny if we took a pic of him tripping some dumb grandma (LOL). 
+
+For the press release, though, can you make it look like she's tripping on something else?
+
+PS. Doesn't he kinda look like Kain?
+""",
+			"link": "EPIC_TRIPPING_FAIL.jpg",
+			"photoshop_index": "trip_lady",
+		},
+		"photoshop_airstrip": {
+			"from": "<deactivated@pkcbusiness.com>",
+			"subject": "Disappointing Food Donations",
+			"body": """Apparently, JDF likes to show off any way they can, and decided to donate more than the minimum amount for the emergency relief effort from a week ago.
+
+Teach them a lesson and make THEIR donations OURS! >:D
+""",
+			"link": "food_donos.jpg",
+			"photoshop_index": "airstrip",
+		},
+		"photoshop_goose": {
+			"from": "Dr. Edna K. (Env. Sci Dept.)",
+			"subject": "Radioactive Geese????",
+			"body": """Someone online noticed that one of their local gooses is uhh.... a bit more...colorful than the others?
+
+			Just please do something to hide it. We can't afford this getting out right now
+""",
+			"link": "radioactive_gouse_sighting.psd",
+			"photoshop_index": "goose",
+		},
+		"photoshop_bad_driver": {
+			"subject": "kids these days...",
+			"from": "Midge Roy <midge@pkcbusiness.com>",
+			"body": """Oof. It looks like someones daughter in corporate got caught joyriding AND driving on the wrong side of the road!?
+
+Spoiled brat probably spent too many summers over in europe.
+
+Thankfully, you can't see who's driving in this pic, but we still need you to move the car to the right (heh) lane, so get on that for us. 
+""",
+			"link": "THIS_IS_AMERICA_NOT_ENGLAND.JPEG",
+			"photoshop_index": "bad_driver",
 		},
 		"generic_twitter": {
 			"subject": [

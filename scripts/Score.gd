@@ -16,6 +16,7 @@ var tweakables
 # various game state
 var curr_time
 var task_emails
+var special_emails
 var junk_emails
 var task_windows
 var reddit_tasks
@@ -37,6 +38,7 @@ func _ready():
 	Events.connect("price_change_user", self, "on_price_change", [true])
 	Events.connect("insert_email", self, "on_change_email_count", [1])
 	Events.connect("email_link", self, "on_change_email_count", [{"link": true}, -1])
+	Events.connect("delete_daily_email", self, "on_read_special_email")
 	Events.connect("delete_email", self, "on_change_email_count", [{}, -1])
 	Events.connect("open_window", self, "on_change_window_count", [1])
 	Events.connect("close_window", self, "on_change_window_count", [{}, -1])
@@ -47,8 +49,11 @@ func _ready():
 	Events.connect("linear_level_completed", self, "on_linear_level_complete")
 	reset_state(true)
 
+func on_read_special_email():
+	special_emails = max(0, special_emails - 1)
+	
 func has_pending_tasks():
-	return task_emails || task_windows || reddit_tasks
+	return task_emails || task_windows || reddit_tasks || special_emails
 	
 func _process(delta):
 	curr_time += delta
@@ -78,6 +83,7 @@ func reset_state(reset_score: bool):
 	linear_complete = false
 	curr_time = 0
 	task_emails = 0
+	special_emails = 0
 	junk_emails = 0
 	task_windows = 0
 	reddit_tasks = 0
@@ -128,11 +134,14 @@ func print_game_state():
 	print ("========================")
 	print ("JUNK EMAILS: ", junk_emails)
 	print ("TASK EMAILS: ", task_emails)
+	print ("SPECIAL EMAILS: ", special_emails)
 	print ("TASK WINDOWS: ", task_windows)
 	print ("REDDIT TASKS: ", reddit_tasks)
 	
 func on_change_email_count(email, count):
-	if email.has("link"):
+	if email.has("use_daily_viewer"):
+		special_emails += count
+	elif email.has("link"):
 		task_emails += count
 	else:
 		junk_emails += count

@@ -15,4 +15,11 @@ func _ready():
 
 func _gui_input(event):
 	if event is InputEventMouseButton && event.pressed && event.button_index == 1:
-		events.emit_signal("open_email", get_index(), email)
+		if email.has("use_daily_viewer") && email.use_daily_viewer:
+			var synthetic_level = {
+				"start_email": email.index,
+			}
+			events.emit_signal("open_email_as_daily", synthetic_level)
+			queue_free()
+		else:
+			events.emit_signal("open_email", get_index(), email)

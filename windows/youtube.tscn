@@ -328,7 +328,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 13
+frame = 11
 playing = true
 script = ExtResource( 9 )
 

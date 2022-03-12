@@ -46,6 +46,7 @@ func send_email(email_index):
 	if typeof(email.body) == TYPE_ARRAY:
 			email.body.shuffle()
 			email.body = email.body[0]
+	email.index = email_index
 	events.emit_signal("insert_email", email)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
