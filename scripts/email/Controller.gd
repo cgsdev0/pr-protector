@@ -15,7 +15,7 @@ func on_open_email(ind, email, link_used):
 	$EmailPopover.visible = true
 	$EmailPopover/From.text = "From: " + email.from
 	$EmailPopover/Subject.text = email.subject
-	$EmailPopover/BtnDelete.visible = !email.has("link") || link_used
+	$EmailPopover/BtnDelete.visible = !(email.has("can_delete") && email.can_delete == false) && (!email.has("link") || link_used)
 	$EmailPopover/BodyContainer/Attachment.visible = email.has("link") && !link_used
 	if email.has("link"):
 		$EmailPopover/BodyContainer/Attachment/LinkText.text = email.link
@@ -79,6 +79,8 @@ func on_reset_level(_should_reset_score):
 	$EmailPopover.visible = false
 	for email in $ScrollContainer/VBoxContainer.get_children():
 		email.queue_free()
+	yield(get_tree().create_timer(0.0), "timeout")
+	update_title()
 
 func update_title():
 	var count = $ScrollContainer/VBoxContainer.get_child_count()

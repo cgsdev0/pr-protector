@@ -7,7 +7,7 @@ var data = {
 		"rewards": {
 			"photoshop": {
 				"good": {
-					"base": 8,
+					"base": 9.9,
 					"range_lower": -0.4,
 					"range_upper": 1.0
 				},
@@ -19,31 +19,31 @@ var data = {
 			},
 			"reddit": {
 				"good": {
-					"base": 1.5,
+					"base": 1.4,
 					"range_lower": -0.1,
 					"range_upper": 0.25
 				},
 				"bad": {
-					"base": -4.5,
+					"base": -3.9,
 					"range_lower": -0.6,
 					"range_upper": 0.6
 				},
 			},
 			"twitter": {
 				"good": {
-					"base": 4.8,
+					"base": 5.6,
 					"range_lower": -0.4,
 					"range_upper": 0.4
 				},
 				"bad": {
-					"base": -6,
+					"base": -3,
 					"range_lower": -1.6,
 					"range_upper": 1.6
 				},
 			},
 			"youtube": {
 				"good": {
-					"base": 5,
+					"base": 7,
 					"range_lower": -0.5,
 					"range_upper": 0.9,
 				},
@@ -116,10 +116,10 @@ var data = {
 		},
 		{
 			"title": "Death of a PR Man",
-			"multiplier": 1,
+			"multiplier": 0.6,
 			"start_email": "day_4_start",
-			"damage_rate": 5,
-			"reddit_sequencer": [1, 1, 1, 1, 2, 11, 11, 11, 40, 40, 40],
+			"damage_rate": 6,
+			"reddit_sequencer": [1, 1, 1, 1, 2, 11, 11, 11, 40, 40, 40, 60],
 			"email_sequencer": [
 				{
 					"time": 7,
@@ -134,31 +134,31 @@ var data = {
 					"email": "photoshop_shake",
 				},
 				{
-					"time": 48,
+					"time": 55,
 					"email": "generic_youtube",
 				},
 				{
-					"time": 48.3,
+					"time": 54.3,
 					"email": "SPAM",
 				},
 				{ 
-					"time": 54.5,
+					"time": 61.5,
 					"email":  "photoshop_hospital",
 				},
 				{
-					"time": 54.7,
+					"time": 62,
 					"email": "photoshop_trip_lady",
 				},
 				{
-					"time": 55,
+					"time": 70,
 					"email": "generic_twitter",
 				},
 			],
 		},
 		{
 			"title": "Red Friday",
-			"multiplier": 2,
-			"damage_rate": 4,
+			"multiplier": 1.8,
+			"damage_rate": 4.2,
 			"reddit_sequencer": [3, 3, 3, 12, 18, 18, 20, 30, 31, 32, 33, 34, 35, 40, 50, 50, 50.1, 50.2, 50.3, 50.4, 50.5, 50.6, 50.7, 50.8, 55],
 			"start_email": "day_5_start",
 			"email_sequencer": [
@@ -182,9 +182,9 @@ var data = {
 		},
 		{
 			"title": "Saturday",
-			"multiplier": 1.15,
-			"damage_rate": 3.5,
-			"reddit_sequencer": [0,0,0,0,0,0,0,0,17,20,21.2, 21.7, 22.4, 22.5, 22.6, 65, 65.5, 70],
+			"multiplier": 1.1,
+			"damage_rate": 3.6,
+			"reddit_sequencer": [1,1,1,1,1,1,17,20,21.2, 21.7, 22.4, 22.5, 22.6, 65, 65.5, 70],
 			"start_email": "day_6_start",
 			"email_sequencer": [
 				{
@@ -297,6 +297,31 @@ This traitorous behavior will not be tolerated.
 If he tries to contact any of you, report it to me immediately.
 """
 		},
+		"paycheck": {
+			"subject": "[AUTOMATED] Payroll",
+			"can_delete": false,
+			"from": "<payroll.noreply@pkcbusiness.com>",
+			"body": """Here is the summary of your first paycheck:
+
+After Tax Pay: [color=#51a83c]$2,535.17[/color]
+
+Deductions:
+ * Equipment rentals  [color=red]$500.00[/color]
+ * Training fee       [color=red]$800.00[/color]
+ * Software rental    [color=red]$750.00[/color]
+ * Parking space fee  [color=red]$100.00[/color]
+ * Exec. comms fee    [color=red]$100.00[/color]
+ * PKC family deposit  [color=red]$99.00[/color]
+ * Bathroom fee        [color=red]$54.17[/color]
+ * Bottled water       [color=red]$15.00[/color]
+ * Unbottled water     [color=red]$14.00[/color]
+ * Oxygen fee         [color=red]$100.00[/color]
+
+Remaining Pay: [color=#51a83c]$3.00[/color]
+
+Thank you for being a part of the PKC family.
+"""
+		},
 		"michael_plot_thread": {
 			"subject": "still alive",
 			"use_daily_viewer": true,
@@ -391,6 +416,8 @@ I trust you can handle this task. You did a good job on the last one.
 			"body": """Here's one of those users I talked about; this one managed to get the hashtag #boycottPKC trending.
 
 I need you to go through their old post history, and [u]find some dirt on 'em[/u].
+
+Try to find something like an [u]unpopuplar opinion[/u], a [u]positive comment about PKC[/u], etc.
 
 Just re-share it, and watch as the clucker hivemind takes care of the rest.
 

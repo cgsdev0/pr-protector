@@ -22,7 +22,7 @@ func on_upload(id):
 	if id != get_owner().get_instance_id():
 		return
 	Score.complete_task("photoshop", challenge_success)
-	if followup_email:
+	if followup_email && !challenge_success:
 		events.emit_signal("insert_email_delayed", followup_email, 3)
 		
 func _process(_delta):

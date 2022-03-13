@@ -46,6 +46,8 @@ func on_next_level():
 	else:
 		transition.get_node("Title").text = "The End"
 		transition.get_node("Title").get_node("Subtitle").text = "Thanks for playing!"
+		yield(get_tree().create_timer(6.0), "timeout")
+		send_email("paycheck")
 	
 
 func send_email(email_index):

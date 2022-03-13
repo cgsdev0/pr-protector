@@ -72,7 +72,7 @@ func make_prompt(template):
 
 	x["<CURRENTYEAR>"] = OS.get_datetime()["year"]
 	x["<PASTYEAR>"] = (rng.randi_range(1900, x["<CURRENTYEAR>"] - 1))
-	x["<QUANTITY>"] = (rng.randi_range(0, 100))
+	x["<QUANTITY>"] = (rng.randi_range(2, 100))
 
 	x["<COUNTRY>"] = get_rand_data("countries").name
 	x["<CURRENCY>"] = get_rand_data("currencies").name
