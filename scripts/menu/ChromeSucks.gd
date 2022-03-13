@@ -10,6 +10,7 @@ extends ColorRect
 func _gui_input(event):
 	if event is InputEventMouseButton && event.pressed && event.button_index == 1:
 		visible = false
+		get_owner().find_node("MainMenuMusic").play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
