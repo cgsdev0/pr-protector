@@ -21,6 +21,10 @@ func on_pause(level, delay):
 	if delay:
 		yield(get_tree().create_timer(2.5), "timeout")
 	visible = true
+	if !delay:
+		$CenterContainer/Node2D/BtnDelete.visible = false
+		yield(get_tree().create_timer(5.0), "timeout")
+		$CenterContainer/Node2D/BtnDelete.visible = true
 	
 func on_unpause():
 	get_tree().paused = false

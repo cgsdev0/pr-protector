@@ -364,6 +364,7 @@ mouse_filter = 1
 margin_top = 254.0
 margin_right = 960.0
 margin_bottom = 334.0
+mouse_default_cursor_shape = 2
 script = ExtResource( 31 )
 
 [node name="Subtitle" type="Label" parent="GameOver/Buttons/BtnRetry"]
@@ -379,6 +380,7 @@ valign = 1
 margin_top = 339.0
 margin_right = 960.0
 margin_bottom = 419.0
+mouse_default_cursor_shape = 2
 script = ExtResource( 31 )
 
 [node name="Subtitle" type="Label" parent="GameOver/Buttons/BtnRetryReset"]
@@ -394,6 +396,7 @@ valign = 1
 margin_top = 423.0
 margin_right = 960.0
 margin_bottom = 503.0
+mouse_default_cursor_shape = 2
 script = ExtResource( 31 )
 
 [node name="Subtitle" type="Label" parent="GameOver/Buttons/BtnMenu"]
