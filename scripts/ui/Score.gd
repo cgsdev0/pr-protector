@@ -42,10 +42,10 @@ func _process(delta):
 		
 	var curr_score = score
 	score = lerp(score, target, max(0, (animate_duration - duration) / animate_duration))
-	if score < 0 or score == -0:
+	if score < 0.01 or score == -0:
 		score = 0.0
 	duration -= delta
-	if curr_score != score:
+	if curr_score - score:
 		update()
 	
 
@@ -58,9 +58,9 @@ func _draw():
 		draw_string(font, text_pos + offset * 2, text, outline_color)
 	
 	var color = Color.white
-	if score > target:
+	if score - target > 0.01:
 		color = Color.red
-	if score < target:
+	elif target - score > 0.01:
 		color = Color.green
 	draw_string(font, text_pos, text, color)
 

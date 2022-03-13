@@ -344,7 +344,7 @@ Michael S.
 			"from": "Michael S. <michael.s@pkcbusiness.com>",
 			"body": """I came across one of those video bloggers I was telling you about and figured I'd let you take care of this one.
 
-just report the video and file a copyright claim. don't feel too bad about it, the video is riddled with lies! They should be grateful we don't sue.
+just [u]report the video[/u] and [u]file a copyright claim[/u]. don't feel too bad about it, the video is riddled with lies! They should be grateful we don't sue.
 
 Thanks, Michael S.
 """,
@@ -398,7 +398,9 @@ thank u
 Sent from my PalmPilot 1000
 """,
 			"link": "youview.com",
-			"youtube": true,
+			"youtube": {
+				"title": "Why Chad Peterson Belongs in JAIL"
+			},
 		},
 		"photoshop_moon_laser": {
 			"subject": "NASA again -_-",
@@ -417,9 +419,8 @@ I trust you can handle this task. You did a good job on the last one.
 
 I need you to go through their old post history, and [u]find some dirt on 'em[/u].
 
-Try to find something like an [u]unpopuplar opinion[/u], a [u]positive comment about PKC[/u], etc.
-
-Just re-share it, and watch as the clucker hivemind takes care of the rest.
+Try to find something like [u]an unpopuplar opinion[/u] -
+just re-share it, and watch as the clucker hivemind takes care of the rest.
 
 Go get 'em, Michael S.
 """,
@@ -1248,46 +1249,46 @@ Thankfully, you can't see who's driving in this pic, but we still need you to mo
 			"istopical": false,
 			"text": "don't tell my stepmom I stole her credit card lol"
 		},
-		{
-			"istopical": true,
-			"text": "Loving my new <COMPANYNAME> Ultralux Car! I'll never buy anything else <3"
-		},
-		{
-			"istopical": true,
-			"text": "This new <LONGCOMPANYNAME> phone is da BOMB"
-		},
-		{
-			"istopical": true,
-			"text": "<COMPANYNAME> isn't that bad tbh"
-		},
-		{
-			"istopical": true,
-			"text": "So proud of my dad! He just got promoted at <COMPANYNAME>!"
-		},
-		{
-			"istopical": true,
-			"text": "Thanks @<COMPANYNAME>Official for the new ride :) #sponsored"
-		},
-		{
-			"istopical": true,
-			"text": "Always start the morning with my trusty <COMPANYNAME> coffee mug"
-		},
-		{
-			"istopical": true,
-			"text": "@<COMPANYNAME>Official SAVED my ass today y'all have NO idea XD"
-		},
-		{
-			"istopical": true,
-			"text": "How did I get this far without @<COMPANYNAME>Official constantly saving me lmao"
-		},
-		{
-			"istopical": true,
-			"text": "Uhh... I'm gonna be in the next <COMPANYNAME> game... so... yeah... #blessed"
-		},
-		{
-			"istopical": true,
-			"text": "I always fly Air <COMPANYNAME> when I can :D"
-		}
+		# {
+		# 	"istopical": true,
+		# 	"text": "Loving my new <COMPANYNAME> Ultralux Car! I'll never buy anything else <3"
+		# },
+		# {
+		# 	"istopical": true,
+		# 	"text": "This new <LONGCOMPANYNAME> phone is da BOMB"
+		# },
+		# {
+		# 	"istopical": true,
+		# 	"text": "<COMPANYNAME> isn't that bad tbh"
+		# },
+		# {
+		# 	"istopical": true,
+		# 	"text": "So proud of my dad! He just got promoted at <COMPANYNAME>!"
+		# },
+		# {
+		# 	"istopical": true,
+		# 	"text": "Thanks @<COMPANYNAME>Official for the new ride :) #sponsored"
+		# },
+		# {
+		# 	"istopical": true,
+		# 	"text": "Always start the morning with my trusty <COMPANYNAME> coffee mug"
+		# },
+		# {
+		# 	"istopical": true,
+		# 	"text": "@<COMPANYNAME>Official SAVED my ass today y'all have NO idea XD"
+		# },
+		# {
+		# 	"istopical": true,
+		# 	"text": "How did I get this far without @<COMPANYNAME>Official constantly saving me lmao"
+		# },
+		# {
+		# 	"istopical": true,
+		# 	"text": "Uhh... I'm gonna be in the next <COMPANYNAME> game... so... yeah... #blessed"
+		# },
+		# {
+		# 	"istopical": true,
+		# 	"text": "I always fly Air <COMPANYNAME> when I can :D"
+		# }
 	],
 	"youtube": [
 		{ "text": "The Dirty Truth About <COMPANYNAME>" },

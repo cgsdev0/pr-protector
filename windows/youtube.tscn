@@ -306,7 +306,7 @@ animations = [ {
 [node name="Node2D" instance=ExtResource( 1 )]
 dimensions = Vector2( 390, 360 )
 color = Color( 0.878431, 0.14902, 0.14902, 1 )
-title = "youtube"
+title = "youview"
 
 [node name="Body" parent="." index="0"]
 margin_right = 390.0
@@ -379,7 +379,6 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
-frame = 3
 playing = true
 script = ExtResource( 19 )
 
@@ -388,6 +387,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 43 )
+frame = 1
 playing = true
 script = ExtResource( 19 )
 
@@ -396,6 +396,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 48 )
+frame = 1
 playing = true
 script = ExtResource( 19 )
 
@@ -404,7 +405,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 53 )
-frame = 2
+frame = 3
 playing = true
 script = ExtResource( 19 )
 
@@ -432,7 +433,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 11
+frame = 14
 playing = true
 script = ExtResource( 9 )
 

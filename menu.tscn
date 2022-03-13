@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://fonts/m5x7_med.tres" type="DynamicFont" id=1]
 [ext_resource path="res://images/menu/fireside.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://scripts/menu/Credits.gd" type="Script" id=19]
 [ext_resource path="res://sounds/click.wav" type="AudioStream" id=20]
 [ext_resource path="res://scripts/Audio.gd" type="Script" id=21]
+[ext_resource path="res://sounds/menu_music.ogg" type="AudioStream" id=22]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -254,7 +255,7 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Credits/Control"]
 position = Vector2( 168, 72 )
 frames = SubResource( 9 )
-frame = 3
+frame = 7
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Credits"]
@@ -334,6 +335,11 @@ script = ExtResource( 21 )
 
 [node name="ClickNoise" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource( 20 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource( 22 )
+volume_db = -3.37
+autoplay = true
 
 [connection signal="mouse_entered" from="Control/Credits" to="Control/Credits" method="_on_Credits_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Credits" to="Control/Credits" method="_on_Credits_mouse_exited"]

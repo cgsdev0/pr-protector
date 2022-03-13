@@ -89,6 +89,11 @@ func update_title():
 	else:
 		get_owner().title = "email ({COUNT})".format({ "COUNT": count })
 	get_owner().update()
+
+func on_open_email_as_daily(_level):
+	# HACK
+	yield(get_tree().create_timer(0.0), "timeout")
+	update_title()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -98,6 +103,7 @@ func _ready():
 	events.connect("email_link", self, "on_email_link")
 	events.connect("insert_email", self, "on_insert_email")
 	events.connect("reset_level", self, "on_reset_level")
+	events.connect("open_email_as_daily", self, "on_open_email_as_daily")
 	# events.emit_signal("insert_email", {"subject": "We need to talk.", "from": "Human Resources", "body": "a\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\n", "link": "yeet.com", "youtube": 0})
 
 func _process(delta):
