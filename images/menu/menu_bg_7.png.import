@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/burnt_brian.png-0cf276277e000074313006b3cfe7e7c6.stex"
+path="res://.import/menu_bg_7.png-1000cb67bef625da8914c2d22f77ea3a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/ui/burnt_brian.png"
-dest_files=[ "res://.import/burnt_brian.png-0cf276277e000074313006b3cfe7e7c6.stex" ]
+source_file="res://images/menu/menu_bg_7.png"
+dest_files=[ "res://.import/menu_bg_7.png-1000cb67bef625da8914c2d22f77ea3a.stex" ]
 
 [params]
 

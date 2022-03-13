@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform bool flip ;
+uniform sampler2D gradient : hint_black; // It can be whatever palette you want
+
+
+void fragment(){ 
+	vec4 col = texture(SCREEN_TEXTURE,SCREEN_UV);
+	
+	float lum = dot(col.rgb,vec3(0.2126,0.7152,0.0722)); // luminance
+	
+	
+	col = texture(gradient,vec2(abs(float(flip) - lum),0));
+	
+	
+	COLOR = col;
+}"
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.854902, 0.647059, 0.160784, 1, 0.419608, 0.0823529, 0.32549, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+width = 8
+
+[resource]
+shader = SubResource( 1 )
+shader_param/flip = true
+shader_param/gradient = SubResource( 3 )

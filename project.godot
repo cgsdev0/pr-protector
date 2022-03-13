@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="fireside-jam"
-run/main_scene="res://main.tscn"
+run/main_scene="res://menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

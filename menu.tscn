@@ -1,13 +1,24 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://fonts/m5x7_med.tres" type="DynamicFont" id=1]
-[ext_resource path="res://images/ui/fireside.png" type="Texture" id=2]
-[ext_resource path="res://images/ui/burnt_brian.png" type="Texture" id=3]
+[ext_resource path="res://images/menu/fireside.png" type="Texture" id=2]
+[ext_resource path="res://images/menu/burnt_brian.png" type="Texture" id=3]
 [ext_resource path="res://fonts/m5x7_giant.tres" type="DynamicFont" id=4]
 [ext_resource path="res://fonts/m5x7_big.tres" type="DynamicFont" id=5]
 [ext_resource path="res://scripts/menu/BtnPlay.gd" type="Script" id=6]
 [ext_resource path="res://scripts/ui/PixelScale.gd" type="Script" id=7]
 [ext_resource path="res://themes/menu_theme.tres" type="Theme" id=8]
+[ext_resource path="res://scripts/menu/Parallax.gd" type="Script" id=9]
+[ext_resource path="res://images/menu/menu_bg_5.png" type="Texture" id=10]
+[ext_resource path="res://images/menu/menu_bg_6.png" type="Texture" id=11]
+[ext_resource path="res://images/menu/menu_bg_4.png" type="Texture" id=12]
+[ext_resource path="res://images/menu/menu_overlay.png" type="Texture" id=13]
+[ext_resource path="res://images/menu/menu_bg_1.png" type="Texture" id=14]
+[ext_resource path="res://images/menu/menu_bg_3.png" type="Texture" id=15]
+[ext_resource path="res://themes/menu_shader.tres" type="Material" id=16]
+[ext_resource path="res://images/menu/menu_bg_7.png" type="Texture" id=17]
+[ext_resource path="res://scripts/menu/CarSpawner.gd" type="Script" id=18]
+[ext_resource path="res://scripts/menu/Credits.gd" type="Script" id=19]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -48,6 +59,21 @@ animations = [ {
 "name": "default",
 "speed": 11.0
 } ]
+
+[sub_resource type="Animation" id=13]
+resource_name = "Slide"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 0.129408, 3.36358 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -60 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "SlideIn"
@@ -100,39 +126,143 @@ tracks/0/keys = {
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 7 )
 
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxBackground"]
+use_parent_material = true
+texture = ExtResource( 11 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer2"]
+use_parent_material = true
+texture = ExtResource( 10 )
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+motion_offset = Vector2( 0, -20 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer5"]
+use_parent_material = true
+texture = ExtResource( 17 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_offset = Vector2( 80, 0 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer3"]
+use_parent_material = true
+texture = ExtResource( 12 )
+centered = false
+
+[node name="CarMax2" type="Node2D" parent="Background/ParallaxBackground"]
+position = Vector2( 1020, 240 )
+script = ExtResource( 18 )
+spread = 40
+min_color = 0.6
+car_scale = 1.2
+car_speed_scale = 1.6
+min_time = 1.8
+max_time = 2.4
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2( 1.35, 1 )
+motion_offset = Vector2( 300, 0 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer4"]
+use_parent_material = true
+texture = ExtResource( 15 )
+centered = false
+
+[node name="CarMax" type="Node2D" parent="Background/ParallaxBackground"]
+position = Vector2( -80, 360 )
+script = ExtResource( 18 )
+spread = 60
+min_color = 0.0
+max_color = 0.0
+right = true
+car_scale = 2.0
+min_time = 1.8
+max_time = 2.4
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2( 2, 1 )
+motion_offset = Vector2( 150, 0 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer6"]
+use_parent_material = true
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Shader" type="Node2D" parent="Background"]
+material = ExtResource( 16 )
+
+[node name="Sprite" type="Sprite" parent="Background/Shader"]
+use_parent_material = true
+texture = ExtResource( 13 )
+centered = false
+region_rect = Rect2( 0, 0, 960, 540 )
+
 [node name="Control" type="Control" parent="."]
 mouse_filter = 2
 theme = ExtResource( 8 )
 
-[node name="Credits" type="Control" parent="Control"]
+[node name="Credits" type="ReferenceRect" parent="Control"]
+margin_left = 764.0
+margin_top = 444.0
+margin_right = 964.0
+margin_bottom = 544.0
+script = ExtResource( 19 )
 
-[node name="Label" type="Label" parent="Control/Credits"]
-margin_left = 505.0
-margin_top = 375.0
-margin_right = 935.0
-margin_bottom = 524.0
+[node name="Control" type="Control" parent="Control/Credits"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control/Credits/Control"]
+margin_left = -360.0
+margin_top = -53.0
+margin_right = 182.0
+margin_bottom = 147.0
 custom_fonts/font = ExtResource( 1 )
 text = "Mari Locsin
 Sarah Schulte
 Jesse Mendez
 Brian Chrzanowski
-Made for the 2022 Fireside Game Jam   "
+Made for the 2022 Fireside Game Jam   
+Special Thanks to Daniel Linssen for the m5x7 font
+Made with Godot Game Engine"
 align = 2
 
-[node name="BurntBrian" type="Sprite" parent="Control/Credits"]
-position = Vector2( 912, 477 )
+[node name="BurntBrian" type="Sprite" parent="Control/Credits/Control"]
+position = Vector2( 159, 49 )
 texture = ExtResource( 3 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Credits"]
-position = Vector2( 921, 500 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Credits/Control"]
+position = Vector2( 168, 72 )
 frames = SubResource( 9 )
-frame = 3
+frame = 4
 playing = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Credits"]
+reset_on_save = false
+anims/Slide = SubResource( 13 )
+
 [node name="Label" type="Label" parent="Control"]
-margin_top = 49.0
+margin_top = 15.0
 margin_right = 959.0
-margin_bottom = 218.0
+margin_bottom = 184.0
 custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 8
 custom_fonts/font = ExtResource( 4 )
@@ -196,6 +326,8 @@ text = ">  QUIT"
 reset_on_save = false
 anims/SlideIn = SubResource( 12 )
 
+[connection signal="mouse_entered" from="Control/Credits" to="Control/Credits" method="_on_Credits_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Credits" to="Control/Credits" method="_on_Credits_mouse_exited"]
 [connection signal="mouse_entered" from="Control/BtnPlay" to="Control/BtnPlay" method="_on_BtnPlay_mouse_entered"]
 [connection signal="mouse_exited" from="Control/BtnPlay" to="Control/BtnPlay" method="_on_BtnPlay_mouse_exited"]
 [connection signal="mouse_entered" from="Control/BtnFullscreen" to="Control/BtnFullscreen" method="_on_BtnPlay_mouse_entered"]

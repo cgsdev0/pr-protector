@@ -16,4 +16,5 @@ func _gui_input(event):
 			"BtnFullscreen":
 				OS.window_fullscreen = !OS.window_fullscreen
 			"BtnQuit":
+				OS.window_fullscreen = false
 				get_tree().quit()

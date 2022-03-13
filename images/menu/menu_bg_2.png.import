@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fireside.png-2b4d7afc1303f682620cdc6c1924bea7.stex"
+path="res://.import/menu_bg_2.png-21405dac75338c38d609fefd7b454b06.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/ui/fireside.png"
-dest_files=[ "res://.import/fireside.png-2b4d7afc1303f682620cdc6c1924bea7.stex" ]
+source_file="res://images/menu/menu_bg_2.png"
+dest_files=[ "res://.import/menu_bg_2.png-21405dac75338c38d609fefd7b454b06.stex" ]
 
 [params]
 
