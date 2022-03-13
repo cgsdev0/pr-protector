@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://fonts/m5x7_med.tres" type="DynamicFont" id=1]
 [ext_resource path="res://images/menu/fireside.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://images/menu/menu_bg_7.png" type="Texture" id=17]
 [ext_resource path="res://scripts/menu/CarSpawner.gd" type="Script" id=18]
 [ext_resource path="res://scripts/menu/Credits.gd" type="Script" id=19]
+[ext_resource path="res://sounds/click.wav" type="AudioStream" id=20]
+[ext_resource path="res://scripts/Audio.gd" type="Script" id=21]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -252,7 +254,7 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Credits/Control"]
 position = Vector2( 168, 72 )
 frames = SubResource( 9 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Credits"]
@@ -325,6 +327,13 @@ text = ">  QUIT"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/BtnQuit"]
 reset_on_save = false
 anims/SlideIn = SubResource( 12 )
+
+[node name="AudioController" type="Node2D" parent="."]
+pause_mode = 2
+script = ExtResource( 21 )
+
+[node name="ClickNoise" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource( 20 )
 
 [connection signal="mouse_entered" from="Control/Credits" to="Control/Credits" method="_on_Credits_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Credits" to="Control/Credits" method="_on_Credits_mouse_exited"]

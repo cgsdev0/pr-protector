@@ -34,6 +34,7 @@ func _input(event):
 				locked_in = true
 				if selected_state != get_owner().find_node("RelocationLabel").text:
 					$AnimationPlayer.play("Shake")
+					events.emit_signal("witness_captcha_wrong")
 					yield(get_tree().create_timer(0.5), "timeout")
 					locked_in = false
 					$Witness.position = witness_original_pos

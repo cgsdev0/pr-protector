@@ -43,5 +43,6 @@ signal reset_level(should_reset_score)
 
 signal select_state(state)
 signal beat_captcha(id)
+signal witness_captcha_wrong
 
 signal tweet_clicked(index, id)

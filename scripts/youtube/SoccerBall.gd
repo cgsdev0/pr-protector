@@ -42,6 +42,7 @@ func _physics_process(delta):
 	if get_slide_count() > 0:
 		var collision = get_slide_collision(0)
 		if collision != null:
+			$HitSound.play()
 			if collision.collider.name == "Net":
 				speed *= net_restitution
 				failed = true

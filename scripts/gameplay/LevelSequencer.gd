@@ -5,7 +5,7 @@ onready var data = get_node("/root/Data").data
 onready var events = get_node("/root/Events")
 onready var Score = get_node("/root/Score")
 
-var level_index = -1 if !OS.is_debug_build() else 4
+var level_index = -1 if !OS.is_debug_build() else 0
 var curr_time = 0
 var level
 

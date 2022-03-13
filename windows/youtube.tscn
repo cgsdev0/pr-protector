@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=99 format=2]
 
 [ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/youtube/pewds.png" type="Texture" id=2]
@@ -44,6 +44,7 @@
 [ext_resource path="res://images/youtube/youtuber_girl.png" type="Texture" id=42]
 [ext_resource path="res://images/youtube/youtuber_bunny.png" type="Texture" id=43]
 [ext_resource path="res://images/youtube/youtuber_silhouette.png" type="Texture" id=44]
+[ext_resource path="res://sounds/soccer_hit.wav" type="AudioStream" id=45]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 17 )
@@ -378,7 +379,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 playing = true
 script = ExtResource( 19 )
 
@@ -387,7 +388,6 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 43 )
-frame = 3
 playing = true
 script = ExtResource( 19 )
 
@@ -396,7 +396,6 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 48 )
-frame = 3
 playing = true
 script = ExtResource( 19 )
 
@@ -405,7 +404,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 53 )
-frame = 1
+frame = 2
 playing = true
 script = ExtResource( 19 )
 
@@ -433,7 +432,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 1
+frame = 11
 playing = true
 script = ExtResource( 9 )
 
@@ -773,6 +772,10 @@ polygon = PoolVector2Array( -6, -5, -2, -8, 2, -8, 6, -5, 8, -2, 8, 2, 5, 6, 2, 
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Control/Layer4/Captchas/soccer/Base/YSort/KinematicBody2D" index="1"]
 frames = SubResource( 33 )
+
+[node name="HitSound" type="AudioStreamPlayer" parent="Body/Control/Layer4/Captchas/soccer/Base/YSort/KinematicBody2D" index="2"]
+stream = ExtResource( 45 )
+volume_db = -6.259
 
 [node name="Net" type="Sprite" parent="Body/Control/Layer4/Captchas/soccer/Base" index="1"]
 position = Vector2( 0, -59 )

@@ -8,7 +8,7 @@ func _ready():
 	var debug_btn = find_node("BtnDebug")
 	if debug_btn: 
 		debug_btn.visible = OS.is_debug_build()
-
+		
 func _screen_resized():
 	var window_size = OS.get_window_size()
 
