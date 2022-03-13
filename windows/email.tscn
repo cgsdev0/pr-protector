@@ -101,6 +101,7 @@ custom_constants/separation = 10
 [node name="Body" type="RichTextLabel" parent="Body/Controller/EmailPopover/BodyContainer" index="0"]
 margin_right = 328.0
 margin_bottom = 147.0
+mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 14 )
@@ -216,8 +217,8 @@ text = "From: badcop"
 [node name="BtnDelete" type="TextureButton" parent="Body/Controller/EmailPopover" index="8"]
 margin_left = 332.0
 margin_top = 24.0
-margin_right = 364.0
-margin_bottom = 56.0
+margin_right = 358.0
+margin_bottom = 49.0
 focus_mode = 0
 mouse_filter = 1
 mouse_default_cursor_shape = 2

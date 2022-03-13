@@ -31,6 +31,7 @@ var youtube_username
 var youtube_image_path
 var youtube_captcha
 var youtube_title
+var youtube_tuber_index
 
 func focus():
 	focused = true

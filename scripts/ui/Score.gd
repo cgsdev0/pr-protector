@@ -21,8 +21,15 @@ export var animate_duration = 0.7
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	events.connect("reset_level", self, "on_reset_level")
 	score = Score.score
 	target = score
+	
+func on_reset_level(_should_reset_score):
+	score = Score.score
+	target = score
+	duration = 0
+	update()
 	
 func _process(delta):
 	if target != Score.score:

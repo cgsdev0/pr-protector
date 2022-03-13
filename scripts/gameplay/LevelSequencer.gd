@@ -5,7 +5,7 @@ onready var data = get_node("/root/Data").data
 onready var events = get_node("/root/Events")
 onready var Score = get_node("/root/Score")
 
-var level_index = 3 # TODO -1
+var level_index = -1 if !OS.is_debug_build() else 4
 var curr_time = 0
 var level
 
@@ -13,7 +13,17 @@ var delaying_linear_task = false
 
 func _ready():
 	events.connect("next_level", self, "on_next_level")
+	events.connect("reset_level", self, "on_reset_level")
 	events.emit_signal("next_level")
+
+func on_reset_level(_should_reset_score):
+	curr_time = 0
+	level = data.levels[level_index].duplicate(true)
+	level.index = level_index
+	
+	var dmg_timer = get_owner().find_node("DamageTimer")
+	dmg_timer.start(dmg_timer.wait_time)
+	events.emit_signal("new_level", level)
 	
 func on_next_level():
 	level_index += 1
@@ -23,9 +33,13 @@ func on_next_level():
 	
 	print("NEW LEVEL", level_index)
 	if level_index < len(data.levels):
-		level = data.levels[level_index].duplicate()
+		level = data.levels[level_index].duplicate(true)
 		level.index = level_index
-		get_owner().find_node("DamageTimer").wait_time = level.damage_rate
+		
+		var dmg_timer = get_owner().find_node("DamageTimer")
+		dmg_timer.wait_time = level.damage_rate
+		dmg_timer.start(dmg_timer.wait_time)
+		
 		transition.get_node("Title").text = "Day " + str(level_index + 1)
 		transition.get_node("Title").get_node("Subtitle").text = level.title
 		events.emit_signal("new_level", level)
@@ -36,7 +50,7 @@ func on_next_level():
 
 func send_email(email_index):
 	randomize()
-	var email = data.emails[email_index].duplicate()
+	var email = data.emails[email_index].duplicate(true)
 	if typeof(email.subject) == TYPE_ARRAY:
 			email.subject.shuffle()
 			email.subject = email.subject[0]

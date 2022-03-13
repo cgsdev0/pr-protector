@@ -98,7 +98,7 @@ func make_prompt(template):
 	for k in x.keys():
 		prompt = prompt.replace(k, x[k])
 		
-	var ofTheKing = template.duplicate()
+	var ofTheKing = template.duplicate(true)
 	
 	ofTheKing.text = prompt
 	

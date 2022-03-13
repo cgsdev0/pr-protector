@@ -8,7 +8,11 @@ onready var data = get_node("/root/Data").data
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	events.connect("next_level", self, "on_play")
+	events.connect("reset_level", self, "on_play2")
 
+func on_play2(_should_reset_score):
+	on_play()
+	
 func on_play():
 	self.modulate = Color.transparent
 	$AnimationPlayer.play("Fade")

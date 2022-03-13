@@ -5,17 +5,28 @@ onready var events = get_node("/root/Events")
 
 var rng = RandomNumberGenerator.new()
 
+var starting_windows = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
 	events.connect('open_window', self, "on_window_open")
-	Events.connect("close_window", self, "on_window_close")
+	events.connect("close_window", self, "on_window_close")
+	events.connect("reset_level", self, "on_reset_level")
 	for window in get_children():
 		if window is Control:
 			continue
 		var body = window.get_node("Body")
 		if body:
 			body.connect('move_to_top', self, 'move_window_to_top')	
+		starting_windows.append(window.get_instance_id())
+
+func on_reset_level(_should_reset_score):
+	for window in get_children():
+		if window is Control:
+			continue
+		if starting_windows.find(window.get_instance_id()) == -1:
+			window.queue_free()
 
 func on_window_close():
 	blur_all()

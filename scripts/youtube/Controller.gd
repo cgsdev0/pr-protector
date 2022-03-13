@@ -2,8 +2,10 @@ extends Control
 
 onready var PromptGenerator = get_node("/root/PromptGenerator")
 
+var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rng.randomize()
 	if !get_owner().youtube_title:
 		var prompt = PromptGenerator.next_prompt(PromptGenerator.PROMPT_YOUTUBE)
 		$Layer1/VideoTitle.text = prompt.text
@@ -15,7 +17,10 @@ func _ready():
 	else:
 		$Layer1/Username.text = get_owner().youtube_username
 	
-	# TODO: handle image_url
+	if !get_owner().youtube_tuber_index:
+		$Layer1/Youtubers.get_child(rng.randi_range(0, 2)).visible = true
+	else:
+		$Layer1/Youtubers.get_child(get_owner().youtube_tuber_index).visible = true
 	
 	if !get_owner().youtube_captcha:
 		randomize()

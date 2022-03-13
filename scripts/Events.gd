@@ -15,7 +15,7 @@ signal photoshop_enable_upload(id)
 signal photoshop_enable_delete(id)
 signal photoshop_enable_paste(id)
 
-signal open_email(index, email)
+signal open_email(index, email, link_used)
 signal delete_email
 signal email_link
 signal insert_email(email)
@@ -38,6 +38,7 @@ signal linear_level_completed
 signal next_level
 signal win_level
 signal lose_level
+signal reset_level(should_reset_score)
 
 signal select_state(state)
 signal beat_captcha(id)

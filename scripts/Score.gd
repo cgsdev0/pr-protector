@@ -37,7 +37,7 @@ func _ready():
 	Events.connect("price_change", self, "on_price_change", [false])
 	Events.connect("price_change_user", self, "on_price_change", [true])
 	Events.connect("insert_email", self, "on_change_email_count", [1])
-	Events.connect("email_link", self, "on_change_email_count", [{"link": true}, -1])
+	Events.connect("email_link", self, "on_email_link")
 	Events.connect("delete_daily_email", self, "on_read_special_email")
 	Events.connect("delete_email", self, "on_change_email_count", [{}, -1])
 	Events.connect("open_window", self, "on_change_window_count", [1])
@@ -47,8 +47,16 @@ func _ready():
 	Events.connect("reddit_downvote", self, "on_change_reddit_queue", [-1])
 	Events.connect("new_level", self, "on_change_level")
 	Events.connect("linear_level_completed", self, "on_linear_level_complete")
+	Events.connect("reset_level", self, "on_reset_level")
 	reset_state(true)
 
+func on_reset_level(should_reset_score):
+	if should_reset_score:
+		reset_state(true)
+	else:
+		score = prev_score
+		reset_state(false)
+	
 func on_read_special_email():
 	special_emails = max(0, special_emails - 1)
 	
@@ -137,6 +145,10 @@ func print_game_state():
 	print ("SPECIAL EMAILS: ", special_emails)
 	print ("TASK WINDOWS: ", task_windows)
 	print ("REDDIT TASKS: ", reddit_tasks)
+	
+func on_email_link():
+	task_emails -= 1
+	junk_emails += 1
 	
 func on_change_email_count(email, count):
 	if email.has("use_daily_viewer"):

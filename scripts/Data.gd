@@ -122,7 +122,7 @@ var data = {
 			"multiplier": 1,
 			"start_email": "day_4_start",
 			"damage_rate": 5,
-			"reddit_sequencer": [1, 1, 1, 2, 5, 5, 6.5, 6.5, 6.5, 6.6, 6.7, 6.9, 40, 40, 40], # ADD
+			"reddit_sequencer": [1, 1, 1, 1, 2, 11, 11, 11, 40, 40, 40],
 			"email_sequencer": [
 				{
 					"time": 7,
@@ -134,11 +134,23 @@ var data = {
 				},
 				{
 					"time": 20.8,
-					"email": "photoshop_moon_laser", # CHANGE
+					"email": "photoshop_shake",
 				},
 				{
 					"time": 48,
 					"email": "generic_youtube",
+				},
+				{
+					"time": 48.3,
+					"email": "SPAM",
+				},
+				{ 
+					"time": 54.5,
+					"email":  "photoshop_hospital",
+				},
+				{
+					"time": 54.7,
+					"email": "photoshop_trip_lady",
 				},
 				{
 					"time": 55,
@@ -163,9 +175,56 @@ var data = {
 					"email": "photoshop_moon_laser",
 				},
 				{
+					"time": 59.8,
+					"email": "photoshop_bad_driver",
+				},
+				{
 					"time": 60,
 					"email": "michael_plot_thread",
 				},
+			]
+		},
+		{
+			"title": "Saturday",
+			"rescale_damage": true,
+			"multiplier": 1.15,
+			"damage_rate": 3.5,
+			"reddit_sequencer": [0,0,0,0,0,0,0,0,17,20,21.2, 21.7, 22.4, 22.5, 22.6, 65, 65.5, 70],
+			"start_email": "day_6_start",
+			"email_sequencer": [
+				{
+					"time": 7,
+					"email": "michael_youtube",
+				},
+				{
+					"time": 20,
+					"email": "SPAM",
+				},
+				{
+					"time": 21,
+					"email": "SPAM",
+				},
+				{
+					"time": 21.2,
+					"email": "generic_twitter",
+				},
+				{
+					"time": 21.5,
+					"email": "SPAM",
+				},
+				{
+					"time": 23,
+					"email": "SPAM",
+				},
+				{
+					"time": 30,
+					"email": "photoshop_airstrip",
+				},
+				{
+					"time": 59.8,
+					"email": "photoshop_goose",
+				},
+
 			]
 		}
 	],
@@ -231,6 +290,18 @@ some insider trading rumors have started going around; wanted to get ahead of th
 ps. to those of you who work in the pr department. i expect to see you here tomorrow morning if you want to keep your job
 """
 		},
+		"day_6_start": {
+			"subject": "Disgruntled Ex-Employee",
+			"from": "Abigail Peterson (Head of Public Relations)",
+			"body": """I'm sending this email to anyone who worked with you-know-who.
+
+He's apparently moved on to a new role at JDF, and he has already started a campaign against us online.
+
+This traitorous behavior will not be tolerated.
+
+If he tries to contact any of you, report it to me immediately.
+"""
+		},
 		"michael_plot_thread": {
 			"subject": "still alive",
 			"use_daily_viewer": true,
@@ -262,6 +333,21 @@ Thanks, Michael S.
 				"username": "jdf_corporate_media",
 				"title": "PKC LITERALLY KILLED MY PET??",
 				"captcha": "witness",
+			},
+		},
+		"michael_youtube": {
+			"subject": "[EXTERNAL] thought you might enjoy :)",
+			"from": "Michael S. <michael.s@JDFbusiness.com>",
+			"body": """wanted to show you my latest creation for JDF. They're already considering me for promotion!
+
+I hope you're not too stressed out by my work. Remember, it's just business!
+""",
+			"link": "youview.com/michael_s",
+			"youtube": {
+				"username": "michael_s",
+				"title": "Ex-Employee TELLS ALL about PKC",
+				"tuber_index": 3,
+				"captcha": "soccer",
 			},
 		},
 		"ceo_youtuber": {
@@ -325,7 +411,7 @@ We need you to replace them with some cute gators or something and stop all this
 		},
 		"photoshop_shake": {
 			"subject": "URGENT INTER-GALACTIC SPACE TROUBLE",
-			"from": "Boris Q. (EA to CFO)",
+			"from": "Zain Q. (EA to CFO)",
 			"body": """Our CFO Jackson Kain recently met with the Garmaxian-Seculonulack Overlord; Xoach Jexxrey and the media DOES NOT like when we make deals with intergalactic space hive overlords without clearing it with the UN first.
 
 So can you replace Xoach with a cute puppy? Marketing says puppies get 94% positive engagement rates. 
@@ -348,11 +434,12 @@ Thanks plenty.
 		},
 		"photoshop_trip_lady": {
 			"from": "Boris X. <boris.x@pkcbusiness.com>",
+			"subject": "Norris is a mad lad",
 			"body": """Do you know Norris? He works up at financing as an executive, and he said it would be really funny if we took a pic of him tripping some dumb grandma (LOL). 
 
 For the press release, though, can you make it look like she's tripping on something else?
 
-PS. Doesn't he kinda look like Kain?
+PS. Doesn't he kinda look like Jackson Kain?
 """,
 			"link": "EPIC_TRIPPING_FAIL.jpg",
 			"photoshop_index": "trip_lady",
@@ -446,6 +533,37 @@ Thankfully, you can't see who's driving in this pic, but we still need you to mo
 			],
 			"twitter": true,
 			"link": "clucker.com",
+		},
+		"SPAM": {
+			"subject": [
+				"to whom it may concern",
+				"re: re: re: all",
+				"URGENT",
+				"help",
+				"subject",
+				" ",
+			],
+			"from": [
+				"<julie@pkcbusiness.com>",
+				"<chris@pkcbusiness.com>",
+				"<chandler@pkcbusiness.com>",
+				"<jeremy@pkcbusiness.com>",
+				"<mary@pkcbusiness.com>",
+				"<miranda@pkcbusiness.com>",
+				"<candice@pkcbusiness.com>",
+				"<dan@pkcbusiness.com>",
+				"<trent@pkcbusiness.com>",
+				"<roger@pkcbusiness.com>",
+				"<wanda@pkcbusiness.com>",
+			],
+			"body": [
+				"can anyone cover for me next tuesday? I work in B-45 with all the clones",
+				"who took my lunch from the 108th floor fridge????",
+				"nd tch spprt ths kybrd cn't tpe vwls",
+				"haha i'm an idiot and left my computer unlocked so i'm getting trolled\n\n- anonymous prankster",
+				"does anyone have the key to the 84th floor bathroom?",
+				"help i'm locked in the stairwell by J-14, my keycard isn't working",
+			],
 		},
 		"generic_youtube": {
 			"subject": [

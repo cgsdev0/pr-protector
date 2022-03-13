@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pewdz_character_sheet_v2.png-a51842312eed454f1236d86201ede612.stex"
+path="res://.import/youtuber_not_pewdiepie.png-9780adc5e39d58f0cc52fce7797de752.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/youtube/pewdz_character_sheet_v2.png"
-dest_files=[ "res://.import/pewdz_character_sheet_v2.png-a51842312eed454f1236d86201ede612.stex" ]
+source_file="res://images/youtube/youtuber_not_pewdiepie.png"
+dest_files=[ "res://.import/youtuber_not_pewdiepie.png-9780adc5e39d58f0cc52fce7797de752.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/youtube/pewds.png" type="Texture" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://scripts/youtube/BtnCaptchaNext.gd" type="Script" id=14]
 [ext_resource path="res://scripts/youtube/BtnCompleteClaim.gd" type="Script" id=15]
 [ext_resource path="res://scripts/youtube/Controller.gd" type="Script" id=16]
-[ext_resource path="res://images/youtube/pewdz_character_sheet_v2.png" type="Texture" id=17]
+[ext_resource path="res://images/youtube/youtuber_not_pewdiepie.png" type="Texture" id=17]
 [ext_resource path="res://images/ui/spinner.png" type="Texture" id=18]
 [ext_resource path="res://scripts/youtube/AnimationJitter.gd" type="Script" id=19]
 [ext_resource path="res://images/youtube/captcha/witness.png" type="Texture" id=20]
@@ -41,6 +41,9 @@
 [ext_resource path="res://scripts/youtube/SoccerDude.gd" type="Script" id=39]
 [ext_resource path="res://images/youtube/captcha2/net.png" type="Texture" id=40]
 [ext_resource path="res://scripts/youtube/SoccerBall.gd" type="Script" id=41]
+[ext_resource path="res://images/youtube/youtuber_girl.png" type="Texture" id=42]
+[ext_resource path="res://images/youtube/youtuber_bunny.png" type="Texture" id=43]
+[ext_resource path="res://images/youtube/youtuber_silhouette.png" type="Texture" id=44]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 17 )
@@ -61,6 +64,78 @@ region = Rect2( 507, 0, 169, 95 )
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 42 )
+region = Rect2( 0, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 42 )
+region = Rect2( 169, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 42 )
+region = Rect2( 338, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 42 )
+region = Rect2( 507, 0, 169, 95 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 43 )
+region = Rect2( 0, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 43 )
+region = Rect2( 169, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 43 )
+region = Rect2( 338, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 43 )
+region = Rect2( 507, 0, 169, 95 )
+
+[sub_resource type="SpriteFrames" id=48]
+animations = [ {
+"frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 44 )
+region = Rect2( 169, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 44 )
+region = Rect2( 338, 0, 169, 95 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 44 )
+region = Rect2( 507, 0, 169, 95 )
+
+[sub_resource type="SpriteFrames" id=53]
+animations = [ {
+"frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -296,11 +371,39 @@ position = Vector2( 36, 326 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Control/Layer1" index="5"]
+[node name="Youtubers" type="Node2D" parent="Body/Control/Layer1" index="5"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Body/Control/Layer1/Youtubers" index="0"]
+visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
-frame = 1
+frame = 3
+playing = true
+script = ExtResource( 19 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Body/Control/Layer1/Youtubers" index="1"]
+visible = false
+position = Vector2( 194, 169 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 43 )
+playing = true
+script = ExtResource( 19 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Body/Control/Layer1/Youtubers" index="2"]
+visible = false
+position = Vector2( 194, 169 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 48 )
+playing = true
+script = ExtResource( 19 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="Body/Control/Layer1/Youtubers" index="3"]
+visible = false
+position = Vector2( 194, 169 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 53 )
+frame = 2
 playing = true
 script = ExtResource( 19 )
 
@@ -328,7 +431,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 11
+frame = 2
 playing = true
 script = ExtResource( 9 )
 

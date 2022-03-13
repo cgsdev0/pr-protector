@@ -4,6 +4,7 @@ extends Control
 onready var events = get_node("/root/Events")
 
 var email
+var link_used = false
 
 func _ready():
 	set_owner(get_parent().get_owner())
@@ -22,4 +23,4 @@ func _gui_input(event):
 			events.emit_signal("open_email_as_daily", synthetic_level)
 			queue_free()
 		else:
-			events.emit_signal("open_email", get_index(), email)
+			events.emit_signal("open_email", get_index(), email, link_used)

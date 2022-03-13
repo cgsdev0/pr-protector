@@ -9,6 +9,11 @@ var queued = 0
 
 var rng = RandomNumberGenerator.new()
 
+func on_reset_level(_should_reset_score):
+	queued = 0
+	update_with(null)
+	update_title()
+	
 func on_level_start(level):
 	if level.index == 0:
 		$PostBody/Buttons/AnimationPlayer.play("Flash")
@@ -19,6 +24,7 @@ func _ready():
 	events.connect("reddit_downvote", self, "vote", [false])
 	events.connect("reddit_queue", self, "on_queue")
 	events.connect("new_level", self, "on_level_start")
+	events.connect("reset_level", self, "on_reset_level")
 	rng.randomize()
 		
 	post = update_with(new_post())

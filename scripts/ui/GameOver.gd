@@ -11,5 +11,9 @@ func _ready():
 
 func on_lose():
 	self.modulate = Color.transparent
+	$Buttons.modulate = Color.transparent
+	$Subtitle.modulate = Color.transparent
 	$AnimationPlayer.play("Fade")
 	visible = true
+	yield(get_tree().create_timer(2.3), "timeout")
+	$Buttons.visible = true

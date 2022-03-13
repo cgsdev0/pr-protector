@@ -1,6 +1,6 @@
 extends Control
 
-onready var Events = get_node("/root/Events")
+onready var events = get_node("/root/Events")
 onready var Score = get_node("/root/Score")
 onready var font = preload("res://fonts/m5x7_small.tres")
 
@@ -26,6 +26,12 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	suggested_window *= Score.tweakables.global_scalar
 	rng.randomize()
+	events.connect("reset_level", self, "on_reset_level")
+	
+func on_reset_level(_should_reset_score):
+	curr_time = 0
+	scores = [{ time = curr_time - time_range, score = Score.score }, { time = curr_time, score = Score.score }]
+	update()
 	
 func _physics_process(delta):
 	curr_time += delta
