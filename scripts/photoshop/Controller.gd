@@ -49,6 +49,9 @@ func _ready():
 			$TargetZone.position = data.target_zone_position
 			cutout.set_script(repScr)
 			cutout.replace_texture = data.replace
+			
+	if data.has("followup_email"):
+		cutout.followup_email = data.followup_email.duplicate(true)
 	
 	$Cutout.add_child(cutout)
 

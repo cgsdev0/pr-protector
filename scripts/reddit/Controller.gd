@@ -11,7 +11,7 @@ var rng = RandomNumberGenerator.new()
 
 func on_reset_level(_should_reset_score):
 	queued = 0
-	update_with(null)
+	post = update_with(null)
 	update_title()
 	
 func on_level_start(level):

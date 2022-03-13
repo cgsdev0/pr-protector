@@ -16,10 +16,14 @@ var short_circuit_complete = false
 
 var challenge_success = false
 
+var followup_email
+
 func on_upload(id):
 	if id != get_owner().get_instance_id():
 		return
 	Score.complete_task("photoshop", challenge_success)
+	if followup_email:
+		events.emit_signal("insert_email_delayed", followup_email, 3)
 		
 func _process(_delta):
 	if !was_frozen && get_owner().photoshop_freeze:

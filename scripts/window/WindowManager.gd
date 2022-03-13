@@ -22,6 +22,7 @@ func _ready():
 		starting_windows.append(window.get_instance_id())
 
 func on_reset_level(_should_reset_score):
+	blur_all()
 	for window in get_children():
 		if window is Control:
 			continue

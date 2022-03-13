@@ -52,14 +52,14 @@ func _physics_process(delta):
 		$AnimatedSprite.stop()
 		kicked = false
 		yield(get_tree().create_timer(0.5), "timeout")
-		if failed || win_count < 2:
+		if failed || win_count < 1:
 			if !failed:
 				win_count += 1
-				get_owner().find_node("ScoreLabel").text = str(win_count) + "/3"
+				get_owner().find_node("ScoreLabel").text = str(win_count) + "/2"
 			position = start_pos
 			kick_after_delay()
 		else:
-			get_owner().find_node("ScoreLabel").text = "3/3"
+			get_owner().find_node("ScoreLabel").text = "2/2"
 			events.emit_signal("beat_captcha", get_owner().get_instance_id())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

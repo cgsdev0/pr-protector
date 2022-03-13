@@ -431,7 +431,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 2
+frame = 4
 playing = true
 script = ExtResource( 9 )
 
@@ -792,7 +792,7 @@ margin_top = 62.0
 margin_right = 124.0
 margin_bottom = 79.0
 theme = ExtResource( 7 )
-text = "0/3"
+text = "0/2"
 autowrap = true
 
 [node name="ColorRect" type="ColorRect" parent="Body/Control/Layer4/Captchas/soccer" index="2"]

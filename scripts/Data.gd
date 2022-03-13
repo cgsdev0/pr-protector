@@ -83,13 +83,13 @@ var data = {
 					"email": "youtube_tutorial"
 				},
 				{
-					"reddit": 2
+					"reddit": 3
 				},
 				{
 					"email": "generic_twitter",
 				},
 				{
-					"email": "generic_youtube"
+					"email": "youtube_tutorial2"
 				},
 			]
 		},
@@ -111,9 +111,6 @@ var data = {
 				},
 				{
 					"email": "generic_twitter",
-				},
-				{
-					"email": "generic_youtube",
 				},
 			]
 		},
@@ -160,7 +157,6 @@ var data = {
 		},
 		{
 			"title": "Red Friday",
-			"rescale_damage": true,
 			"multiplier": 2,
 			"damage_rate": 4,
 			"reddit_sequencer": [3, 3, 3, 12, 18, 18, 20, 30, 31, 32, 33, 34, 35, 40, 50, 50, 50.1, 50.2, 50.3, 50.4, 50.5, 50.6, 50.7, 50.8, 55],
@@ -186,7 +182,6 @@ var data = {
 		},
 		{
 			"title": "Saturday",
-			"rescale_damage": true,
 			"multiplier": 1.15,
 			"damage_rate": 3.5,
 			"reddit_sequencer": [0,0,0,0,0,0,0,0,17,20,21.2, 21.7, 22.4, 22.5, 22.6, 65, 65.5, 70],
@@ -331,8 +326,25 @@ Thanks, Michael S.
 			"link": "youview.com",
 			"youtube": {
 				"username": "jdf_corporate_media",
-				"title": "PKC LITERALLY KILLED MY PET??",
+				"title": "10 reasons to support JDF over PKC",
 				"captcha": "witness",
+			},
+		},
+		"youtube_tutorial2": {
+			"subject": "Another one",
+			"from": "Michael S. <michael.s@pkcbusiness.com>",
+			"body": """Got another one for ya. This cute animated bunny talks about how \"PKC is literally anti-America\".
+
+I just hope my kids aren't watching this garbage.
+
+Cheers, Michael S.
+""",
+			"link": "youview.com",
+			"youtube": {
+				"username": "RealBusinessBunny",
+				"title": "How PKC is DESTROYING America",
+				"captcha": "soccer",
+				"tuber_index": 2,
 			},
 		},
 		"michael_youtube": {
@@ -368,15 +380,21 @@ Sent from my PalmPilot 1000
 			"from": "Abigail Peterson (Head of Public Relations)",
 			"body": """It seems NASA has acquired more imagery of our space operations.
 
-I trust you can handle this task; I'm still too busy with the whole dictator thing.
+I trust you can handle this task. You did a good job on the last one.
 """,
 			"link": "space_laser.jpg",
 			"photoshop_index": "moon_laser",
 		},
 		"twitter_tutorial": {
-			"subject": "twitter tutorial",
-			"from": "TODO",
-			"body": """ALSO TODO
+			"subject": "Corporate clucker tactics",
+			"from": "Michael S. <michael.s@pkcbusiness.com>",
+			"body": """Here's one of those users I talked about; this one managed to get the hashtag #boycottPKC trending.
+
+I need you to go through their old post history, and [u]find some dirt on 'em[/u].
+
+Just re-share it, and watch as the clucker hivemind takes care of the rest.
+
+Go get 'em, Michael S.
 """,
 			"link": "clucker.com",
 			"twitter": true,
@@ -386,15 +404,15 @@ I trust you can handle this task; I'm still too busy with the whole dictator thi
 			"from": "Abigail Peterson (Head of Public Relations)",
 			"body": """Hello,
 
-I'm Abigail Peterson, the Head of Public Relations here at PKC. I come to you today with a bit of an odd request.
+I come to you today with a bit of an odd request.
 
 NASA has somehow acquired images of our top secret moon base. They're threatening to go public.
 
-Your resumé stated that you are proficient with Photoshop; your skills should transfer seamlessly to our internal tool, PKC PhotoEdit PRO.
+Your resumé stated that you are proficient with PKC PhotoEdit PRO.
 
 Please [u]edit out the base[/u] from the image.
 
-I trust you can handle this task; I'm too busy with this whole dictator fiasco.
+Thanks, Abigail
 """,
 			"link": "moon_base.jpg",
 			"photoshop_index": "moon_building",
@@ -517,17 +535,17 @@ Thankfully, you can't see who's driving in this pic, but we still need you to mo
 				"This loud mouth needs to shut up",
 				"Got another one for you:",
 				"Here:",
-				"We have another target(crossout) user for you.",
+				"We have another target for you.",
 				"A loud mouth negative nelly who hates the proud PKC family brand",
 				"They think we're playing smh. Show them what's what ;)",
 				"Kill this account for us? Kthx",
 				"Yo, broooooo I heard you take care of things for us yeah?? Do I just drop the link here?",
-				"Meanie :(",
+				"this person is a meanie :(",
 				"Corporate needs some help with a thingie. Don't ask.",
 				"Corporate needs help again.",
 				"my mom is an exec and she said you had to help me destroy this guy who TOTALLY CHEATED on Modern Duty Combat 2 >:(",
 				"End themmmmmmmmm AHHHHHHHHHH",
-				"What a weirdo lol. Mess em up.",
+				"This person is a total a weirdo lol. Mess em up.",
 				"Hola. ¿Me puedes ayudar?",
 				"This ex-employee just leaked the color palette of our new game logo. Teach them a lesson:",
 			],
@@ -1285,6 +1303,14 @@ Thankfully, you can't see who's driving in this pic, but we still need you to mo
 			"task": "replace",
 			"target_zone": [Vector2(283, 43), Vector2(283, 3), Vector2(365, 3), Vector2(366, 43)],
 			"target_zone_position": Vector2(-30, 160),
+			"followup_email": {
+				"subject": "Yikes",
+				"from": "Erik Withakay (President of Charitable Contributions)",
+				"body": """I expected you to make it say $1,000,000, not... this...
+
+whatever. thanks for trying
+"""
+			},
 		},
 		"moon_building": {
 			"cutout_polygon": [Vector2(144, 187), Vector2(169, 171), Vector2(300, 171), Vector2(300, 297), Vector2(169, 297), Vector2(144, 250)],
@@ -1303,6 +1329,14 @@ Thankfully, you can't see who's driving in this pic, but we still need you to mo
 			"polygon_offset": Vector2(0, 0),
 			"target_zone": [Vector2(-22, 156), Vector2(9, -13), Vector2(17, -148), Vector2(109, -149), Vector2(79, 18), Vector2(59, 156)],
 			"target_zone_position": Vector2(240, 170),
+			"followup_email": {
+				"subject": "You made it worse...?",
+				"from": "Midge Roy <midge@pkcbusiness.com>",
+				"body": """Hats off. I didn't think it could be done, but you somehow made the image even worse.
+
+Gratz.
+"""
+			},
 		},
 		"shake": {
 			"task": "replace",
@@ -1313,7 +1347,15 @@ Thankfully, you can't see who's driving in this pic, but we still need you to mo
 			"clean_plate": "res://images/photoshop/shake.png",
 			"target_zone": [Vector2(171, 164), Vector2(187, -173), Vector2(539, -182), Vector2(551, 170)],
 			"target_zone_position": Vector2(-51, 165),
-			"replace": "res://images/photoshop/shake_replace.png"
+			"replace": "res://images/photoshop/shake_replace.png",
+			"followup_email": {
+				"subject": "WTF",
+				"from": "Zain Q. (EA to CFO)",
+				"body": """it's supposed to look like he's shaking hands with the puppy. What's so hard to understand????
+
+I'll just do it myself, forget it.
+"""
+			},
 		},
 		"moon_laser": {
 			"task": "delete",
@@ -1331,7 +1373,15 @@ Thankfully, you can't see who's driving in this pic, but we still need you to mo
 			"target_zone": [Vector2(37, 105), Vector2(37, -137), Vector2(189, -138), Vector2(192, 101)],
 			"target_zone_position": Vector2(252, 216),
 			"clean_plate": "res://images/photoshop/trip_lady.png",
-			"cutout": "res://images/photoshop/trip_lady_cutout.png"
+			"cutout": "res://images/photoshop/trip_lady_cutout.png",
+			"followup_email": {
+				"subject": "wow -_-",
+				"from": "Norris <norris@pkcbusiness.com>",
+				"body": """is this some kind of joke???
+
+the press release is in an hour! not funny >:(
+"""
+			},
 		},
 		"airstrip": {
 			"cutout_polygon": [Vector2(230, 225), Vector2(230, 242), Vector2(214, 242), Vector2(214, 225)],
@@ -1352,7 +1402,13 @@ Thankfully, you can't see who's driving in this pic, but we still need you to mo
 			"clean_plate": "res://images/photoshop/goose.png",
 			"task": "move",
 			"target_zone": [Vector2(107, -22), Vector2(175, -23), Vector2(179, 34), Vector2(105, 36)],
-			"target_zone_position": Vector2(91, 233)
+			"target_zone_position": Vector2(91, 233),
+			"followup_email": {
+				"subject": "I can still see it...?",
+				"from": "Dr. Edna K. (Env. Sci Dept.)",
+				"body": """what part of this radioactive goose is \"hidden\"?
+"""
+			},			
 		},
 		"swamp": {
 			"cutout_polygon": [Vector2(174, 236), Vector2(202, 232), Vector2(217, 209), Vector2(271, 211), Vector2(275, 243), Vector2(235, 245), Vector2(179, 260), Vector2(169, 251)],
@@ -1363,7 +1419,15 @@ Thankfully, you can't see who's driving in this pic, but we still need you to mo
 			"replace": "res://images/photoshop/swamp_replace.png",
 			"task": "replace",
 			"target_zone": [Vector2(72, 152), Vector2(101, -36), Vector2(265, -35), Vector2(322, -47), Vector2(397, -68), Vector2(497, -87), Vector2(495, 155)],
-			"target_zone_position": Vector2(-51, 165)
+			"target_zone_position": Vector2(-51, 165),
+			"followup_email": {
+				"subject": "sigh...",
+				"from": "Dr. Edna K. (Env. Sci Dept.)",
+				"body": """HOW did you mess this up?
+
+this looks totally shopped. Forget it. I'll get someone else to do it...
+"""
+			},
 		}
 	},
 	"news": [

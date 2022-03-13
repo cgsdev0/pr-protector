@@ -19,6 +19,7 @@ signal open_email(index, email, link_used)
 signal delete_email
 signal email_link
 signal insert_email(email)
+signal insert_email_delayed(email, delay)
 signal delete_daily_email
 
 signal open_window(node)
