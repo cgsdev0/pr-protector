@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://windows/email.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/ui/PixelScale.gd" type="Script" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://sounds/bad_thing.wav" type="AudioStream" id=36]
 [ext_resource path="res://sounds/error_sound.wav" type="AudioStream" id=37]
 [ext_resource path="res://sounds/good_thing_long.wav" type="AudioStream" id=38]
+[ext_resource path="res://music/creepy_morning.ogg" type="AudioStream" id=39]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 13 )
@@ -562,6 +563,11 @@ volume_db = -1.926
 
 [node name="GoodThingLong" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource( 38 )
+
+[node name="MorningTrack" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource( 39 )
+volume_db = -3.865
+autoplay = true
 
 [connection signal="mouse_entered" from="GameOver/Buttons/BtnRetry" to="GameOver/Buttons/BtnRetry" method="_on_BtnRetry_mouse_entered"]
 [connection signal="mouse_exited" from="GameOver/Buttons/BtnRetry" to="GameOver/Buttons/BtnRetry" method="_on_BtnRetry_mouse_exited"]

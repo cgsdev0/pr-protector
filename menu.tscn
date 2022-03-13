@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://fonts/m5x7_med.tres" type="DynamicFont" id=1]
 [ext_resource path="res://images/menu/fireside.png" type="Texture" id=2]
@@ -21,7 +21,8 @@
 [ext_resource path="res://scripts/menu/Credits.gd" type="Script" id=19]
 [ext_resource path="res://sounds/click.wav" type="AudioStream" id=20]
 [ext_resource path="res://scripts/Audio.gd" type="Script" id=21]
-[ext_resource path="res://sounds/menu_music.ogg" type="AudioStream" id=22]
+[ext_resource path="res://music/menu_music.ogg" type="AudioStream" id=22]
+[ext_resource path="res://scripts/menu/ChromeSucks.gd" type="Script" id=23]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -255,7 +256,7 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Credits/Control"]
 position = Vector2( 168, 72 )
 frames = SubResource( 9 )
-frame = 7
+frame = 5
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Credits"]
@@ -328,6 +329,20 @@ text = ">  QUIT"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/BtnQuit"]
 reset_on_save = false
 anims/SlideIn = SubResource( 12 )
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 971.0
+margin_bottom = 555.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 23 )
+
+[node name="Label" type="Label" parent="Control/ColorRect"]
+margin_right = 960.0
+margin_bottom = 540.0
+custom_fonts/font = ExtResource( 4 )
+text = "[CLICK TO START]"
+align = 1
+valign = 1
 
 [node name="AudioController" type="Node2D" parent="."]
 pause_mode = 2

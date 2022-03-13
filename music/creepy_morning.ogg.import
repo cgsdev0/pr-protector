@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/creepy_morning.ogg-6e71d51c9c6f3eca9e229ad2360de15e.oggstr"
+
+[deps]
+
+source_file="res://music/creepy_morning.ogg"
+dest_files=[ "res://.import/creepy_morning.ogg-6e71d51c9c6f3eca9e229ad2360de15e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
