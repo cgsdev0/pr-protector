@@ -5,7 +5,7 @@ onready var data = get_node("/root/Data").data
 onready var events = get_node("/root/Events")
 onready var Score = get_node("/root/Score")
 
-var level_index = -1 if !OS.is_debug_build() else -1
+var level_index = -1 if !OS.is_debug_build() else 4
 var curr_time = 0
 var level
 
@@ -31,7 +31,6 @@ func on_next_level():
 	level = null
 	var transition = get_owner().find_node("DayTransition")
 	
-	print("NEW LEVEL", level_index)
 	if level_index < len(data.levels):
 		level = data.levels[level_index].duplicate(true)
 		level.index = level_index
@@ -46,6 +45,8 @@ func on_next_level():
 	else:
 		transition.get_node("Title").text = "The End"
 		transition.get_node("Title").get_node("Subtitle").text = "Thanks for playing!"
+		yield(get_tree().create_timer(0.1), "timeout")
+		events.emit_signal("game_completed")
 		yield(get_tree().create_timer(6.0), "timeout")
 		send_email("paycheck")
 	
@@ -85,7 +86,6 @@ func _physics_process(delta):
 				events.emit_signal("reddit_queue", task.reddit)
 			
 			if task.has("email"):
-				print("opening email ", task.email)
 				assert(data.emails.has(task.email))
 				send_email(task.email)
 			

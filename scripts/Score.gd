@@ -77,7 +77,6 @@ func _process(delta):
 		yield(get_tree().create_timer(2.0), "timeout")
 		if !lost:
 			won = true
-			print("YOU BEAT THE LEVEL")
 			yield(get_tree().create_timer(3.0), "timeout")
 			Events.emit_signal("win_level", level)
 		

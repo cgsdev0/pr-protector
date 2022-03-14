@@ -586,7 +586,7 @@ volume_db = -10.0
 
 [node name="OfficeNoises" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource( 42 )
-volume_db = 6.3
+volume_db = 6.9
 autoplay = true
 
 [node name="VictoryLap" type="AudioStreamPlayer" parent="AudioController"]

@@ -37,8 +37,6 @@ func _ready():
 			good += 1
 		else:
 			bad += 1
-	print("good: ", good)
-	print("bad:  ", bad)
 
 # _process : called every frame
 # func _process(delta):

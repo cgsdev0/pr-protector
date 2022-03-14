@@ -21,14 +21,14 @@ func _ready():
 	target_zone = get_owner().find_node("TargetZone")
 	events.connect("photoshop_freeze", self, "on_freeze")
 	on_change_my_poly()
-	if name == "SAMPLE":
-		var line = ""
-		for point in target_zone.polygon:
-			if len(line):
-				line += ", "
-			line += "Vector2" + str(point)
-		print("\"target_zone\": ", "[", line, "],")
-		print("\"target_zone_position\": Vector2", target_zone.position)
+# if name == "SAMPLE":
+# var line = ""
+# for point in target_zone.polygon:
+# 	if len(line):
+# 		line += ", "
+# 	line += "Vector2" + str(point)
+# print("\"target_zone\": ", "[", line, "],")
+# print("\"target_zone_position\": Vector2", target_zone.position)
 	
 
 func minv(curvec,newvec):
@@ -100,8 +100,8 @@ func _process(_delta):
 			get_parent().position.y = 308 - box.size.y - position.y - box.position.y
 		if(get_parent().position.y + position.y + box.position.y < 27):
 			get_parent().position.y = 27 - position.y - box.position.y
-		if OS.is_debug_build():
-			print(is_contained(polygon, target_zone.polygon, self.global_position, target_zone.global_position))
+		# if OS.is_debug_build():
+			# print(is_contained(polygon, target_zone.polygon, self.global_position, target_zone.global_position))
 		return
 	# process cursor state
 	if !get_owner().focused:

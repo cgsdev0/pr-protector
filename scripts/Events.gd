@@ -46,3 +46,5 @@ signal beat_captcha(id)
 signal witness_captcha_wrong
 
 signal tweet_clicked(index, id)
+
+signal game_completed

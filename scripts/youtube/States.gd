@@ -27,7 +27,7 @@ func _input(event):
 			$Witness.global_position = get_global_mouse_position() + grab_offset
 		if witness_grabbed && !event.pressed:
 			witness_grabbed = false
-			print(selected_state)
+			# print(selected_state)
 			if !selected_state:
 				$Witness.position = witness_original_pos
 			else:

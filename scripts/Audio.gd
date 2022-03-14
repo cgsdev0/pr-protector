@@ -16,12 +16,18 @@ func _ready():
 	events.connect("unpause_game", self, "on_unpause_game")
 	events.connect("pause_game", self, "on_pause_game")
 	events.connect("win_level", self, "on_win_level")
+	events.connect("game_completed", self, "on_game_completed")
 
 var was_paused = false
 var intended_track = "morning"
 
 var frantic = false
 
+func on_game_completed():
+	yield(get_tree().create_timer(0.1), "timeout")
+	intended_track = "nothing"
+	stop_all()
+	
 func on_win_level(_level):
 	stop_all()
 	intended_track = "victory"

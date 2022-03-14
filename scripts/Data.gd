@@ -159,6 +159,7 @@ var data = {
 			"title": "Red Friday",
 			"multiplier": 1.8,
 			"damage_rate": 4.2,
+			"rescale_damage": true,
 			"reddit_sequencer": [3, 3, 3, 12, 18, 18, 20, 30, 31, 32, 33, 34, 35, 40, 50, 50, 50.1, 50.2, 50.3, 50.4, 50.5, 50.6, 50.7, 50.8, 55],
 			"start_email": "day_5_start",
 			"email_sequencer": [
@@ -184,6 +185,7 @@ var data = {
 			"title": "Saturday",
 			"multiplier": 1.1,
 			"damage_rate": 3.6,
+			"rescale_damage": true,
 			"reddit_sequencer": [1,1,1,1,1,1,17,20,21.2, 21.7, 22.4, 22.5, 22.6, 65, 65.5, 70],
 			"start_email": "day_6_start",
 			"email_sequencer": [
@@ -328,7 +330,7 @@ Thank you for being a part of the PKC family.
 			"from": "michael.s@hotmail.com",
 			"body": """DON'T TRUST ANYONE AT PKC.
 
-there's some shady s*** going on over there, and I can't believe I was so blind to it before.
+there's some shady stuff going on over there, and I can't believe I was so blind to it before.
 
 don't want to take too much of your time, but as you can tell I'm not there anymore. They fired me yesterday.
 
