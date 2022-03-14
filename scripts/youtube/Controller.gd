@@ -2,6 +2,12 @@ extends Control
 
 onready var PromptGenerator = get_node("/root/PromptGenerator")
 
+var pitch_array = [
+	1.0,
+	1.5,
+	2.0,
+	0.75,
+]
 var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,10 +23,12 @@ func _ready():
 	else:
 		$Layer1/Username.text = get_owner().youtube_username
 	
-	if !get_owner().youtube_tuber_index:
-		$Layer1/Youtubers.get_child(rng.randi_range(0, 2)).visible = true
-	else:
-		$Layer1/Youtubers.get_child(get_owner().youtube_tuber_index).visible = true
+	var yt_index = rng.randi_range(0, 2)
+	if get_owner().youtube_tuber_index:
+		yt_index = get_owner().youtube_tuber_index
+		
+	$Layer1/Youtubers.get_child(yt_index).visible = true
+	$Layer1/YoutuberVoice.pitch_scale = pitch_array[yt_index]
 	
 	if !get_owner().youtube_captcha:
 		randomize()

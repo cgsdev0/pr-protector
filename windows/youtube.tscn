@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://windows/base_window.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/youtube/pewds.png" type="Texture" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://images/youtube/youtuber_bunny.png" type="Texture" id=43]
 [ext_resource path="res://images/youtube/youtuber_silhouette.png" type="Texture" id=44]
 [ext_resource path="res://sounds/soccer_hit.wav" type="AudioStream" id=45]
+[ext_resource path="res://sounds/game_voice_test_1.mp3" type="AudioStream" id=46]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 17 )
@@ -379,6 +380,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 script = ExtResource( 19 )
 
@@ -387,7 +389,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 43 )
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 19 )
 
@@ -396,7 +398,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 48 )
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 19 )
 
@@ -405,9 +407,14 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 53 )
-frame = 3
+frame = 1
 playing = true
 script = ExtResource( 19 )
+
+[node name="YoutuberVoice" type="AudioStreamPlayer" parent="Body/Control/Layer1" index="6"]
+stream = ExtResource( 46 )
+volume_db = -4.0
+autoplay = true
 
 [node name="Layer2" type="Control" parent="Body/Control" index="1"]
 visible = false
@@ -433,7 +440,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 14
+frame = 4
 playing = true
 script = ExtResource( 9 )
 

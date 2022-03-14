@@ -569,7 +569,7 @@ stream = ExtResource( 38 )
 
 [node name="MorningTrack" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource( 39 )
-volume_db = -3.865
+volume_db = -6.272
 autoplay = true
 
 [connection signal="mouse_entered" from="GameOver/Buttons/BtnRetry" to="GameOver/Buttons/BtnRetry" method="_on_BtnRetry_mouse_entered"]
