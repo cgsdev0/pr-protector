@@ -505,7 +505,7 @@ Teach them a lesson and make THEIR donations OURS! >:D
 			"subject": "Radioactive Geese????",
 			"body": """Someone online noticed that one of their local gooses is uhh.... a bit more...colorful than the others?
 
-			Just please do something to hide it. We can't afford this getting out right now
+Just please do something to hide it. We can't afford this getting out right now
 """,
 			"link": "radioactive_gouse_sighting.psd",
 			"photoshop_index": "goose",

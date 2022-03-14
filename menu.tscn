@@ -256,7 +256,7 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control/Credits/Control"]
 position = Vector2( 168, 72 )
 frames = SubResource( 9 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Credits"]
@@ -353,7 +353,7 @@ stream = ExtResource( 20 )
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource( 22 )
-volume_db = -6.74
+volume_db = -12.0
 
 [connection signal="mouse_entered" from="Control/Credits" to="Control/Credits" method="_on_Credits_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Credits" to="Control/Credits" method="_on_Credits_mouse_exited"]

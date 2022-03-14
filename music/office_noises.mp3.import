@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/office_noises.mp3-ae2738476cd29a277c75a180880b4314.mp3str"
+
+[deps]
+
+source_file="res://music/office_noises.mp3"
+dest_files=[ "res://.import/office_noises.mp3-ae2738476cd29a277c75a180880b4314.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://windows/email.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/ui/PixelScale.gd" type="Script" id=2]
@@ -39,6 +39,10 @@
 [ext_resource path="res://sounds/error_sound.wav" type="AudioStream" id=37]
 [ext_resource path="res://sounds/good_thing_long.wav" type="AudioStream" id=38]
 [ext_resource path="res://music/creepy_morning.ogg" type="AudioStream" id=39]
+[ext_resource path="res://music/daily_grind_intro.tres" type="AudioStream" id=40]
+[ext_resource path="res://music/daily_grind.ogg" type="AudioStream" id=41]
+[ext_resource path="res://music/office_noises.mp3" type="AudioStream" id=42]
+[ext_resource path="res://music/victory_lap.ogg" type="AudioStream" id=43]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 13 )
@@ -569,8 +573,25 @@ stream = ExtResource( 38 )
 
 [node name="MorningTrack" type="AudioStreamPlayer" parent="AudioController"]
 stream = ExtResource( 39 )
-volume_db = -6.272
+volume_db = -12.0
 autoplay = true
+
+[node name="DailyGrindIntro" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource( 40 )
+volume_db = -10.0
+
+[node name="DailyGrind" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource( 41 )
+volume_db = -10.0
+
+[node name="OfficeNoises" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource( 42 )
+volume_db = 6.3
+autoplay = true
+
+[node name="VictoryLap" type="AudioStreamPlayer" parent="AudioController"]
+stream = ExtResource( 43 )
+volume_db = -6.0
 
 [connection signal="mouse_entered" from="GameOver/Buttons/BtnRetry" to="GameOver/Buttons/BtnRetry" method="_on_BtnRetry_mouse_entered"]
 [connection signal="mouse_exited" from="GameOver/Buttons/BtnRetry" to="GameOver/Buttons/BtnRetry" method="_on_BtnRetry_mouse_exited"]
@@ -578,3 +599,4 @@ autoplay = true
 [connection signal="mouse_exited" from="GameOver/Buttons/BtnRetryReset" to="GameOver/Buttons/BtnRetryReset" method="_on_BtnRetry_mouse_exited"]
 [connection signal="mouse_entered" from="GameOver/Buttons/BtnMenu" to="GameOver/Buttons/BtnMenu" method="_on_BtnRetry_mouse_entered"]
 [connection signal="mouse_exited" from="GameOver/Buttons/BtnMenu" to="GameOver/Buttons/BtnMenu" method="_on_BtnRetry_mouse_exited"]
+[connection signal="finished" from="AudioController/DailyGrindIntro" to="AudioController" method="_on_DailyGrindIntro_finished"]

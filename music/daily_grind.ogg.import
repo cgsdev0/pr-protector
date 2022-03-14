@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/daily_grind.ogg-372a8eee78f00a0ceb653f95dae65510.oggstr"
+
+[deps]
+
+source_file="res://music/daily_grind.ogg"
+dest_files=[ "res://.import/daily_grind.ogg-372a8eee78f00a0ceb653f95dae65510.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -37,7 +37,7 @@ signal open_email_as_daily(level)
 signal new_level(level)
 signal linear_level_completed
 signal next_level
-signal win_level
+signal win_level(level)
 signal lose_level
 signal reset_level(should_reset_score)
 

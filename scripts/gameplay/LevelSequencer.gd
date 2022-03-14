@@ -5,7 +5,7 @@ onready var data = get_node("/root/Data").data
 onready var events = get_node("/root/Events")
 onready var Score = get_node("/root/Score")
 
-var level_index = -1 if !OS.is_debug_build() else 3
+var level_index = -1 if !OS.is_debug_build() else -1
 var curr_time = 0
 var level
 
@@ -69,7 +69,9 @@ func send_email(email_index):
 func _physics_process(delta):
 	if !level:
 		return
-
+	if Score.lost:
+		return
+		
 	curr_time += delta
 	if level.has("linear_sequencer"):
 		if Score.has_pending_tasks() || delaying_linear_task:

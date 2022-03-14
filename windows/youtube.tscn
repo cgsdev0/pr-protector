@@ -380,7 +380,6 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
-frame = 2
 playing = true
 script = ExtResource( 19 )
 
@@ -389,7 +388,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 43 )
-frame = 3
+frame = 1
 playing = true
 script = ExtResource( 19 )
 
@@ -398,7 +397,7 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 48 )
-frame = 3
+frame = 1
 playing = true
 script = ExtResource( 19 )
 
@@ -407,13 +406,13 @@ visible = false
 position = Vector2( 194, 169 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 53 )
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 19 )
 
 [node name="YoutuberVoice" type="AudioStreamPlayer" parent="Body/Control/Layer1" index="6"]
 stream = ExtResource( 46 )
-volume_db = -4.0
+volume_db = -5.0
 autoplay = true
 
 [node name="Layer2" type="Control" parent="Body/Control" index="1"]
@@ -440,7 +439,7 @@ mouse_filter = 1
 [node name="Spinner" type="AnimatedSprite" parent="Body/Control/Layer2/Control" index="0"]
 position = Vector2( 189.75, 183.25 )
 frames = SubResource( 22 )
-frame = 4
+frame = 13
 playing = true
 script = ExtResource( 9 )
 

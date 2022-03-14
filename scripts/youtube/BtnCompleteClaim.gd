@@ -12,4 +12,5 @@ func _pressed():
 		get_owner().find_node("Layer5").visible = false
 		get_owner().find_node("Layer6").visible = true
 		get_owner().setClosable(true)
+		get_owner().find_node("YoutuberVoice").stop()
 		Score.complete_task("youtube", true)
